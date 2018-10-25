@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>linux命令详解 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="linux命令详解linux命令的通用格式命令 [选项] [参数] 选项及参数的含义：选项：用于调节命令的功能         &amp;gt;以&amp;quot;-&amp;quot;引导短格式选项（单个字符），例如&amp;quot;-l&amp;quot;         &amp;gt;以&amp;quot;--&amp;quot;引导长格式选项（多个字符），例如&amp;quot;--color&amp;quot;         &amp;gt;多个短格式选项可以写在一">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux命令详解">
+<meta property="og:url" content="https://feng4.github.io/2018/10/25/linux命令详解/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="linux命令详解linux命令的通用格式命令 [选项] [参数] 选项及参数的含义：选项：用于调节命令的功能         &amp;gt;以&amp;quot;-&amp;quot;引导短格式选项（单个字符），例如&amp;quot;-l&amp;quot;         &amp;gt;以&amp;quot;--&amp;quot;引导长格式选项（多个字符），例如&amp;quot;--color&amp;quot;         &amp;gt;多个短格式选项可以写在一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-03T07:32:57.501Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux命令详解">
+<meta name="twitter:description" content="linux命令详解linux命令的通用格式命令 [选项] [参数] 选项及参数的含义：选项：用于调节命令的功能         &amp;gt;以&amp;quot;-&amp;quot;引导短格式选项（单个字符），例如&amp;quot;-l&amp;quot;         &amp;gt;以&amp;quot;--&amp;quot;引导长格式选项（多个字符），例如&amp;quot;--color&amp;quot;         &amp;gt;多个短格式选项可以写在一">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-linux命令详解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      linux命令详解
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/命令学习/">命令学习</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-10-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="linux命令详解"><a href="#linux命令详解" class="headerlink" title="linux命令详解"></a>linux命令详解</h1><h2 id="linux命令的通用格式"><a href="#linux命令的通用格式" class="headerlink" title="linux命令的通用格式"></a>linux命令的通用格式</h2><pre><code>命令 [选项] [参数]
+</code></pre><h4 id="选项及参数的含义："><a href="#选项及参数的含义：" class="headerlink" title="选项及参数的含义："></a>选项及参数的含义：</h4><pre><code>选项：用于调节命令的功能
+        &gt;以&quot;-&quot;引导短格式选项（单个字符），例如&quot;-l&quot;
+        &gt;以&quot;--&quot;引导长格式选项（多个字符），例如&quot;--color&quot;
+        &gt;多个短格式选项可以写在一起，只用一个&quot;-&quot;引导，例如&quot;-al&quot;
+参数：命令操作的对象，如文件，目录名等。例如&quot;ls -l /home
+</code></pre><h4 id="命令行编辑的几个辅助操作"><a href="#命令行编辑的几个辅助操作" class="headerlink" title="命令行编辑的几个辅助操作:"></a>命令行编辑的几个辅助操作:</h4><pre><code>反斜杠&quot;\&quot;;强制换行
+快捷键  ctrl+U  清空至行首
+        ctrl+K 清空至行尾
+        ctrl+L 清屏
+        ctrl+C 取消本次命令编辑
+        ctrl+alt+F2 切换图形界面或命令行界面    
+--help 查看帮助
+</code></pre><h5 id="uname命令："><a href="#uname命令：" class="headerlink" title="uname命令："></a>uname命令：</h5><pre><code>-a  显示主机名，内核版本，硬件平台等详细信息。
+-r  显示内核版本
+</code></pre><h5 id="hostname命令："><a href="#hostname命令：" class="headerlink" title="hostname命令："></a>hostname命令：</h5><pre><code>查看主机名
+</code></pre><h5 id="关机命令："><a href="#关机命令：" class="headerlink" title="关机命令："></a>关机命令：</h5><pre><code>halt    关机
+shutdown -h now   现在关机
+poweroff  关机
+shutdown -r 重启
+reboot   重启
+</code></pre><h5 id="目录切换命令："><a href="#目录切换命令：" class="headerlink" title="目录切换命令："></a>目录切换命令：</h5><pre><code>cd    切换目录
+pwd   查看当前所在目录
+</code></pre><h5 id="ls命令："><a href="#ls命令：" class="headerlink" title="ls命令："></a>ls命令：</h5><pre><code>列表显示目录内容
+格式： ls [选项] .....[目录或文件名]
+选项： 
+        -l  以长格式显示
+        -a  显示所有字目录和文件信息，包括隐藏文件
+        -A  类似于&quot;-a&quot;，但不显示&quot;.&quot;和&quot;..&quot;目录信息。
+        -d  显示目录本身的属性
+        -h  以更易读的字节单位（K,M 等）显示信息
+        -R  递归显示内容
+        --color 以颜色区分不同类型文件
+</code></pre><h5 id="du命令："><a href="#du命令：" class="headerlink" title="du命令："></a>du命令：</h5><pre><code>统计目录及文件的空间占用情况
+格式： du [选项].....[目录或文件名]
+选项：
+     -a  统计时包括所有的文件，而不仅仅只统计目录
+     -h  以更易读的字节单位（K,M 等）显示信息
+     -s  只统计每个参数所占用空间总大小。
+</code></pre><h5 id="mkdir命令："><a href="#mkdir命令：" class="headerlink" title="mkdir命令："></a>mkdir命令：</h5><pre><code>创建新的目录
+格式： mkdir [-p] [路径] 目录名
+</code></pre><h5 id="touch命令："><a href="#touch命令：" class="headerlink" title="touch命令："></a>touch命令：</h5><pre><code>创建文件，或更新文件的时间标记
+格式：  touch 文件名
+</code></pre><h5 id="ln命令："><a href="#ln命令：" class="headerlink" title="ln命令："></a>ln命令：</h5><pre><code>为文件或目录建立链接。Link
+格式： ln [-s] 源文件或目录....链接文件或目标目录
+选项：
+      -s  建立符号链接文件（省略此项建立硬链接）
+</code></pre><h5 id="cp命令："><a href="#cp命令：" class="headerlink" title="cp命令："></a>cp命令：</h5><pre><code>复制 文件或目录
+格式： cp [选项] 源文件或目录....目标文件或目录
+选项：
+      -r  递归复制整个目录树
+      -p  保持源文件的属性不变
+      -f  强制覆盖目标同名文件或目录
+      -i  需要覆盖文件或目录时进行提醒
+</code></pre><h5 id="rm命令："><a href="#rm命令：" class="headerlink" title="rm命令："></a>rm命令：</h5><pre><code>删除 文件或目录
+格式： rm [选项]... 文件或目录
+选项： 
+      -f 强行删除文件或目录，不进行提醒
+      -i 删除文件或目录时提醒用户确认
+      -r 递归删除整个目录树
+</code></pre><h5 id="防火墙命令："><a href="#防火墙命令：" class="headerlink" title="防火墙命令："></a>防火墙命令：</h5><pre><code>1) Linux操作系统中永久性生效，重启后不会复原
+
+开启： chkconfig iptables on
+
+关闭： chkconfig iptables off
+
+2) 即时生效，重启后复原
+
+开启： service iptables start
+
+关闭： service iptables stop
+
+需要说明的是对于Linux操作系统中的其它服务都可以用以上命令执行开启和关闭操作。
+
+在开启了防火墙时，做如下设置，开启相关端口，
+
+修改/etc/sysconfig/iptables 文件，添加以下内容：
+
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+</code></pre>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月03日 15:32</p>
+        <p>原始链接： <a class="post-url" href="/2018/10/25/linux命令详解/" title="linux命令详解">https://feng4.github.io/2018/10/25/linux命令详解/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/25/linux命令详解/&title=《linux命令详解》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/25/linux命令详解/&title=《linux命令详解》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/25/linux命令详解/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux命令详解》 — Feng 的博客&url=https://feng4.github.io/2018/10/25/linux命令详解/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/25/linux命令详解/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/25/linux命令详解/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/linux/" class="color1">linux</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#linux命令详解"><span class="post-toc-text">linux命令详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#linux命令的通用格式"><span class="post-toc-text">linux命令的通用格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选项及参数的含义："><span class="post-toc-text">选项及参数的含义：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命令行编辑的几个辅助操作"><span class="post-toc-text">命令行编辑的几个辅助操作:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#uname命令："><span class="post-toc-text">uname命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#hostname命令："><span class="post-toc-text">hostname命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关机命令："><span class="post-toc-text">关机命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#目录切换命令："><span class="post-toc-text">目录切换命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ls命令："><span class="post-toc-text">ls命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#du命令："><span class="post-toc-text">du命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mkdir命令："><span class="post-toc-text">mkdir命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#touch命令："><span class="post-toc-text">touch命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ln命令："><span class="post-toc-text">ln命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#cp命令："><span class="post-toc-text">cp命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#rm命令："><span class="post-toc-text">rm命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#防火墙命令："><span class="post-toc-text">防火墙命令：</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/10/25/mysql笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          sql盲注笔记
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/10/25/正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">正则表达式</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2018 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

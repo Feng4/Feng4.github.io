@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php静态变量 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="php静态变量Static（静态）关键字 1.在函数中声明的静态变量，只在调用时声明。2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。static静态变量会被放在程序的全局">
+<meta name="keywords" content="php学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php静态变量">
+<meta property="og:url" content="https://feng4.github.io/2018/10/25/php静态变量/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="php静态变量Static（静态）关键字 1.在函数中声明的静态变量，只在调用时声明。2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。static静态变量会被放在程序的全局">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-01T14:34:19.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php静态变量">
+<meta name="twitter:description" content="php静态变量Static（静态）关键字 1.在函数中声明的静态变量，只在调用时声明。2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。static静态变量会被放在程序的全局">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-php静态变量" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      php静态变量
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-10-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="php静态变量"><a href="#php静态变量" class="headerlink" title="php静态变量"></a>php静态变量</h3><pre><code>Static（静态）关键字
+</code></pre><p>1.在函数中声明的静态变量，只在调用时声明。<br><br>2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。<br><br>3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。<br><br>static静态变量会被放在程序的全局存储区中（即在程序的全局数据区，而不是在堆栈中分配，所以不会导致堆栈溢出），这样可以在下一次调用的时候还可以保持原来的赋值。这一点是它与堆栈变量和堆变量的区别。</p>
+<pre><code>代码示例：
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//--------------如何理解static静态变量-----------</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/** 普通局部变量 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">local</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $loc = <span class="number">0</span>; <span class="comment">//这样，如果直接不给初值0是错误的。</span></span><br><span class="line">    ++$loc;</span><br><span class="line">    <span class="keyword">echo</span> $loc . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'===================================&lt;br/&gt;'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/** static静态局部变量 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">static_local</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> $local = <span class="number">0</span> ; <span class="comment">//此处可以不赋0值</span></span><br><span class="line">    $local++;</span><br><span class="line">    <span class="keyword">echo</span> $local . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">static_local(); <span class="comment">//1</span></span><br><span class="line">static_local(); <span class="comment">//2</span></span><br><span class="line">static_local(); <span class="comment">//3</span></span><br><span class="line"><span class="comment">//echo $local; 注意虽然静态变量，但是它仍然是局部的，在外不能直接访问的。</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'=======================================&lt;br&gt;'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/** static静态全局变量(实际上:全局变量本身就是静态存储方式,所有的全局变量都是静态变量) */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">static_global</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">global</span> $glo; <span class="comment">//此处，可以不赋值0，当然赋值0，后每次调用时其值都为0，每次调用函数得到的值都会是1，但是不能想</span></span><br><span class="line"><span class="comment">//当然的写上"static"加以修饰，那样是错误的.</span></span><br><span class="line">    $glo++;</span><br><span class="line">    <span class="keyword">echo</span> $glo . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">static_global(); <span class="comment">//1</span></span><br><span class="line">static_global(); <span class="comment">//2</span></span><br><span class="line">static_global(); <span class="comment">//3</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="静态局部变量："><a href="#静态局部变量：" class="headerlink" title="静态局部变量："></a>静态局部变量：</h5><p>  1.static类型的内部变量同auto自动变量（即未加static声明的局部变量）一样，是某个特定函数的局部变量，即只能在定义该变量的函数内使用该变量，两者作用域相同；两者的不同在于：<strong>auto自动变量会随着函数被调用和退出而存在和消失，而static类局部变量不会，它不管其所在的函数是否被调用，都将一直存在；不过，尽管该变量还继续存在，但不能使用它。</strong>倘若再次调用定义它的函数时，它又可继续使用，而且保存了前次被调用后的值。换言之，<strong><em>static类型的局部变量是一种只能在某个特定函数中使用，但一直占据储存空间的变量。</em></strong></p>
+<p>  2.函数体内如果在定义静态变量的同时进行了初始化，则以后程序不在进行初始化操作（出现在函数内部的基本类型的静态变量初始化语句只有在第一次调用才执行）。而对自动变量赋初值是在函数调用时进行，每调用一次函数重新给一次初值3，相当于执行一次赋值语句。</p>
+<p>  3.静态局部变量的初始化表达式必须是一个常量表达式。即使局部静态变量定义时没有赋初值，</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月01日 22:34</p>
+        <p>原始链接： <a class="post-url" href="/2018/10/25/php静态变量/" title="php静态变量">https://feng4.github.io/2018/10/25/php静态变量/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/25/php静态变量/&title=《php静态变量》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/25/php静态变量/&title=《php静态变量》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/25/php静态变量/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php静态变量》 — Feng 的博客&url=https://feng4.github.io/2018/10/25/php静态变量/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/25/php静态变量/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/25/php静态变量/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习/" class="color1">php学习</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#php静态变量"><span class="post-toc-text">php静态变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#静态局部变量："><span class="post-toc-text">静态局部变量：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/10/25/php可变变量/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          php可变变量
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/10/25/php进制/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">php进制</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2018 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
