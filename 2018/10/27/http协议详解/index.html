@@ -3,23 +3,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>php进制 | Feng 的博客</title>
+  <title>HTTP协议 | Feng 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Feng,Feng's Blog">
   
-  <meta name="description" content="php进制关于进制的表格：    进制 缩写 单词     十进制 dec decimalist   八进制 oct otconary   二进制 bin binary   十六进制 hex hexadecimal    php进制转换函数： decbin()--------十进制 转 二进制 decoct()--------十进制 转 八进制 bindec()--------二进制 转 十进制">
-<meta name="keywords" content="php学习">
+  <meta name="description" content="HTTP协议HTTP–Hyper Text Transfer Protocol(超文本传输协议)，是用于从互联网服务器传输超文本到本地浏览器的传输协议。 HTTP是一个基于TCP/IP通信协议来传递数据（HTML文件、图片、查询结果等）。  HTTP工作原理HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。 Web服务器有：Apa">
+<meta name="keywords" content="HTTP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php进制">
-<meta property="og:url" content="https://feng4.github.io/2018/10/25/php进制/index.html">
+<meta property="og:title" content="HTTP协议">
+<meta property="og:url" content="https://feng4.github.io/2018/10/27/http协议详解/index.html">
 <meta property="og:site_name" content="Feng 的博客">
-<meta property="og:description" content="php进制关于进制的表格：    进制 缩写 单词     十进制 dec decimalist   八进制 oct otconary   二进制 bin binary   十六进制 hex hexadecimal    php进制转换函数： decbin()--------十进制 转 二进制 decoct()--------十进制 转 八进制 bindec()--------二进制 转 十进制">
+<meta property="og:description" content="HTTP协议HTTP–Hyper Text Transfer Protocol(超文本传输协议)，是用于从互联网服务器传输超文本到本地浏览器的传输协议。 HTTP是一个基于TCP/IP通信协议来传递数据（HTML文件、图片、查询结果等）。  HTTP工作原理HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。 Web服务器有：Apa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-02T09:48:21.530Z">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2013/11/cgiarch.gif">
+<meta property="og:updated_time" content="2018-10-26T08:55:09.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php进制">
-<meta name="twitter:description" content="php进制关于进制的表格：    进制 缩写 单词     十进制 dec decimalist   八进制 oct otconary   二进制 bin binary   十六进制 hex hexadecimal    php进制转换函数： decbin()--------十进制 转 二进制 decoct()--------十进制 转 八进制 bindec()--------二进制 转 十进制">
+<meta name="twitter:title" content="HTTP协议">
+<meta name="twitter:description" content="HTTP协议HTTP–Hyper Text Transfer Protocol(超文本传输协议)，是用于从互联网服务器传输超文本到本地浏览器的传输协议。 HTTP是一个基于TCP/IP通信协议来传递数据（HTML文件、图片、查询结果等）。  HTTP工作原理HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。 Web服务器有：Apa">
+<meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2013/11/cgiarch.gif">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -110,20 +112,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-php进制" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-http协议详解" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      php进制
+      HTTP协议
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-10-25
+          <i class="fa fa-calendar"></i>  2018-10-27
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -139,54 +141,26 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h4 id="php进制"><a href="#php进制" class="headerlink" title="php进制"></a>php进制</h4><p><strong>关于进制的表格：</strong></p>
-<table>
-<thead>
-<tr>
-<th>进制</th>
-<th style="text-align:center">缩写</th>
-<th style="text-align:right">单词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>十进制</td>
-<td style="text-align:center">dec</td>
-<td style="text-align:right">decimalist</td>
-</tr>
-<tr>
-<td>八进制</td>
-<td style="text-align:center">oct</td>
-<td style="text-align:right">otconary</td>
-</tr>
-<tr>
-<td>二进制</td>
-<td style="text-align:center">bin</td>
-<td style="text-align:right">binary</td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td style="text-align:center">hex</td>
-<td style="text-align:right">hexadecimal</td>
-</tr>
-</tbody>
-</table>
-<p><strong>php进制转换函数：</strong><br></p>
-<pre><code>decbin()--------十进制 转 二进制
-decoct()--------十进制 转 八进制
-bindec()--------二进制 转 十进制
-</code></pre><p>我们发现缩写组合一下就是 <em>什么进制</em> 转 <em>什么进制</em>。<br></p>
-<p>php变量中可以存十进制、八进制、十六进制。<br></p>
-<p>php变量5.4之前版本<strong>不能</strong>储存 二进制。</p>
-<p><strong>php进制变量声明：</strong></p>
-<pre><code>$a = 123 //十进制
-$a = 023 //八进制
-$a = 0x1A //十六进制
-</code></pre>
+            <h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p><strong>HTTP</strong>–Hyper Text Transfer Protocol(超文本传输协议)，是用于从互联网服务器传输超文本到本地浏览器的传输协议。 <br><br>HTTP是一个基于TCP/IP通信协议来传递数据（HTML文件、图片、查询结果等）。 <br></p>
+<h2 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h2><p>HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。 <br><br>Web服务器有：Apache服务器，iis服务器等。<br><br>Web服务器根据接收到的请求后，向客户端发送响应信息。<br><br>HTTP默认端口号为80，但是你可以改为8080或其他端口号。<br><br><br><br><strong>HTTP三点注意事项：</strong></p>
+<ul>
+<li><p>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求，服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式节省传输时间。</p>
+</li>
+<li><p>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</p>
+</li>
+<li><p>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对事务处理没有记忆功能。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br><img src="http://www.runoob.com/wp-content/uploads/2013/11/cgiarch.gif" alt="aaa"></p>
+</li>
+</ul>
+<hr>
+<p><br></p>
+<blockquote>
+<p>转载至<a href="http://www.runoob.com/http/http-intro.html" title="菜鸟教程" target="_blank" rel="noopener">菜鸟教程-HTTP简介</a></p>
+</blockquote>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年12月02日 17:48</p>
-        <p>原始链接： <a class="post-url" href="/2018/10/25/php进制/" title="php进制">https://feng4.github.io/2018/10/25/php进制/</a></p>
+        <p>最后更新： 2018年10月26日 16:55</p>
+        <p>原始链接： <a class="post-url" href="/2018/10/27/http协议详解/" title="HTTP协议">https://feng4.github.io/2018/10/27/http协议详解/</a></p>
         <footer>
             <a href="https://feng4.github.io">
                 <img src="/images/logo.png" alt="Feng">
@@ -243,7 +217,7 @@ $a = 0x1A //十六进制
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/25/php进制/&title=《php进制》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/27/http协议详解/&title=《HTTP协议》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -253,22 +227,22 @@ $a = 0x1A //十六进制
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/25/php进制/&title=《php进制》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/27/http协议详解/&title=《HTTP协议》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/25/php进制/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/27/http协议详解/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php进制》 — Feng 的博客&url=https://feng4.github.io/2018/10/25/php进制/&via=https://feng4.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HTTP协议》 — Feng 的博客&url=https://feng4.github.io/2018/10/27/http协议详解/&via=https://feng4.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/25/php进制/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/27/http协议详解/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -278,7 +252,7 @@ $a = 0x1A //十六进制
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/25/php进制/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/27/http协议详解/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -290,7 +264,7 @@ $a = 0x1A //十六进制
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/php学习/" class="color1">php学习</a>
+    <a href="/tags/HTTP/" class="color5">HTTP</a>
       
   </li>
 
@@ -303,26 +277,16 @@ $a = 0x1A //十六进制
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#php进制"><span class="post-toc-text">php进制</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP协议"><span class="post-toc-text">HTTP协议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP工作原理"><span class="post-toc-text">HTTP工作原理</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2018/10/25/php静态变量/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          php静态变量
-        
-      </span>
-    </a>
   
-  
-    <a href="/2018/10/25/php回调函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">php回调函数</span>
+    <a href="/2018/10/25/sql时间盲注/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">sql时间盲注</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
