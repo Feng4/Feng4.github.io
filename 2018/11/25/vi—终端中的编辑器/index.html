@@ -3,17 +3,18 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Feng 的博客</title>
+  <title>vi —— 终端中的编辑器 | Feng 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Feng,Feng's Blog">
   
-  <meta name="description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
+  <meta name="description" content="目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图形界面的环境下，要编辑文件">
+<meta name="keywords" content="vi —— 终端中的编辑器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Feng 的博客">
+<meta property="og:title" content="vi —— 终端中的编辑器">
 <meta property="og:url" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/index.html">
 <meta property="og:site_name" content="Feng 的博客">
-<meta property="og:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
+<meta property="og:description" content="目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图形界面的环境下，要编辑文件">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/001_vi%E9%94%AE%E7%9B%98.png">
 <meta property="og:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/002_%E5%88%A0%E9%99%A4%E4%BA%A4%E6%8D%A2%E6%96%87%E4%BB%B6.png">
@@ -21,10 +22,10 @@
 <meta property="og:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/005_%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87.png">
 <meta property="og:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/004_%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4.png">
 <meta property="og:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/vim.png">
-<meta property="og:updated_time" content="2017-07-12T09:36:00.000Z">
+<meta property="og:updated_time" content="2018-11-25T09:22:24.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Feng 的博客">
-<meta name="twitter:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
+<meta name="twitter:title" content="vi —— 终端中的编辑器">
+<meta name="twitter:description" content="目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图形界面的环境下，要编辑文件">
 <meta name="twitter:image" content="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/media/14993340485745/001_vi%E9%94%AE%E7%9B%98.png">
   
   
@@ -119,10 +120,40 @@
         <section id="main" class="body-wrap"><article id="post-vi—终端中的编辑器" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      vi —— 终端中的编辑器
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/vi——终端中的编辑器/">vi —— 终端中的编辑器</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="vi-——-终端中的编辑器"><a href="#vi-——-终端中的编辑器" class="headerlink" title="vi —— 终端中的编辑器"></a><code>vi</code> —— 终端中的编辑器</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+            <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
 <li><code>vi</code> 简介</li>
 <li>打开和新建文件</li>
 <li>三种工作模式</li>
@@ -1060,8 +1091,8 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年07月12日 17:36</p>
-        <p>原始链接： <a class="post-url" href="/2018/11/25/vi—终端中的编辑器/" title="">https://feng4.github.io/2018/11/25/vi—终端中的编辑器/</a></p>
+        <p>最后更新： 2018年11月25日 17:22</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/25/vi—终端中的编辑器/" title="vi —— 终端中的编辑器">https://feng4.github.io/2018/11/25/vi—终端中的编辑器/</a></p>
         <footer>
             <a href="https://feng4.github.io">
                 <img src="/images/logo.png" alt="Feng">
@@ -1118,7 +1149,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&title=Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&title=《vi —— 终端中的编辑器》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -1128,7 +1159,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&title=Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&title=《vi —— 终端中的编辑器》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -1138,7 +1169,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Feng 的博客&url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&via=https://feng4.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vi —— 终端中的编辑器》 — Feng 的博客&url=https://feng4.github.io/2018/11/25/vi—终端中的编辑器/&via=https://feng4.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -1162,6 +1193,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/vi——终端中的编辑器/" class="color4">vi —— 终端中的编辑器</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -1171,7 +1209,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#vi-——-终端中的编辑器"><span class="post-toc-text">vi —— 终端中的编辑器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#01-vi-简介"><span class="post-toc-text">01. vi 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-学习-vi-的目的"><span class="post-toc-text">1.1 学习 vi 的目的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-vi-和-vim"><span class="post-toc-text">1.2 vi 和 vim</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vi"><span class="post-toc-text">vi</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vim"><span class="post-toc-text">vim</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询软连接命令（知道）"><span class="post-toc-text">查询软连接命令（知道）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#02-打开和新建文件"><span class="post-toc-text">02. 打开和新建文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-打开文件并且定位行"><span class="post-toc-text">2.1 打开文件并且定位行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-异常处理"><span class="post-toc-text">2.2 异常处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#03-三种工作模式"><span class="post-toc-text">03. 三种工作模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#末行模式命令"><span class="post-toc-text">末行模式命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#04-常用命令"><span class="post-toc-text">04. 常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令线路图"><span class="post-toc-text">命令线路图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#学习提示"><span class="post-toc-text">学习提示</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-移动（基本）"><span class="post-toc-text">4.1 移动（基本）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-上、下、左、右"><span class="post-toc-text">1) 上、下、左、右</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-行内移动"><span class="post-toc-text">2) 行内移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-行数移动"><span class="post-toc-text">3) 行数移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-屏幕移动"><span class="post-toc-text">4) 屏幕移动</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-移动（程序）"><span class="post-toc-text">4.2 移动（程序）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-段落移动"><span class="post-toc-text">1) 段落移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-括号切换"><span class="post-toc-text">2) 括号切换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-标记"><span class="post-toc-text">3) 标记</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-选中文本（可视模式）"><span class="post-toc-text">4.3 选中文本（可视模式）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-撤销和恢复撤销"><span class="post-toc-text">4.4 撤销和恢复撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-删除文本"><span class="post-toc-text">4.5 删除文本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-复制、粘贴"><span class="post-toc-text">4.6 复制、粘贴</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-7-替换"><span class="post-toc-text">4.7 替换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-缩排和重复执行"><span class="post-toc-text">4.8 缩排和重复执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-9-查找"><span class="post-toc-text">4.9 查找</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常规查找"><span class="post-toc-text">常规查找</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单词快速匹配"><span class="post-toc-text">单词快速匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-10-查找并替换"><span class="post-toc-text">4.10 查找并替换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-全局替换"><span class="post-toc-text">1) 全局替换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-可视区域替换"><span class="post-toc-text">2) 可视区域替换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-确认替换"><span class="post-toc-text">3) 确认替换</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-11-插入命令"><span class="post-toc-text">4.11 插入命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#演练-1-——-编辑命令和数字连用"><span class="post-toc-text">演练 1 —— 编辑命令和数字连用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#演练-2-——-利用-可视块-给多行代码增加注释"><span class="post-toc-text">演练 2 —— 利用 可视块 给多行代码增加注释</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#05-分屏命令"><span class="post-toc-text">05. 分屏命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-末行命令扩展"><span class="post-toc-text">5.1 末行命令扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-分屏命令"><span class="post-toc-text">5.2 分屏命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-切换分屏窗口"><span class="post-toc-text">1) 切换分屏窗口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-调整窗口大小"><span class="post-toc-text">2) 调整窗口大小</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#06-常用命令速查图"><span class="post-toc-text">06. 常用命令速查图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vimrc"><span class="post-toc-text">vimrc</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#01-vi-简介"><span class="post-toc-text">01. vi 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-学习-vi-的目的"><span class="post-toc-text">1.1 学习 vi 的目的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-vi-和-vim"><span class="post-toc-text">1.2 vi 和 vim</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vi"><span class="post-toc-text">vi</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vim"><span class="post-toc-text">vim</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询软连接命令（知道）"><span class="post-toc-text">查询软连接命令（知道）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#02-打开和新建文件"><span class="post-toc-text">02. 打开和新建文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-打开文件并且定位行"><span class="post-toc-text">2.1 打开文件并且定位行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-异常处理"><span class="post-toc-text">2.2 异常处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#03-三种工作模式"><span class="post-toc-text">03. 三种工作模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#末行模式命令"><span class="post-toc-text">末行模式命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#04-常用命令"><span class="post-toc-text">04. 常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令线路图"><span class="post-toc-text">命令线路图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#学习提示"><span class="post-toc-text">学习提示</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-移动（基本）"><span class="post-toc-text">4.1 移动（基本）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-上、下、左、右"><span class="post-toc-text">1) 上、下、左、右</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-行内移动"><span class="post-toc-text">2) 行内移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-行数移动"><span class="post-toc-text">3) 行数移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-屏幕移动"><span class="post-toc-text">4) 屏幕移动</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-移动（程序）"><span class="post-toc-text">4.2 移动（程序）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-段落移动"><span class="post-toc-text">1) 段落移动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-括号切换"><span class="post-toc-text">2) 括号切换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-标记"><span class="post-toc-text">3) 标记</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-选中文本（可视模式）"><span class="post-toc-text">4.3 选中文本（可视模式）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-撤销和恢复撤销"><span class="post-toc-text">4.4 撤销和恢复撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-删除文本"><span class="post-toc-text">4.5 删除文本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-复制、粘贴"><span class="post-toc-text">4.6 复制、粘贴</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-7-替换"><span class="post-toc-text">4.7 替换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-缩排和重复执行"><span class="post-toc-text">4.8 缩排和重复执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-9-查找"><span class="post-toc-text">4.9 查找</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常规查找"><span class="post-toc-text">常规查找</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单词快速匹配"><span class="post-toc-text">单词快速匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-10-查找并替换"><span class="post-toc-text">4.10 查找并替换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-全局替换"><span class="post-toc-text">1) 全局替换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-可视区域替换"><span class="post-toc-text">2) 可视区域替换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-确认替换"><span class="post-toc-text">3) 确认替换</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-11-插入命令"><span class="post-toc-text">4.11 插入命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#演练-1-——-编辑命令和数字连用"><span class="post-toc-text">演练 1 —— 编辑命令和数字连用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#演练-2-——-利用-可视块-给多行代码增加注释"><span class="post-toc-text">演练 2 —— 利用 可视块 给多行代码增加注释</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#05-分屏命令"><span class="post-toc-text">05. 分屏命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-末行命令扩展"><span class="post-toc-text">5.1 末行命令扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-分屏命令"><span class="post-toc-text">5.2 分屏命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-切换分屏窗口"><span class="post-toc-text">1) 切换分屏窗口</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-调整窗口大小"><span class="post-toc-text">2) 调整窗口大小</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#06-常用命令速查图"><span class="post-toc-text">06. 常用命令速查图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vimrc"><span class="post-toc-text">vimrc</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -1242,10 +1280,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -1278,7 +1316,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
         </div>
     </div>
 </div>
