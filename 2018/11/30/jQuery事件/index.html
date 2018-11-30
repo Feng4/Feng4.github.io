@@ -3,23 +3,27 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>php+mysql注入 | Feng 的博客</title>
+  <title>jQuery事件 | Feng 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Feng,Feng's Blog">
   
-  <meta name="description" content="php+mysql（5.0以上）注入     1.判断注入点      2.猜解字段数      3.猜数据库名      4.猜表名      5.猜列名      6.猜数据 注入语句: http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3 查询信息：  http://127.0.0.1/wl13/sql.php?x=1%20union%20">
-<meta name="keywords" content="mysql注入">
+  <meta name="description" content="加载事件1简写：```$(function()&amp;#123;&amp;#125;); 注意：​    js:1​	jq:```$(document).ready(fn);  事件切换12345$(&quot;div&quot;).hover(function ()&amp;#123;	$(&quot;b&quot;).html(&quot;鼠标放上就变&quot;);//鼠标放到div标签中，就会变化&amp;#125;,function ()&amp;#123;	$(&quot;a&quot;).html(">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php+mysql注入">
-<meta property="og:url" content="https://feng4.github.io/2018/10/25/php注入/index.html">
+<meta property="og:title" content="jQuery事件">
+<meta property="og:url" content="https://feng4.github.io/2018/11/30/jQuery事件/index.html">
 <meta property="og:site_name" content="Feng 的博客">
-<meta property="og:description" content="php+mysql（5.0以上）注入     1.判断注入点      2.猜解字段数      3.猜数据库名      4.猜表名      5.猜列名      6.猜数据 注入语句: http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3 查询信息：  http://127.0.0.1/wl13/sql.php?x=1%20union%20">
+<meta property="og:description" content="加载事件1简写：```$(function()&amp;#123;&amp;#125;); 注意：​    js:1​	jq:```$(document).ready(fn);  事件切换12345$(&quot;div&quot;).hover(function ()&amp;#123;	$(&quot;b&quot;).html(&quot;鼠标放上就变&quot;);//鼠标放到div标签中，就会变化&amp;#125;,function ()&amp;#123;	$(&quot;a&quot;).html(">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-22T09:06:04.902Z">
+<meta property="og:image" content="https://i.imgur.com/tSwi0ia.png">
+<meta property="og:image" content="https://i.imgur.com/Ho6LFWb.png">
+<meta property="og:image" content="https://i.imgur.com/hITdkvL.png">
+<meta property="og:updated_time" content="2018-11-30T04:55:14.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php+mysql注入">
-<meta name="twitter:description" content="php+mysql（5.0以上）注入     1.判断注入点      2.猜解字段数      3.猜数据库名      4.猜表名      5.猜列名      6.猜数据 注入语句: http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3 查询信息：  http://127.0.0.1/wl13/sql.php?x=1%20union%20">
+<meta name="twitter:title" content="jQuery事件">
+<meta name="twitter:description" content="加载事件1简写：```$(function()&amp;#123;&amp;#125;); 注意：​    js:1​	jq:```$(document).ready(fn);  事件切换12345$(&quot;div&quot;).hover(function ()&amp;#123;	$(&quot;b&quot;).html(&quot;鼠标放上就变&quot;);//鼠标放到div标签中，就会变化&amp;#125;,function ()&amp;#123;	$(&quot;a&quot;).html(">
+<meta name="twitter:image" content="https://i.imgur.com/tSwi0ia.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -110,27 +114,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-php注入" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-jQuery事件" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      php+mysql注入
+      jQuery事件
     </h1>
     <div class="post-title-bar">
       <ul>
           
-              <li>
-                  <i class="fa fa-book"></i>
-                  
-                      <a href="/categories/sql注入/">sql注入</a>
-                  
-              </li>
-          
         <li>
-          <i class="fa fa-calendar"></i>  2018-10-25
+          <i class="fa fa-calendar"></i>  2018-11-30
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -146,36 +143,22 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="php-mysql（5-0以上）注入"><a href="#php-mysql（5-0以上）注入" class="headerlink" title="php+mysql（5.0以上）注入"></a>php+mysql（5.0以上）注入</h3><pre><code>     1.判断注入点
-     2.猜解字段数
-     3.猜数据库名
-     4.猜表名
-     5.猜列名
-     6.猜数据
-注入语句:
-http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
-查询信息：
- http://127.0.0.1/wl13/sql.php?x=1%20union%20select%20database(),version(),user()
- 注入函数：
-     数据库名 database()
-     数据库版本 version()
-     数据库用户 user()
-     操作系统 @@version_compile_os
+            <h3 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简写：```$(function()&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意：<br>​    js:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​	jq:```$(document).ready(fn);</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/tSwi0ia.png" alt="1"></p>
+<h3 id="事件切换"><a href="#事件切换" class="headerlink" title="事件切换"></a>事件切换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">"b"</span>).html(<span class="string">"鼠标放上就变"</span>);<span class="comment">//鼠标放到div标签中，就会变化</span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">"a"</span>).html(<span class="string">"鼠标离开就变"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/Ho6LFWb.png" alt="2"></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">注：selector为选择器，可以使用标签名，或者id等选中要操作的对象。</span><br><span class="line">$(selector).click(fn); -----selector的点击事件，会触发fn函数。</span><br><span class="line">$(selector).dblclick(fn);---双击事件。</span><br><span class="line">$(selector).focus(fn);--------获得焦点触发事件。</span><br><span class="line">$(selector).blur(fn);---------失去焦点。</span><br><span class="line">$(selector).change(fn);-------发生改变。</span><br><span class="line">$(selector).mouseover(fn);----鼠标放上。</span><br><span class="line">$(selector).mouseout(fn);-----鼠标离开。</span><br><span class="line">$(selector).mousedown(fn);----鼠标按下。</span><br><span class="line">$(selector).mouseup(fn);------鼠标抬起。</span><br><span class="line">$(selector).mousemove(fn);----鼠标移动。</span><br><span class="line">js的事件都带有on，而jq事件都没有on</span><br></pre></td></tr></table></figure>
+<h3 id="鼠标移动事件"><a href="#鼠标移动事件" class="headerlink" title="鼠标移动事件"></a>鼠标移动事件</h3><p><img src="https://i.imgur.com/hITdkvL.png" alt="1"><br>注：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   ```clientY```属性是获取y坐标</span><br><span class="line">   ```event```就代表了div标签对象</span><br><span class="line"></span><br><span class="line">### 事件处理：</span><br><span class="line">**bind：重点**</span><br><span class="line">  绑定事件</span><br><span class="line">  ```bind(&quot;事件名&quot;,fn)</span><br></pre></td></tr></table></figure></p>
+<p>  如果多个事件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**unbind(&quot;事件名&quot;)**</span><br><span class="line">  解除绑定，如果没有参数，意味着，全部解除绑定</span><br><span class="line">![2](https://i.imgur.com/fvq7NSJ.png)</span><br><span class="line"></span><br><span class="line">**on：重点**</span><br><span class="line"> 绑定事件</span><br><span class="line"> ```$(select).on(&quot;clcik&quot;,function ()&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>off解绑</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![12](https://i.imgur.com/HgPP9gg.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**one：绑定事件，只会执行一次**</span><br><span class="line">代码：```$(&quot;#d1&quot;).one(&quot;click&quot;,function ()&#123;alert (&quot;你好，世界&quot;);&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>执行一次后就失效。</p>
+<p><strong>查找：</strong><br><code>$(selector).parent()</code>—–查找父元素。<br><code>$(selector).find(a)</code>——在selector中找a元素。</p>
 
-    Mysql5.0 注入（有根据）
-    数据库中“.”代表下一级
-    Information_schema：
-    mysql5.0及以上版本自带数据库，存储有mysql所有数据库下的表名及列名信息
-    Information_schema.tables：存储所有表名信息的表
-    Table_name：表名
-    table_schema：数据库名
-    Column_name：列名
-    information_schema.columns：存储所有列名信息的表
-</code></pre>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年11月22日 17:06</p>
-        <p>原始链接： <a class="post-url" href="/2018/10/25/php注入/" title="php+mysql注入">https://feng4.github.io/2018/10/25/php注入/</a></p>
+        <p>最后更新： 2018年11月30日 12:55</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/30/jQuery事件/" title="jQuery事件">https://feng4.github.io/2018/11/30/jQuery事件/</a></p>
         <footer>
             <a href="https://feng4.github.io">
                 <img src="/images/logo.png" alt="Feng">
@@ -232,7 +215,7 @@ http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/25/php注入/&title=《php+mysql注入》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/11/30/jQuery事件/&title=《jQuery事件》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -242,22 +225,22 @@ http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/25/php注入/&title=《php+mysql注入》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/11/30/jQuery事件/&title=《jQuery事件》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/25/php注入/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/11/30/jQuery事件/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php+mysql注入》 — Feng 的博客&url=https://feng4.github.io/2018/10/25/php注入/&via=https://feng4.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jQuery事件》 — Feng 的博客&url=https://feng4.github.io/2018/11/30/jQuery事件/&via=https://feng4.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/25/php注入/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/11/30/jQuery事件/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -267,7 +250,7 @@ http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/25/php注入/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/11/30/jQuery事件/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -279,7 +262,7 @@ http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/mysql注入/" class="color3">mysql注入</a>
+    <a href="/tags/jQuery/" class="color2">jQuery</a>
       
   </li>
 
@@ -292,26 +275,16 @@ http://127.0.0.1/wl13/sql.php?x=1 union select 1,2,3
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#php-mysql（5-0以上）注入"><span class="post-toc-text">php+mysql（5.0以上）注入</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加载事件"><span class="post-toc-text">加载事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件切换"><span class="post-toc-text">事件切换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件"><span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#鼠标移动事件"><span class="post-toc-text">鼠标移动事件</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2018/10/25/sql注入/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          sql注入
-        
-      </span>
-    </a>
   
-  
-    <a href="/2018/10/25/php位运算/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">php位运算</span>
+    <a href="/2018/11/25/vi—终端中的编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">vi —— 终端中的编辑器</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
