@@ -3,23 +3,29 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>php string函数 | Feng 的博客</title>
+  <title>mysql高级操作 | Feng 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Feng,Feng's Blog">
   
-  <meta name="description" content="string函数1.chr() chr()函数从指定的ascii值返回字符。 2.strlen() 计算字符串的长度，如果是中文的字符则代表两个长度。 3.trim() 去除字符串的两边空格。 4.strtolower() 把字符串转换为小写。 5.strtoupper() 把字符串转换为大写。 6.htmlspecialchars() 把特殊字符转换为HTML编码。 7.strrev() 反转字">
-<meta name="keywords" content="php学习">
+  <meta name="description" content="外键外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。 增加外键外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。一张表可以有多个外键。 创建表的时候增加外键：在所有的表字段之后，使用foreign key(外键字段)references 外部表(主键字段)在新增表之后增加外键：修改表结构alte">
+<meta name="keywords" content="php学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php string函数">
-<meta property="og:url" content="https://feng4.github.io/2018/10/25/php string函数/index.html">
+<meta property="og:title" content="mysql高级操作">
+<meta property="og:url" content="https://feng4.github.io/2018/12/29/mysql高级操作/index.html">
 <meta property="og:site_name" content="Feng 的博客">
-<meta property="og:description" content="string函数1.chr() chr()函数从指定的ascii值返回字符。 2.strlen() 计算字符串的长度，如果是中文的字符则代表两个长度。 3.trim() 去除字符串的两边空格。 4.strtolower() 把字符串转换为小写。 5.strtoupper() 把字符串转换为大写。 6.htmlspecialchars() 把特殊字符转换为HTML编码。 7.strrev() 反转字">
+<meta property="og:description" content="外键外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。 增加外键外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。一张表可以有多个外键。 创建表的时候增加外键：在所有的表字段之后，使用foreign key(外键字段)references 外部表(主键字段)在新增表之后增加外键：修改表结构alte">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-07T00:59:38.475Z">
+<meta property="og:image" content="https://i.imgur.com/ms1L7Nz.png">
+<meta property="og:image" content="https://i.imgur.com/8hhdoXi.png">
+<meta property="og:image" content="https://i.imgur.com/QX3G8Jq.png">
+<meta property="og:image" content="https://i.imgur.com/4EfgPLg.png">
+<meta property="og:image" content="https://i.imgur.com/PJyPlCm.png">
+<meta property="og:updated_time" content="2018-12-12T07:27:57.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php string函数">
-<meta name="twitter:description" content="string函数1.chr() chr()函数从指定的ascii值返回字符。 2.strlen() 计算字符串的长度，如果是中文的字符则代表两个长度。 3.trim() 去除字符串的两边空格。 4.strtolower() 把字符串转换为小写。 5.strtoupper() 把字符串转换为大写。 6.htmlspecialchars() 把特殊字符转换为HTML编码。 7.strrev() 反转字">
+<meta name="twitter:title" content="mysql高级操作">
+<meta name="twitter:description" content="外键外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。 增加外键外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。一张表可以有多个外键。 创建表的时候增加外键：在所有的表字段之后，使用foreign key(外键字段)references 外部表(主键字段)在新增表之后增加外键：修改表结构alte">
+<meta name="twitter:image" content="https://i.imgur.com/ms1L7Nz.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -110,20 +116,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-php string函数" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-mysql高级操作" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      php string函数
+      mysql高级操作
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-10-25
+          <i class="fa fa-calendar"></i>  2018-12-29
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -139,41 +145,16 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h4 id="string函数"><a href="#string函数" class="headerlink" title="string函数"></a>string函数</h4><p>1.chr()<br></p>
-<pre><code>chr()函数从指定的ascii值返回字符。
-</code></pre><p>2.strlen()</p>
-<pre><code>计算字符串的长度，如果是中文的字符则代表两个长度。
-</code></pre><p>3.trim()</p>
-<pre><code>去除字符串的两边空格。
-</code></pre><p>4.strtolower()</p>
-<pre><code>把字符串转换为小写。
-</code></pre><p>5.strtoupper()</p>
-<pre><code>把字符串转换为大写。
-</code></pre><p>6.htmlspecialchars()</p>
-<pre><code>把特殊字符转换为HTML编码。
-</code></pre><p>7.strrev()</p>
-<pre><code>反转字符。
-</code></pre><p>8.strpos()</p>
-<pre><code>找出字符第一次出现的位置，下标从0开始，区分大小写strpos(&apos;字符串&apos;，要找的字符)
-mixed strpos ( string $haystack , mixed $needle [, int $offset = 0 ] )
-返回 needle 在 haystack 中首次出现的数字位置。
-</code></pre><p>9.stristr()</p>
-<pre><code>不区分大小写，找到指定字符的位置，然后，进行截取，一直截取到末尾，包括字符本身
-</code></pre><p>10.strrchr()</p>
-<pre><code>找到字符最后出现的位置，区分大小写，并截取到末尾
-</code></pre><p>11.str_replace()</p>
-<pre><code>字符串替换函数。
-</code></pre><p>12.substr()</p>
-<pre><code>截取字符串函数
-substr(&apos;字符串&apos;,开始位置，结束位置)
-如果结束位置没有填写，则默认截取的结尾
-</code></pre><p>13.join()</p>
-<pre><code>把数组连接成为字符串
-</code></pre>
+            <h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p>外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。</p>
+<h3 id="增加外键"><a href="#增加外键" class="headerlink" title="增加外键"></a>增加外键</h3><p>外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。<br>一张表可以有多个外键。</p>
+<p>创建表的时候增加外键：在所有的表字段之后，使用<code>foreign key(外键字段)references 外部表(主键字段)</code><br><img src="https://i.imgur.com/ms1L7Nz.png" alt="1"><br>在新增表之后增加外键：修改表结构<br><code>alter table 表名 add[constraint 外键名] foreign key(外键字段) references 父表(主键字段);</code><br><img src="https://i.imgur.com/8hhdoXi.png" alt="2"></p>
+<h3 id="修改外键-amp-删除外键"><a href="#修改外键-amp-删除外键" class="headerlink" title="修改外键&amp;删除外键"></a>修改外键&amp;删除外键</h3><p><strong>外键不可修改：只能先删除后新增</strong><br><strong>删除外键语法:</strong><br><code>alter table 表名 drop foreign key 外键名;</code> 一张表中可以有多个外键，但是名字不能相同<br><img src="https://i.imgur.com/QX3G8Jq.png" alt="3"></p>
+<h3 id="外键作用"><a href="#外键作用" class="headerlink" title="外键作用"></a>外键作用</h3><p>外键默认的作用有两点：一个对父表，一个对字表(外键字段所在的表)<br>对字表约束：子表数据进行写操作(增和改)的时候，如果对应的外键字段在父表找不到对应的匹配：那么操作会失败（约束字表数据操作）<br><img src="https://i.imgur.com/4EfgPLg.png" alt="4"><br>对父表约束：父表数据进行写操作(删和改：都必须涉及到主键本身)，如果对应的主键在子表中已经被数据所引用，那么就不允许操作<br><img src="https://i.imgur.com/PJyPlCm.png" alt="5"></p>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年12月07日 08:59</p>
-        <p>原始链接： <a class="post-url" href="/2018/10/25/php string函数/" title="php string函数">https://feng4.github.io/2018/10/25/php string函数/</a></p>
+        <p>最后更新： 2018年12月12日 15:27</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/29/mysql高级操作/" title="mysql高级操作">https://feng4.github.io/2018/12/29/mysql高级操作/</a></p>
         <footer>
             <a href="https://feng4.github.io">
                 <img src="/images/logo.png" alt="Feng">
@@ -230,7 +211,7 @@ substr(&apos;字符串&apos;,开始位置，结束位置)
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/10/25/php string函数/&title=《php string函数》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/12/29/mysql高级操作/&title=《mysql高级操作》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -240,22 +221,22 @@ substr(&apos;字符串&apos;,开始位置，结束位置)
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/10/25/php string函数/&title=《php string函数》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/12/29/mysql高级操作/&title=《mysql高级操作》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/10/25/php string函数/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/12/29/mysql高级操作/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php string函数》 — Feng 的博客&url=https://feng4.github.io/2018/10/25/php string函数/&via=https://feng4.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql高级操作》 — Feng 的博客&url=https://feng4.github.io/2018/12/29/mysql高级操作/&via=https://feng4.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/10/25/php string函数/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/12/29/mysql高级操作/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -265,7 +246,7 @@ substr(&apos;字符串&apos;,开始位置，结束位置)
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/10/25/php string函数/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/12/29/mysql高级操作/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -277,7 +258,7 @@ substr(&apos;字符串&apos;,开始位置，结束位置)
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/php学习/" class="color1">php学习</a>
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
       
   </li>
 
@@ -290,26 +271,16 @@ substr(&apos;字符串&apos;,开始位置，结束位置)
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#string函数"><span class="post-toc-text">string函数</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#外键"><span class="post-toc-text">外键</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#增加外键"><span class="post-toc-text">增加外键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改外键-amp-删除外键"><span class="post-toc-text">修改外键&amp;删除外键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外键作用"><span class="post-toc-text">外键作用</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2018/10/25/php变量函数/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          php变量函数
-        
-      </span>
-    </a>
   
-  
-    <a href="/2018/10/25/mysql笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">sql盲注笔记</span>
+    <a href="/2018/12/29/mysql操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">mysql操作</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

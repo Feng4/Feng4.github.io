@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>mysql操作 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="SQL基本操作库的操作新增数据库 基本语法create database 数据库名 [库选项]库选项：用来约束数据库，分为两个选项：  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8  校对集设定：collate 具体校对集(数据比较的规则)  查看数据库 查看所有数据库：show databases;查看指定部分的数据库：">
+<meta name="keywords" content="php学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql操作">
+<meta property="og:url" content="https://feng4.github.io/2018/12/29/mysql操作/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="SQL基本操作库的操作新增数据库 基本语法create database 数据库名 [库选项]库选项：用来约束数据库，分为两个选项：  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8  校对集设定：collate 具体校对集(数据比较的规则)  查看数据库 查看所有数据库：show databases;查看指定部分的数据库：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/vQ4zQuM.png">
+<meta property="og:image" content="https://i.imgur.com/kOhmaJ6.png">
+<meta property="og:image" content="https://i.imgur.com/qYYU99v.png">
+<meta property="og:image" content="https://i.imgur.com/QF5oZiy.png">
+<meta property="og:image" content="https://i.imgur.com/pK6PzpS.png">
+<meta property="og:image" content="https://i.imgur.com/kXOak4w.png">
+<meta property="og:image" content="https://i.imgur.com/X2loxIa.png">
+<meta property="og:image" content="https://i.imgur.com/U3GYE7k.png">
+<meta property="og:image" content="https://i.imgur.com/oGTuHTk.png">
+<meta property="og:image" content="https://i.imgur.com/S8gMDEt.png">
+<meta property="og:image" content="https://i.imgur.com/kfl6FOY.png">
+<meta property="og:image" content="https://i.imgur.com/6RKb3hP.png">
+<meta property="og:image" content="https://i.imgur.com/ACaIbhh.png">
+<meta property="og:updated_time" content="2018-12-17T02:40:15.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql操作">
+<meta name="twitter:description" content="SQL基本操作库的操作新增数据库 基本语法create database 数据库名 [库选项]库选项：用来约束数据库，分为两个选项：  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8  校对集设定：collate 具体校对集(数据比较的规则)  查看数据库 查看所有数据库：show databases;查看指定部分的数据库：">
+<meta name="twitter:image" content="https://i.imgur.com/vQ4zQuM.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个小菜比的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-mysql操作" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      mysql操作
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-12-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="SQL基本操作"><a href="#SQL基本操作" class="headerlink" title="SQL基本操作"></a>SQL基本操作</h2><h3 id="库的操作"><a href="#库的操作" class="headerlink" title="库的操作"></a>库的操作</h3><h4 id="新增数据库"><a href="#新增数据库" class="headerlink" title="新增数据库"></a>新增数据库</h4><blockquote>
+<p>基本语法<br><code>create database 数据库名 [库选项]</code><br>库选项：用来约束数据库，分为两个选项：<br>  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8<br>  校对集设定：collate 具体校对集(数据比较的规则)</p>
+</blockquote>
+<h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><blockquote>
+<p>查看所有数据库：show databases;<br>查看指定部分的数据库： 模糊查询：<br>  show databases like ‘pattern’; –pattern是匹配模式<br>  %：表示匹配多个字符<br>  _：表示匹配单个字符<br>  <img src="https://i.imgur.com/vQ4zQuM.png" alt="1"><br>查看数据库的创建语句：show create database 数据库名;<br><img src="https://i.imgur.com/kOhmaJ6.png" alt="2"></p>
+</blockquote>
+<h4 id="更新数据库"><a href="#更新数据库" class="headerlink" title="更新数据库"></a>更新数据库</h4><blockquote>
+<p>数据库名字不可以修改<br>数据库的修改仅限<code>库选项</code>：字符集和校对集(校对集依赖字符集)<br>alter database 数据库名字 [库选项];<br>charset/character set[=] 字符集<br>collate 校对集<br><img src="https://i.imgur.com/qYYU99v.png" alt="3"></p>
+</blockquote>
+<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><blockquote>
+<p>drop database 数据库名;</p>
+</blockquote>
+<h3 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h3><h4 id="新增数据表"><a href="#新增数据表" class="headerlink" title="新增数据表"></a>新增数据表</h4><blockquote>
+<p><code>create table [if not exists] 表名(字段名 数据类型,字段名 数据类型)[表选项]；</code><br>if not exists :如果表名不存在，那么就创建，否则不执行创建代码：检查功能<br>表选项：控制表的表现<br>   字符集：<code>charset/character set 具体字符集;</code> 保证表中数据储存的字符集<br>   校对集：<code>collate 具体校对集;</code><br>   存储引擎：engine 具体的存储引擎(innodb和myisam)<br>   <img src="https://i.imgur.com/QF5oZiy.png" alt="4"><br>   当创建数据表的SQL指令执行之后，到底发生了什么？<br>   1.指定数据库下已经存在对应的表<br>   2.在数据库对应的文件夹下，会产生对应表的结构文件(跟存储引擎有关系)<br>   <img src="https://i.imgur.com/pK6PzpS.png" alt="5"></p>
+</blockquote>
+<h4 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h4><blockquote>
+<p>查看所有表：<code>show tables;</code><br>查看部分表：模糊匹配：<code>show tables like &#39;pattern&#39;;</code><br><img src="https://i.imgur.com/kXOak4w.png" alt="7"><br>查看表的创建语句：<code>show create table 表名;</code><br>查看表结构：查看表中的字段信息<br>  <code>desc/describe/show columns from 表名;</code><br>  <img src="https://i.imgur.com/X2loxIa.png" alt="8"></p>
+</blockquote>
+<h4 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h4><blockquote>
+<p><strong>修改表本身:</strong><br>  修改表名：<code>rename table 旧表名 to 新表名;</code><br>  修改表选项： <code>alter table 表名 表选项 [=] 值;</code><br>  <img src="https://i.imgur.com/U3GYE7k.png" alt="9"><br>  修改字段：<br>​    新增字段：<code>alter table 表名 add [cloumn] 字段名 数据类型 [列属性][位置];</code><br>​      位置：字段名可以存放表中的任意位置<br>​          first：第一个位置<br>​          after：在哪个字段之后：<code>after 字段名;</code>默认的是在最后一个字段之后<br>​    修改字段：修改通常是修改属性或者数据类型<br>​       <code>alter table 表名 modify 字段名 数据类型 [属性][位置];</code><br>​    重命名字段：<code>alter table 表名 change 旧字段 新字段 数据类型 [属性][位置];</code><br>​    删除字段：<code>alter table 表名 drop 字段名;</code><br><strong>删除数据表：</strong><br>  <code>drop table 表名1,表名2...;</code> 可以一次删除多个表</p>
+</blockquote>
+<h4 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h4><blockquote>
+<p><strong>新增数据</strong><br>  方法1：<code>insert into 表名 values(值列表)[,(值列表)...];</code><br>  方法2：<code>insert into 表名(字段列表)values(值列表)[,(值列表)...];</code><br>  <img src="https://i.imgur.com/oGTuHTk.png" alt="10"><br><strong>查看数据：</strong><br> <code>select */字段列表 from 表名 [where 条件];</code></p>
+<p><code>select distinct 字段 from 表名</code> ——-根据字段筛选数据</p>
+<p> <strong>更新数据：</strong><br>   <code>update 表名 set 字段 = 值 [where 条件];</code><br> <strong>删除数据：</strong><br>   <code>delete from 表名 [where 条件];</code></p>
+</blockquote>
+<h4 id="校对集问题"><a href="#校对集问题" class="headerlink" title="校对集问题"></a>校对集问题</h4><blockquote>
+<p>校对集：数据比较的方式<br>校对集有三种方式：<br>  _bin: binary,二进制比较，取出二进制位，一位一位的比较，区分大小写。<br>  _cs: case sensitive,大小写敏感。<br>  _ci: case insensitive，大小写不敏感。<br>  查看数据库所支持的校对集：<code>show collation;</code><br>  <em>只有当数据产生比较的时候，校对集才会生效。</em><br>  比较：根据某个字段进行排序：<code>order by 字段名 [asc|desc];</code> asc是升序，desc是降序，默认是升序</p>
+</blockquote>
+<h3 id="字段属性"><a href="#字段属性" class="headerlink" title="字段属性"></a>字段属性</h3><h4 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h4><blockquote>
+<p>主键：primary key,主要的键，一张表只能有一个字段可以使用对应的键，用来唯一的约束该字段里面的数据，不能重复：这种称之为主键</p>
+</blockquote>
+<h4 id="增加主键："><a href="#增加主键：" class="headerlink" title="增加主键："></a>增加主键：</h4><blockquote>
+<p>sql操作中有多种方式可以给表增加主键：大体分为三种：<br>  方案1：在创建表的时候，直接在字段之后，跟primary key关键字(主键本身不允许为空)<br>  <img src="https://i.imgur.com/S8gMDEt.png" alt="1"><br>  <strong>优点：</strong>非常直接；<strong>缺点：</strong>只能使用一个字段作为主键<br>  1<br>  方案2：在创建表的时候，在所有的字段之后，使用primary key(主键字段列表)来创建主键(如果有多个字段作为主键，可以是复合主键)<br>  <img src="https://i.imgur.com/kfl6FOY.png" alt="2"><br>  1<br>  方案3：当表已经创建好之后，额外追加主键：可以通过修改表字段属性，也可以直接追加。<br>​    <code>alter table 表名 add primary key(字段列表);</code><br>​    <img src="https://i.imgur.com/6RKb3hP.png" alt="3"><br>​    前提：表中字段对应的数据本身是独立的(不重复)</p>
+</blockquote>
+<h4 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h4><blockquote>
+<p>主键对应的字段中的数据不允许重复：一旦重复，数据操作失败（增和改）<br><img src="https://i.imgur.com/ACaIbhh.png" alt="4"></p>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月17日 10:40</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/29/mysql操作/" title="mysql操作">https://feng4.github.io/2018/12/29/mysql操作/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2018/12/29/mysql操作/&title=《mysql操作》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2018/12/29/mysql操作/&title=《mysql操作》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2018/12/29/mysql操作/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql操作》 — Feng 的博客&url=https://feng4.github.io/2018/12/29/mysql操作/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2018/12/29/mysql操作/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2018/12/29/mysql操作/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL基本操作"><span class="post-toc-text">SQL基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#库的操作"><span class="post-toc-text">库的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新增数据库"><span class="post-toc-text">新增数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看数据库"><span class="post-toc-text">查看数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#更新数据库"><span class="post-toc-text">更新数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除数据库"><span class="post-toc-text">删除数据库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表操作"><span class="post-toc-text">表操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新增数据表"><span class="post-toc-text">新增数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看数据表"><span class="post-toc-text">查看数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改数据表"><span class="post-toc-text">修改数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据操作"><span class="post-toc-text">数据操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#校对集问题"><span class="post-toc-text">校对集问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字段属性"><span class="post-toc-text">字段属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主键"><span class="post-toc-text">主键</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#增加主键："><span class="post-toc-text">增加主键：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主键约束"><span class="post-toc-text">主键约束</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/12/29/mysql高级操作/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          mysql高级操作
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/11/30/jQuery事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">jQuery事件</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2018 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 15px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 15px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 15px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
