@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php包含文件 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="php包含文件 在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。 包含文件相当于将文件的内容复制到页面中，如果包含文件有,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。  包含文件的语法 1.include() ——— 可以包含多次2.require() ——— 可以包含多次3.includ">
+<meta name="keywords" content="php学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php包含文件">
+<meta property="og:url" content="https://feng4.github.io/2019/01/03/php包含文件/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="php包含文件 在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。 包含文件相当于将文件的内容复制到页面中，如果包含文件有,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。  包含文件的语法 1.include() ——— 可以包含多次2.require() ——— 可以包含多次3.includ">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/tMrMqO5.png">
+<meta property="og:image" content="https://i.imgur.com/i5FsYiL.png">
+<meta property="og:image" content="https://i.imgur.com/AKgTvUO.png">
+<meta property="og:image" content="https://i.imgur.com/X8JaM66.png">
+<meta property="og:image" content="https://i.imgur.com/0cmG3P8.png">
+<meta property="og:image" content="https://i.imgur.com/Hsg7dEP.png">
+<meta property="og:image" content="https://i.imgur.com/GPdKQjq.png">
+<meta property="og:image" content="https://i.imgur.com/2iD0bS4.png">
+<meta property="og:updated_time" content="2018-12-05T15:59:43.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php包含文件">
+<meta name="twitter:description" content="php包含文件 在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。 包含文件相当于将文件的内容复制到页面中，如果包含文件有,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。  包含文件的语法 1.include() ——— 可以包含多次2.require() ——— 可以包含多次3.includ">
+<meta name="twitter:image" content="https://i.imgur.com/tMrMqO5.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个小菜比的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-php包含文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      php包含文件
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="php包含文件"><a href="#php包含文件" class="headerlink" title="php包含文件"></a>php包含文件</h2><blockquote>
+<p>在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。<br> 包含文件相当于将文件的内容复制到页面中，如果包含文件有<html></html>,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。</p>
+</blockquote>
+<h3 id="包含文件的语法"><a href="#包含文件的语法" class="headerlink" title="包含文件的语法"></a>包含文件的语法</h3><blockquote>
+<p>1.include() ——— 可以包含多次<br>2.require() ——— 可以包含多次<br>3.include_once() —- 只能包含一次<br>4.require_once() —- 只能包含一次</p>
+</blockquote>
+<h3 id="require和include的区别"><a href="#require和include的区别" class="headerlink" title="require和include的区别"></a>require和include的区别</h3><blockquote>
+<p>相同点：可以包含多次<br>不同点：require遇到错误停止执行，include遇到错误继续执行。<br><img src="https://i.imgur.com/tMrMqO5.png" alt="1"></p>
+</blockquote>
+<h3 id="目录-文件和目录-文件的区别"><a href="#目录-文件和目录-文件的区别" class="headerlink" title="./目录/文件和目录/文件的区别"></a>./目录/文件和目录/文件的区别</h3><blockquote>
+<p>这两种写法的效果基本是一样的，不带./的路径受到include_path配置的影响。<br><img src="https://i.imgur.com/i5FsYiL.png" alt="2"><br><img src="https://i.imgur.com/AKgTvUO.png" alt="3"></p>
+</blockquote>
+<blockquote>
+<p>可以通过<code>set_include_path()</code>来设置包含文件所在的目录。<br><img src="https://i.imgur.com/X8JaM66.png" alt="4"><br><code>set_include_path()</code> —- 设置包含文件的目录<br><code>get_include_path()</code> —- 获取包含文件的目录<br><strong>设置include_path的作用：</strong><br>1、将项目的经常使用的文件放到一个统一的目录下，然后通过include_path指向此文件夹，就不用写很长的地址字符串。<br>2.将安全性高的文件放到站点外，通过include_path指向此目录。比如连接数据库文件。</p>
+</blockquote>
+<h3 id="终止脚本执行"><a href="#终止脚本执行" class="headerlink" title="终止脚本执行"></a>终止脚本执行</h3><blockquote>
+<p><strong>exit和die()</strong>:<br>exit，终止脚本执行，die(),终止后可以输出一个字符串。<br><img src="https://i.imgur.com/0cmG3P8.png" alt="5"><br><img src="https://i.imgur.com/Hsg7dEP.png" alt="7"><br><strong>return</strong>:<br>终止当前页面的执行。<br><img src="https://i.imgur.com/GPdKQjq.png" alt="6"><br><img src="https://i.imgur.com/2iD0bS4.png" alt="8"></p>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月05日 23:59</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/03/php包含文件/" title="php包含文件">https://feng4.github.io/2019/01/03/php包含文件/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2019/01/03/php包含文件/&title=《php包含文件》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2019/01/03/php包含文件/&title=《php包含文件》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2019/01/03/php包含文件/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php包含文件》 — Feng 的博客&url=https://feng4.github.io/2019/01/03/php包含文件/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2019/01/03/php包含文件/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2019/01/03/php包含文件/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#php包含文件"><span class="post-toc-text">php包含文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包含文件的语法"><span class="post-toc-text">包含文件的语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#require和include的区别"><span class="post-toc-text">require和include的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#目录-文件和目录-文件的区别"><span class="post-toc-text">./目录/文件和目录/文件的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#终止脚本执行"><span class="post-toc-text">终止脚本执行</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/03/php操作mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          php操作mysql
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/03/Apache的下载与安装/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Apache的下载与安装</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2019 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

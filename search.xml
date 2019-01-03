@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[php数组指针]]></title>
+    <url>%2F2019%2F01%2F03%2Fphp%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88foreach%2F</url>
+    <content type="text"><![CDATA[foreach数组指针 1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。2.默认情况下，打开一个数组，指针会指向数组的第一个元素。语法结构foreach(数组 as 键=&gt;值){ 循环体 } 流程图 foreach是循环，break和continue也适用于foreach循环 foreach值变量支持传地址 注意：键变量不支持传地址。 foreach循环变量数组的时候，遍历的是数组的拷贝 数组指针的操作 1.key() —— 从关联数组中取得键名，没有取到返回NULL。2.current() – 返回数组中的当前单元3.next() —– 返回数组中的当前单元4.prev() —– 将数组的内部指针倒回一位5.reset() —- 将数组的内部指针指向第一个单元6.end() —— 将数组的内部指针指向最后一个单元 例题：将数组的元素从后往前取 注意：如果一个数组连续输出两次，必须要将指针复位。 each()函数的使用 1.返回数组当前的键/值对并将数组指针向前移动一步，如果内部指针穿越了数组的末尾返回false 2.键值对返回4个单元，其中包含索引数组和关联数组，下标是key和0的是键，下标是1和value的是值。3.each()=key()+current()+next()4.如果第二次再遍历，必须通过reset()复位指针。 通过while+each遍历数组]]></content>
+      <tags>
+        <tag>php学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php字符串操作函数]]></title>
+    <url>%2F2019%2F01%2F03%2Fphp%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[[]用下标操作字符串 字符串可以理解成字符集合，所以可以通过[]来访问。不能操作中文。 strlen() 返回字符串长度，以字节为单位。 注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。 trim()、ltrim()、rtrim():去除空白字符 trim():去字符串两边的把空格 ltrim():去字符串左边的空格 rtrim():去字符串右边的空格 strpos(),strrpos() strpos():查找字符串首次出现的位置strrpos(): 查找字符串最后一次出现的位置 str_repeat():重复字符串 chr()和ord() substr(字符串,开始位置,截取长度):截取字符串 strchr()、strrchr()：截取字符串 应用：截取文件后缀名 str_replace():替换字符串 str_split():将字符串分割成数组 str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串 字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写) nl2br():将字符串的换行转成 htmlspecialchars():将HTML字体转成实体 urlencode()、urldecode():url编码和解码 多字节字符串处理函数 PHP默认本身不支持多字节处理。要开启扩展(multibytes)以mb_开头的函数都在多字节处理函数。 mb_strlen():获取字符串长度 注意：需要设置字符编码，默认字符编码为ISO-8859-1. mb_internal_encoding():设置/获取内部字符编码 mb_strpos():查找字符串在另一个字符串的位置 mb_substr():获取字符串 字符串编码iconv(输入的编码,输出的编码,字符串)]]></content>
+      <tags>
+        <tag>php学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php多态]]></title>
+    <url>%2F2019%2F01%2F03%2Fphp%E5%A4%9A%E6%80%81%2F</url>
+    <content type="text"><![CDATA[多态面向对象的三大特性：封装、继承、多态。多态就是多种形态，多态分为方法重写和方法重载。但是PHP不支持方法重载 方法重写子类重写了父类的同名的方法12345678910111213class Person&#123; public function show()&#123; echo '你好啊！'; &#125;&#125;class Student extends Person&#123; public function show()&#123; //方法重写 echo "我是学生！"; &#125;&#125;$a = new Student;$a -&gt; show();//这是学生类 1、子类和父类的方法名必须一致2、子类重写的方法可以和父类方法的参数个数不一致 3、子类重写的方法可以和父类方法的参数个数不一致 方法重载注意：php不支持方法重载 私有属性的继承和重写]]></content>
+      <tags>
+        <tag>php学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php操作mysql]]></title>
+    <url>%2F2019%2F01%2F03%2Fphp%E6%93%8D%E4%BD%9Cmysql%2F</url>
+    <content type="text"><![CDATA[php操作mysql php本身不能操作mysql，但是php有扩展可以实现操作mysql。php操作mysql的扩展：mysql，mysqli和PDO扩展。mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作PDO:纯面向对象，只有类，加载后只能调用类。mysql扩展在php5.5之后就移除了，小伙伴注意了。 当php来对mysql进行操作之后：php的角色是mysql的一个客户端 客户端操作服务端有必要的流程 连接认证：数据库连接资源 mysql_connect(服务器地址包含端口,用户名,用户密码);默认的：mysql_connect会产生一个连接资源，即便是重新连接，也会返回原有的连接资源如果真的想产生多一个连接：是新的可以在mysql_connect函数的第四个参数控制：true php发送sql指令（等待执行结果） mysql服务端接收指令，执行指令，返回结果 php接收结果mixed mysql_query(sql指令); boolean结果;sql指令没有返回值，布尔true结果只能代表sql语句没有语法错误，false就代表是sql语句有语法错误：主增删改resource结果：结果集资源，sql指令有结果返回(show,select)，结果集永远为true，主查询 php没有办法直接使用结果集：需要解析结果集mysql扩展提供了一系列函数：mysql_fetch系列：任何操作都是指针操作：操作完就会指针下移。mysql_fetch_array:默认获取混合数组，有一组关联，有一组索引。当前函数可以实现：只获取关联数组或者索引数组。通过第二个参数限制：MYSQL_BOTH是默认的，MYSQL_ASSOC是关联数组，MYSQL_NUM是索引数组。关联数组获取：MYSQL_ASSOC索引数组获取：MYSQL_NUMmysql_fetch_row:获取索引数组mysql_fetch_assoc:直接获取关联数组不管是哪个fetch：最终如果结果集指针移动到最后，返回都是false 如果指针已经移动到最后，那么需要重置指针实现其他操作。mysql_data_seek(结果集资源，位置从0开始); 获取的数据往往只有一行：实际上查多少是为了显示全部：解析全部，循环遍历来实现。 释放资源：mysql资源通常不需要释放(脚本执行周期不会太长，但是数据库的操作是贯穿整个脚本的)mysql_close(资源变量); 增删改查 从计算机角度出发：增删改都属于写，查属于读。 写操作: 连接认证：不一定连接成功，需要对结果进行判断，可以直接使用三目运算(逻辑或)来进行处理，但是无法获取错误信息。 如果要获取错误信息，那么需要使用mysql提供的获取错误的函数： mysql_errno():获取错误编号，mysql_error():获取错误信息。]]></content>
+      <tags>
+        <tag>php学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php包含文件]]></title>
+    <url>%2F2019%2F01%2F03%2Fphp%E5%8C%85%E5%90%AB%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[php包含文件 在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。 包含文件相当于将文件的内容复制到页面中，如果包含文件有,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。 包含文件的语法 1.include() ——— 可以包含多次2.require() ——— 可以包含多次3.include_once() —- 只能包含一次4.require_once() —- 只能包含一次 require和include的区别 相同点：可以包含多次不同点：require遇到错误停止执行，include遇到错误继续执行。 ./目录/文件和目录/文件的区别 这两种写法的效果基本是一样的，不带./的路径受到include_path配置的影响。 可以通过set_include_path()来设置包含文件所在的目录。set_include_path() —- 设置包含文件的目录get_include_path() —- 获取包含文件的目录设置include_path的作用：1、将项目的经常使用的文件放到一个统一的目录下，然后通过include_path指向此文件夹，就不用写很长的地址字符串。2.将安全性高的文件放到站点外，通过include_path指向此目录。比如连接数据库文件。 终止脚本执行 exit和die():exit，终止脚本执行，die(),终止后可以输出一个字符串。return:终止当前页面的执行。]]></content>
+      <tags>
+        <tag>php学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Apache的下载与安装]]></title>
+    <url>%2F2019%2F01%2F03%2FApache%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[一、Apache官网下载Apache HTTP Server服务器 1.打开Apache官网：http://www.apache.org选择第一项ApacheHaus，这是个第三方下载平台，在它的网站下载独立的Apache会是一个压缩包。另外四个中，第二个也是独立的Apache下载地址，另外三个是集成开发环境。本人选的第一个。在新的界面中，会发现VC9和VC11字样，通过阅读相关内容得知，VC9是指用VS2008编译的代码，而VC11是用VS2012编译的，而用VS2012编译的无法在Windows XP和Server 2003中使用。算是为了兼容性好点吧，本人选的用VC9编译的32位Apache，选择下载至此，下载过程完成！ 二、Apache服务器的安装 Apache下载完成后，进行解压缩。 解压文件放到一个文件夹，我放到c:\wamp文件夹下。解压后文件夹名我设置为Apache。 三、Apache的配置 打开httpd.conf文件（在conf文件夹下）1.修改目录位置，如下图： 若你的80端口被占用（可以在cmd下用命令netstat -a查看），可以把默认apache端口改掉 2.配置安装Apache的主服务，这样Apache才能启动。以管理员身份打开cmd窗口，到apache的bin目录下，输入：httpd.exe -k install -n apache。这条命令是安装apache服务，并将该服务名命名为apache（你也可以改为你喜欢的名称）。其中，Errors reported here must be corrected before the service can be started.意思是，此处报告的错误必须在服务开始前进行纠正。若没有，则成功。 四、Apache服务器的启动 配置好Apache服务器之后，就可以启动服务器，windows下Apache服务器的启动： 1.利用命令启动注意：这里如果你的服务名有改动的话，就需要指定服务名。-n是指定服务名。 2.利用Apache服务器自身的程序打开：在bin目录下的ApacheMonitor.exe,打开 打开浏览器，输入http://localhost,若出现如下图的界面，则Apache服务器的基本配置完毕。 配置环境变量 我的电脑右键属性将apache的bin目录放到path中，用”;”分隔。执行过程：当在命令行输入一个命令的时候，先到当前目录下查找当前命令，如果有就执行，如果没有就到环境变量中找path路径，path中有很多命令的路径，默认在从左往右依次寻找。]]></content>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mysql高级操作]]></title>
     <url>%2F2018%2F12%2F29%2Fmysql%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[外键外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。 增加外键外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。一张表可以有多个外键。 创建表的时候增加外键：在所有的表字段之后，使用foreign key(外键字段)references 外部表(主键字段)在新增表之后增加外键：修改表结构alter table 表名 add[constraint 外键名] foreign key(外键字段) references 父表(主键字段); 修改外键&amp;删除外键外键不可修改：只能先删除后新增删除外键语法:alter table 表名 drop foreign key 外键名; 一张表中可以有多个外键，但是名字不能相同 外键作用外键默认的作用有两点：一个对父表，一个对字表(外键字段所在的表)对字表约束：子表数据进行写操作(增和改)的时候，如果对应的外键字段在父表找不到对应的匹配：那么操作会失败（约束字表数据操作）对父表约束：父表数据进行写操作(删和改：都必须涉及到主键本身)，如果对应的主键在子表中已经被数据所引用，那么就不允许操作]]></content>

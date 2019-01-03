@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php字符串操作函数 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="[]用下标操作字符串 字符串可以理解成字符集合，所以可以通过[]来访问。不能操作中文。  strlen() 返回字符串长度，以字节为单位。   注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。  trim()、ltrim()、rtrim():去除空白字符 trim():去字符串两边的把空格 ltrim():去字符串左边的空格 rtrim():去字符串右边的空格  strpos()">
+<meta name="keywords" content="php学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php字符串操作函数">
+<meta property="og:url" content="https://feng4.github.io/2019/01/03/php字符串操作函数/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="[]用下标操作字符串 字符串可以理解成字符集合，所以可以通过[]来访问。不能操作中文。  strlen() 返回字符串长度，以字节为单位。   注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。  trim()、ltrim()、rtrim():去除空白字符 trim():去字符串两边的把空格 ltrim():去字符串左边的空格 rtrim():去字符串右边的空格  strpos()">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/mepWNf1.png">
+<meta property="og:image" content="https://i.imgur.com/RxPCzCv.png">
+<meta property="og:image" content="https://i.imgur.com/rxhFV2A.png">
+<meta property="og:image" content="https://i.imgur.com/Zu2hDLC.png">
+<meta property="og:image" content="https://i.imgur.com/XxNCvt3.png">
+<meta property="og:image" content="https://i.imgur.com/BVHZlRI.png">
+<meta property="og:image" content="https://i.imgur.com/k365fZY.png">
+<meta property="og:image" content="https://i.imgur.com/5Lxr3sg.png">
+<meta property="og:image" content="https://i.imgur.com/itHSqgW.png">
+<meta property="og:image" content="https://i.imgur.com/iFDDFMm.png">
+<meta property="og:image" content="https://i.imgur.com/eInUsTU.png">
+<meta property="og:image" content="https://i.imgur.com/deSwHjS.png">
+<meta property="og:image" content="https://i.imgur.com/4Kk9xrO.png">
+<meta property="og:image" content="https://i.imgur.com/xXGvgJU.png">
+<meta property="og:image" content="https://i.imgur.com/41U3APm.png">
+<meta property="og:image" content="https://i.imgur.com/zWAyxKm.png">
+<meta property="og:image" content="https://i.imgur.com/Bw6Hp5c.png">
+<meta property="og:image" content="https://i.imgur.com/nDtFGqk.png">
+<meta property="og:image" content="https://i.imgur.com/djuADZd.png">
+<meta property="og:image" content="https://i.imgur.com/lSTgnHf.png">
+<meta property="og:image" content="https://i.imgur.com/co1UwGp.png">
+<meta property="og:image" content="https://i.imgur.com/euK8ciG.png">
+<meta property="og:updated_time" content="2018-12-08T02:49:47.528Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php字符串操作函数">
+<meta name="twitter:description" content="[]用下标操作字符串 字符串可以理解成字符集合，所以可以通过[]来访问。不能操作中文。  strlen() 返回字符串长度，以字节为单位。   注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。  trim()、ltrim()、rtrim():去除空白字符 trim():去字符串两边的把空格 ltrim():去字符串左边的空格 rtrim():去字符串右边的空格  strpos()">
+<meta name="twitter:image" content="https://i.imgur.com/mepWNf1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个小菜比的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-php字符串操作函数" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      php字符串操作函数
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="用下标操作字符串"><a href="#用下标操作字符串" class="headerlink" title="[]用下标操作字符串"></a>[]用下标操作字符串</h3><blockquote>
+<p>字符串可以理解成字符集合，所以可以通过[]来访问。<strong>不能操作中文</strong>。<br><img src="https://i.imgur.com/mepWNf1.png" alt="1"></p>
+</blockquote>
+<h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen()"></a>strlen()</h3><blockquote>
+<p>返回字符串长度，以字节为单位。<br><img src="https://i.imgur.com/RxPCzCv.png" alt="2"></p>
+</blockquote>
+<blockquote>
+<p><strong>注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。</strong></p>
+</blockquote>
+<h3 id="trim-、ltrim-、rtrim-去除空白字符"><a href="#trim-、ltrim-、rtrim-去除空白字符" class="headerlink" title="trim()、ltrim()、rtrim():去除空白字符"></a>trim()、ltrim()、rtrim():去除空白字符</h3><ol>
+<li>trim():去字符串两边的把空格</li>
+<li>ltrim():去字符串左边的空格</li>
+<li>rtrim():去字符串右边的空格</li>
+</ol>
+<h3 id="strpos-strrpos"><a href="#strpos-strrpos" class="headerlink" title="strpos(),strrpos()"></a>strpos(),strrpos()</h3><blockquote>
+<p>strpos():查找字符串首次出现的位置<br>strrpos(): 查找字符串最后一次出现的位置</p>
+</blockquote>
+<h3 id="str-repeat-重复字符串"><a href="#str-repeat-重复字符串" class="headerlink" title="str_repeat():重复字符串"></a>str_repeat():重复字符串</h3><p> <img src="https://i.imgur.com/rxhFV2A.png" alt="3"></p>
+<h3 id="chr-和ord"><a href="#chr-和ord" class="headerlink" title="chr()和ord()"></a>chr()和ord()</h3><p><img src="https://i.imgur.com/Zu2hDLC.png" alt="4"></p>
+<h3 id="substr-字符串-开始位置-截取长度-截取字符串"><a href="#substr-字符串-开始位置-截取长度-截取字符串" class="headerlink" title="substr(字符串,开始位置,截取长度):截取字符串"></a>substr(字符串,开始位置,截取长度):截取字符串</h3><p><img src="https://i.imgur.com/XxNCvt3.png" alt="5"></p>
+<h3 id="strchr-、strrchr-：截取字符串"><a href="#strchr-、strrchr-：截取字符串" class="headerlink" title="strchr()、strrchr()：截取字符串"></a>strchr()、strrchr()：截取字符串</h3><p><img src="https://i.imgur.com/BVHZlRI.png" alt="6"></p>
+<blockquote>
+<p>应用：截取文件后缀名<br><img src="https://i.imgur.com/k365fZY.png" alt="7"></p>
+</blockquote>
+<h3 id="str-replace-替换字符串"><a href="#str-replace-替换字符串" class="headerlink" title="str_replace():替换字符串"></a>str_replace():替换字符串</h3><p><img src="https://i.imgur.com/5Lxr3sg.png" alt="8"></p>
+<h3 id="str-split-将字符串分割成数组"><a href="#str-split-将字符串分割成数组" class="headerlink" title="str_split():将字符串分割成数组"></a>str_split():将字符串分割成数组</h3><p><img src="https://i.imgur.com/itHSqgW.png" alt="9"></p>
+<h3 id="str-pad-带填充字符串-总位数-填充字符-填充位置-填充字符串"><a href="#str-pad-带填充字符串-总位数-填充字符-填充位置-填充字符串" class="headerlink" title="str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串"></a>str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串</h3><p><img src="https://i.imgur.com/iFDDFMm.png" alt="10"><br><img src="https://i.imgur.com/eInUsTU.png" alt="11"></p>
+<h3 id="字符串大小写转换-strtolower-转换成小写、strtoupper-转换成大写"><a href="#字符串大小写转换-strtolower-转换成小写、strtoupper-转换成大写" class="headerlink" title="字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写)"></a>字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写)</h3><p><img src="https://i.imgur.com/deSwHjS.png" alt="12"></p>
+<h3 id="nl2br-将字符串的换行转成"><a href="#nl2br-将字符串的换行转成" class="headerlink" title="nl2br():将字符串的换行转成"></a>nl2br():将字符串的换行转成<br></h3><p><img src="https://i.imgur.com/4Kk9xrO.png" alt="13"></p>
+<h3 id="htmlspecialchars-将HTML字体转成实体"><a href="#htmlspecialchars-将HTML字体转成实体" class="headerlink" title="htmlspecialchars():将HTML字体转成实体"></a>htmlspecialchars():将HTML字体转成实体</h3><p><img src="https://i.imgur.com/xXGvgJU.png" alt="14"></p>
+<h3 id="urlencode-、urldecode-url编码和解码"><a href="#urlencode-、urldecode-url编码和解码" class="headerlink" title="urlencode()、urldecode():url编码和解码"></a>urlencode()、urldecode():url编码和解码</h3><p><img src="https://i.imgur.com/41U3APm.png" alt="15"><br><img src="https://i.imgur.com/zWAyxKm.png" alt="16"></p>
+<h3 id="多字节字符串处理函数"><a href="#多字节字符串处理函数" class="headerlink" title="多字节字符串处理函数"></a>多字节字符串处理函数</h3><blockquote>
+<p>PHP默认本身不支持多字节处理。要开启扩展(multibytes)<br><img src="https://i.imgur.com/Bw6Hp5c.png" alt="17"><br>以mb_开头的函数都在多字节处理函数。</p>
+</blockquote>
+<h4 id="mb-strlen-获取字符串长度"><a href="#mb-strlen-获取字符串长度" class="headerlink" title="mb_strlen():获取字符串长度"></a>mb_strlen():获取字符串长度</h4><p><img src="https://i.imgur.com/nDtFGqk.png" alt="18"></p>
+<blockquote>
+<p><strong>注意</strong>：需要设置字符编码，默认字符编码为ISO-8859-1.</p>
+</blockquote>
+<h4 id="mb-internal-encoding-设置-获取内部字符编码"><a href="#mb-internal-encoding-设置-获取内部字符编码" class="headerlink" title="mb_internal_encoding():设置/获取内部字符编码"></a>mb_internal_encoding():设置/获取内部字符编码</h4><p><img src="https://i.imgur.com/djuADZd.png" alt="19"></p>
+<h4 id="mb-strpos-查找字符串在另一个字符串的位置"><a href="#mb-strpos-查找字符串在另一个字符串的位置" class="headerlink" title="mb_strpos():查找字符串在另一个字符串的位置"></a>mb_strpos():查找字符串在另一个字符串的位置</h4><p><img src="https://i.imgur.com/lSTgnHf.png" alt="20"></p>
+<h4 id="mb-substr-获取字符串"><a href="#mb-substr-获取字符串" class="headerlink" title="mb_substr():获取字符串"></a>mb_substr():获取字符串</h4><p><img src="https://i.imgur.com/co1UwGp.png" alt="21"></p>
+<h3 id="字符串编码"><a href="#字符串编码" class="headerlink" title="字符串编码"></a>字符串编码</h3><h4 id="iconv-输入的编码-输出的编码-字符串"><a href="#iconv-输入的编码-输出的编码-字符串" class="headerlink" title="iconv(输入的编码,输出的编码,字符串)"></a>iconv(输入的编码,输出的编码,字符串)</h4><p><img src="https://i.imgur.com/euK8ciG.png" alt="22"></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月08日 10:49</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/03/php字符串操作函数/" title="php字符串操作函数">https://feng4.github.io/2019/01/03/php字符串操作函数/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2019/01/03/php字符串操作函数/&title=《php字符串操作函数》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2019/01/03/php字符串操作函数/&title=《php字符串操作函数》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2019/01/03/php字符串操作函数/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php字符串操作函数》 — Feng 的博客&url=https://feng4.github.io/2019/01/03/php字符串操作函数/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2019/01/03/php字符串操作函数/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2019/01/03/php字符串操作函数/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用下标操作字符串"><span class="post-toc-text">[]用下标操作字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strlen"><span class="post-toc-text">strlen()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#trim-、ltrim-、rtrim-去除空白字符"><span class="post-toc-text">trim()、ltrim()、rtrim():去除空白字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strpos-strrpos"><span class="post-toc-text">strpos(),strrpos()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-repeat-重复字符串"><span class="post-toc-text">str_repeat():重复字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#chr-和ord"><span class="post-toc-text">chr()和ord()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#substr-字符串-开始位置-截取长度-截取字符串"><span class="post-toc-text">substr(字符串,开始位置,截取长度):截取字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#strchr-、strrchr-：截取字符串"><span class="post-toc-text">strchr()、strrchr()：截取字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-replace-替换字符串"><span class="post-toc-text">str_replace():替换字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-split-将字符串分割成数组"><span class="post-toc-text">str_split():将字符串分割成数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-pad-带填充字符串-总位数-填充字符-填充位置-填充字符串"><span class="post-toc-text">str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串大小写转换-strtolower-转换成小写、strtoupper-转换成大写"><span class="post-toc-text">字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nl2br-将字符串的换行转成"><span class="post-toc-text">nl2br():将字符串的换行转成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#htmlspecialchars-将HTML字体转成实体"><span class="post-toc-text">htmlspecialchars():将HTML字体转成实体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urlencode-、urldecode-url编码和解码"><span class="post-toc-text">urlencode()、urldecode():url编码和解码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多字节字符串处理函数"><span class="post-toc-text">多字节字符串处理函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mb-strlen-获取字符串长度"><span class="post-toc-text">mb_strlen():获取字符串长度</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mb-internal-encoding-设置-获取内部字符编码"><span class="post-toc-text">mb_internal_encoding():设置/获取内部字符编码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mb-strpos-查找字符串在另一个字符串的位置"><span class="post-toc-text">mb_strpos():查找字符串在另一个字符串的位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mb-substr-获取字符串"><span class="post-toc-text">mb_substr():获取字符串</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串编码"><span class="post-toc-text">字符串编码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iconv-输入的编码-输出的编码-字符串"><span class="post-toc-text">iconv(输入的编码,输出的编码,字符串)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/03/php数组指针foreach/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          php数组指针
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/03/php多态/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">php多态</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2019 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

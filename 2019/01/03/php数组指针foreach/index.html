@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php数组指针 | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="foreach数组指针 1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。2.默认情况下，打开一个数组，指针会指向数组的第一个元素。语法结构foreach(数组 as 键=&amp;gt;值){ 循环体 }   流程图    foreach是循环，break和continue也适用于foreach循环   foreach值变量支持传地址   注意：键变量不支持传地址。   foreach循环">
+<meta name="keywords" content="php学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php数组指针">
+<meta property="og:url" content="https://feng4.github.io/2019/01/03/php数组指针foreach/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="foreach数组指针 1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。2.默认情况下，打开一个数组，指针会指向数组的第一个元素。语法结构foreach(数组 as 键=&amp;gt;值){ 循环体 }   流程图    foreach是循环，break和continue也适用于foreach循环   foreach值变量支持传地址   注意：键变量不支持传地址。   foreach循环">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/EELmBAD.png">
+<meta property="og:image" content="https://i.imgur.com/tjkkLID.png">
+<meta property="og:image" content="https://i.imgur.com/sAL4pfe.png">
+<meta property="og:image" content="https://i.imgur.com/thwPC7e.png">
+<meta property="og:image" content="https://i.imgur.com/VDWJHXh.png">
+<meta property="og:image" content="https://i.imgur.com/LlP6QLr.png">
+<meta property="og:image" content="https://i.imgur.com/aO0WLgM.png">
+<meta property="og:image" content="https://i.imgur.com/c7o9hC1.png">
+<meta property="og:image" content="https://i.imgur.com/7AFr5t8.png">
+<meta property="og:updated_time" content="2018-12-05T16:15:52.091Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php数组指针">
+<meta name="twitter:description" content="foreach数组指针 1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。2.默认情况下，打开一个数组，指针会指向数组的第一个元素。语法结构foreach(数组 as 键=&amp;gt;值){ 循环体 }   流程图    foreach是循环，break和continue也适用于foreach循环   foreach值变量支持传地址   注意：键变量不支持传地址。   foreach循环">
+<meta name="twitter:image" content="https://i.imgur.com/EELmBAD.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个小菜比的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-php数组指针foreach" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      php数组指针
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="foreach数组指针"><a href="#foreach数组指针" class="headerlink" title="foreach数组指针"></a>foreach数组指针</h3><blockquote>
+<p>1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。<br>2.默认情况下，打开一个数组，指针会指向数组的第一个元素。<br><img src="https://i.imgur.com/EELmBAD.png" alt="1"><br>语法结构<code>foreach(数组 as 键=&gt;值){ 循环体 }</code></p>
+</blockquote>
+<blockquote>
+<p>流程图</p>
+</blockquote>
+<p><img src="https://i.imgur.com/tjkkLID.png" alt="2"></p>
+<blockquote>
+<p>foreach是循环，break和continue也适用于foreach循环<br><img src="https://i.imgur.com/sAL4pfe.png" alt="3"></p>
+</blockquote>
+<blockquote>
+<p>foreach值变量支持传地址<br><img src="https://i.imgur.com/thwPC7e.png" alt="4"><br><img src="https://i.imgur.com/VDWJHXh.png" alt="5"></p>
+</blockquote>
+<blockquote>
+<p><strong>注意：</strong>键变量不支持传地址。</p>
+</blockquote>
+<blockquote>
+<p>foreach循环变量数组的时候，遍历的是数组的拷贝<br><img src="https://i.imgur.com/LlP6QLr.png" alt="6"></p>
+</blockquote>
+<h3 id="数组指针的操作"><a href="#数组指针的操作" class="headerlink" title="数组指针的操作"></a>数组指针的操作</h3><blockquote>
+<p>1.key() —— 从关联数组中取得键名，没有取到返回NULL。<br>2.current() – 返回数组中的当前单元<br>3.next() —– 返回数组中的当前单元<br>4.prev() —– 将数组的内部指针倒回一位<br>5.reset() —- 将数组的内部指针指向第一个单元<br>6.end() —— 将数组的内部指针指向最后一个单元</p>
+</blockquote>
+<p>例题：将数组的元素从后往前取<br><img src="https://i.imgur.com/aO0WLgM.png" alt="7"></p>
+<blockquote>
+<p><strong>注意：</strong>如果一个数组连续输出两次，必须要将指针复位。</p>
+</blockquote>
+<h3 id="each-函数的使用"><a href="#each-函数的使用" class="headerlink" title="each()函数的使用"></a>each()函数的使用</h3><blockquote>
+<p>1.返回数组当前的键/值对并将数组指针向前移动一步，如果内部指针穿越了数组的末尾返回false</p>
+</blockquote>
+<blockquote>
+<p>2.键值对返回4个单元，其中包含索引数组和关联数组，下标是key和0的是键，下标是1和value的是值。<br>3.each()=key()+current()+next()<br>4.如果第二次再遍历，必须通过reset()复位指针。<br><img src="https://i.imgur.com/c7o9hC1.png" alt="1"></p>
+</blockquote>
+<blockquote>
+<p>通过while+each遍历数组<br><img src="https://i.imgur.com/7AFr5t8.png" alt="2"></p>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月06日 00:15</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/03/php数组指针foreach/" title="php数组指针">https://feng4.github.io/2019/01/03/php数组指针foreach/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2019/01/03/php数组指针foreach/&title=《php数组指针》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2019/01/03/php数组指针foreach/&title=《php数组指针》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2019/01/03/php数组指针foreach/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php数组指针》 — Feng 的博客&url=https://feng4.github.io/2019/01/03/php数组指针foreach/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2019/01/03/php数组指针foreach/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2019/01/03/php数组指针foreach/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#foreach数组指针"><span class="post-toc-text">foreach数组指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组指针的操作"><span class="post-toc-text">数组指针的操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#each-函数的使用"><span class="post-toc-text">each()函数的使用</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/03/php字符串操作函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">php字符串操作函数</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2019 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

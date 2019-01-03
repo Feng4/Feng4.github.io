@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php操作mysql | Feng 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Feng,Feng's Blog">
+  
+  <meta name="description" content="php操作mysql php本身不能操作mysql，但是php有扩展可以实现操作mysql。php操作mysql的扩展：mysql，mysqli和PDO扩展。mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作PDO:纯面向对象，只有类，加载后只能调用类。mysql扩展在php5.5之后就移">
+<meta name="keywords" content="php学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php操作mysql">
+<meta property="og:url" content="https://feng4.github.io/2019/01/03/php操作mysql/index.html">
+<meta property="og:site_name" content="Feng 的博客">
+<meta property="og:description" content="php操作mysql php本身不能操作mysql，但是php有扩展可以实现操作mysql。php操作mysql的扩展：mysql，mysqli和PDO扩展。mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作PDO:纯面向对象，只有类，加载后只能调用类。mysql扩展在php5.5之后就移">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/tVLwRC3.png">
+<meta property="og:image" content="https://i.imgur.com/4QZKQFM.png">
+<meta property="og:image" content="https://i.imgur.com/FAbpS2B.png">
+<meta property="og:image" content="https://i.imgur.com/JvhvxbI.png">
+<meta property="og:image" content="https://i.imgur.com/MezXiWq.png">
+<meta property="og:image" content="https://i.imgur.com/CQA8c5a.png">
+<meta property="og:image" content="https://i.imgur.com/YE993Qx.png">
+<meta property="og:image" content="https://i.imgur.com/LA3ioR4.png">
+<meta property="og:image" content="https://i.imgur.com/IzdFMq2.png">
+<meta property="og:image" content="https://i.imgur.com/dabqZAm.png">
+<meta property="og:image" content="https://i.imgur.com/AWnMMtC.png">
+<meta property="og:updated_time" content="2018-12-09T14:42:29.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php操作mysql">
+<meta name="twitter:description" content="php操作mysql php本身不能操作mysql，但是php有扩展可以实现操作mysql。php操作mysql的扩展：mysql，mysqli和PDO扩展。mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作PDO:纯面向对象，只有类，加载后只能调用类。mysql扩展在php5.5之后就移">
+<meta name="twitter:image" content="https://i.imgur.com/tVLwRC3.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Feng&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Feng&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个小菜比的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Feng" target="_blank" href="https://feng4.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/feng4">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="QQ" href="https://user.qzone.qq.com/1986889477/infocenter">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-php操作mysql" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      php操作mysql
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="php操作mysql"><a href="#php操作mysql" class="headerlink" title="php操作mysql"></a>php操作mysql</h3><blockquote>
+<p>php本身不能操作mysql，但是php有扩展可以实现操作mysql。<br>php操作mysql的扩展：mysql，mysqli和PDO扩展。<br>mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。<br>mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作<br>PDO:纯面向对象，只有类，加载后只能调用类。<br>mysql扩展在php5.5之后就移除了，小伙伴注意了。</p>
+</blockquote>
+<p>当php来对mysql进行操作之后：php的角色是mysql的一个客户端</p>
+<blockquote>
+<p>客户端操作服务端有必要的流程</p>
+<ol>
+<li>连接认证：数据库连接资源 <code>mysql_connect(服务器地址包含端口,用户名,用户密码);</code><br><img src="https://i.imgur.com/tVLwRC3.png" alt="5"><br>默认的：mysql_connect会产生一个连接资源，即便是重新连接，也会返回原有的连接资源<br><img src="https://i.imgur.com/4QZKQFM.png" alt="6"><br>如果真的想产生多一个连接：是新的可以在mysql_connect函数的第四个参数控制：true<br><img src="https://i.imgur.com/FAbpS2B.png" alt="7"></li>
+<li>php发送sql指令（等待执行结果）</li>
+<li>mysql服务端接收指令，执行指令，返回结果</li>
+<li>php接收结果<br>mixed <code>mysql_query(sql指令);</code><br>  boolean结果;sql指令没有返回值，布尔true结果只能代表sql语句没有语法错误，false就代表是sql语句有语法错误：主增删改<br><img src="https://i.imgur.com/JvhvxbI.png" alt="8"><br>resource结果：结果集资源，sql指令有结果返回(show,select)，结果集永远为true，主查询<br><img src="https://i.imgur.com/MezXiWq.png" alt="9"><ol start="5">
+<li>php没有办法直接使用结果集：需要解析结果集mysql扩展提供了一系列函数：mysql_fetch系列：任何操作都是指针操作：操作完就会指针下移。<br><strong>mysql_fetch_array</strong>:默认获取混合数组，有一组关联，有一组索引。<br><img src="https://i.imgur.com/CQA8c5a.png" alt="10"><br>当前函数可以实现：只获取关联数组或者索引数组。通过第二个参数限制：MYSQL_BOTH是默认的，MYSQL_ASSOC是关联数组，MYSQL_NUM是索引数组。<br>关联数组获取：MYSQL_ASSOC<br><img src="https://i.imgur.com/YE993Qx.png" alt="11"><br>索引数组获取：MYSQL_NUM<br><img src="https://i.imgur.com/LA3ioR4.png" alt="12"><br><strong>mysql_fetch_row</strong>:获取索引数组<br><strong>mysql_fetch_assoc</strong>:直接获取关联数组<br>不管是哪个fetch：最终如果结果集指针移动到最后，返回都是false</li>
+<li>如果指针已经移动到最后，那么需要重置指针实现其他操作。<br><code>mysql_data_seek(结果集资源，位置从0开始);</code></li>
+<li>获取的数据往往只有一行：实际上查多少是为了显示全部：解析全部，循环遍历来实现。<br><img src="https://i.imgur.com/IzdFMq2.png" alt="13"></li>
+<li>释放资源：mysql资源通常不需要释放(脚本执行周期不会太长，但是数据库的操作是贯穿整个脚本的)<br><code>mysql_close(资源变量);</code><br><img src="https://i.imgur.com/dabqZAm.png" alt="14"></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h4 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h4><blockquote>
+<p>从计算机角度出发：增删改都属于写，查属于读。</p>
+</blockquote>
+<blockquote>
+<p><strong>写操作</strong>:<br> 连接认证：不一定连接成功，需要对结果进行判断，可以直接使用三目运算(逻辑或)来进行处理，但是无法获取错误信息。<br> 如果要获取错误信息，那么需要使用mysql提供的获取错误的函数：<br> <code>mysql_errno()</code>:获取错误编号，<code>mysql_error()</code>:获取错误信息。<br> <img src="https://i.imgur.com/AWnMMtC.png" alt="15"></p>
+</blockquote>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月09日 22:42</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/03/php操作mysql/" title="php操作mysql">https://feng4.github.io/2019/01/03/php操作mysql/</a></p>
+        <footer>
+            <a href="https://feng4.github.io">
+                <img src="/images/logo.png" alt="Feng">
+                Feng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://feng4.github.io/2019/01/03/php操作mysql/&title=《php操作mysql》 — Feng 的博客&pic=https://feng4.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://feng4.github.io/2019/01/03/php操作mysql/&title=《php操作mysql》 — Feng 的博客&source=IT,web,网络安全" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://feng4.github.io/2019/01/03/php操作mysql/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《php操作mysql》 — Feng 的博客&url=https://feng4.github.io/2019/01/03/php操作mysql/&via=https://feng4.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://feng4.github.io/2019/01/03/php操作mysql/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://feng4.github.io/2019/01/03/php操作mysql/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/php学习笔记/" class="color3">php学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#php操作mysql"><span class="post-toc-text">php操作mysql</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#增删改查"><span class="post-toc-text">增删改查</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/03/php多态/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          php多态
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/03/php包含文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">php包含文件</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
+        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
+      &copy; 2019 Feng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://feng4.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/sql注入/">sql注入</a><a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql注入/" style="font-size: 10px;">mysql注入</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 16.67px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql注入/" style="font-size: 13.33px;">sql注入</a> <a href="/tags/sql盲注/" style="font-size: 10px;">sql盲注</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
