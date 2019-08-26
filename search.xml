@@ -175,11 +175,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>%2F2018%2F10%2F25%2Fphp%E8%A1%A8%E5%8D%95%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[php变量函数]]></title>
     <url>%2F2018%2F10%2F25%2Fphp%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[php变量函数php支持变量函数的概念。这意味着如果一个变量名后有圆括号，php将寻找与变量的值同名的函数，并且将尝试执行它。除了别的事情以外，这个可以被用于实现回调函数，函数表等等。变量函数不能用于语言结构，例如echo(),print(),unset(),isset(),empty(),include(),require()以及类似的语句。需要使用自己的外壳函数来将这些结构用作变量函数。 变量函数示例： 1234567891011121314151617181920212223&lt;?phpfunction foo()&#123; echo "In foo()&lt;br /&gt;\n";&#125;function bar($arg = '')&#123; echo "In bar();argument was '$arg'.&lt;br /&gt;\n";&#125;//This is a wrapper function around echofunction echoit($string)&#123; echo $string;&#125;$func = 'foo';$func(); //这里调用foo()$func = 'bar';$func('test'); //这里调用bar()$func = 'echoit';$func('test'); //这里调用echoit() 还可利用变量函数的特性来调用一个对象的方法。 变量方法范例： 1234567891011121314151617181920&lt;?phpclass Foo&#123; function Variable() &#123; $name = 'Bar'; $this-&gt;$name();//这是Bar()方法 &#125; functoin Bar() &#123; echo "这是Bar"; &#125;&#125;$foo = new Foo();$funcname = "Variable";$foo-&gt;$funcname(); //这是$foo-&gt;Variable()?&gt;]]></content>
