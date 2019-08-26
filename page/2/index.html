@@ -1,14 +1,85 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <title>Feng 的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <meta name="keywords" content="Feng,Feng's Blog">
-  
-  <meta name="description" content="IT,web,网络安全">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="IT,web,网络安全">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Feng 的博客">
 <meta property="og:url" content="https://feng4.github.io/page/2/index.html">
@@ -18,859 +89,2617 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Feng 的博客">
 <meta name="twitter:description" content="IT,web,网络安全">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/pace.min.js"></script>
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'fengx'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://feng4.github.io/page/2/">
+
+
+
+
+
+  <title>Feng 的博客</title>
   
 
-  
-  
+
+
+
+
+
+
 
 </head>
-</html>
-<body>
-  <div id="container">
-      <header id="header">
-    <div id="banner"></div>
-    <div id="header-outer">
-        <div id="header-menu" class="header-menu-pos animated">
-            <div class="header-menu-container">
-                <a href="/" class="left">
-                    <span class="site-title">Feng&#39;s Blog</span>
-                </a>
-                <nav id="header-menu-nav" class="right">
-                    
-                    <a  href="/">
-                        <i class="fa fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                    
-                    <a  href="/archives">
-                        <i class="fa fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
-                    
-                    <a  href="/about">
-                        <i class="fa fa-user"></i>
-                        <span>About</span>
-                    </a>
-                    
-                </nav>
-                <a class="mobile-header-menu-button">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-        </div>
-        <div id="header-row">
-            <div id="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-info">
-                <div id="header-title">
-                    
-                    <h2>
-                        Feng&#39;s Blog
-                    </h2>
-                    
-                </div>
-                <div id="header-description">
-                    
-                    <h3>
-                        一个小菜比的博客
-                    </h3>
-                    
-                </div>
-            </div>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a title="Feng" target="_blank" href="https://feng4.github.io">
-                            <i class="fa fa-home fa-2x"></i></a>
-                    
-                        <a title="Github" target="_blank" href="//github.com/feng4">
-                            <i class="fa fa-github fa-2x"></i></a>
-                    
-                        <a title="Twitter" target="_blank" href="https://twitter.com/FengWu198">
-                            <i class="fa fa-twitter fa-2x"></i></a>
-                    
-                        <a title="QQ"  href="https://user.qzone.qq.com/1986889477/infocenter">
-                            <i class="fa fa-qq fa-2x"></i></a>
-                    
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-      <div class="outer">
-        <section id="main" class="body-wrap">
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
   
-    <article id="post-jQuery事件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/jQuery事件/"  >jQuery事件</a>
-    </h1>
   
 
-          
-      </header>
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/11/30/jQuery事件/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="jQuery事件" title="jQuery事件">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                加载事件
-代码$(document).ready(fn);简写：$(function(){});注意：js:windows.onload=fn;jq:$(document).ready(fn);
 
-事件切换12345$("div").hover(function ()&#123;	$("b").html("鼠标放上就变");//鼠标放到div标签中，就会变化&#125;,...
-            </p>
-        </div>
-      
-        
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Feng 的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-11-30</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
       
-    <a href="/tags/jQuery/" class="color2">jQuery</a>
+        <p class="site-subtitle">Feng's blog</p>
       
-  </li>
-
-        </ul>
-        
-            <a href="/2018/11/30/jQuery事件/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
   </div>
-</article>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
 
   
-    <article id="post-vi—终端中的编辑器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/25/vi—终端中的编辑器/"  >vi —— 终端中的编辑器</a>
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
-          
-              <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                  
-                  <a href="/categories/vi——终端中的编辑器/">vi —— 终端中的编辑器</a>
-                  
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/11/30/jQuery事件/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/30/jQuery事件/" itemprop="url">jQuery事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
               </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T12:55:41+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <div class="article-img">
-            <a href="/2018/11/25/vi—终端中的编辑器/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="vi —— 终端中的编辑器" title="vi —— 终端中的编辑器">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                目标
-vi 简介
-打开和新建文件
-三种工作模式
-常用命令
-分屏命令
-常用命令速查图
+      
 
-01. vi 简介1.1 学习 vi 的目的
-在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可
-常见需要修改的文件包括：
-源程序
-配置文件，例如 ssh 的配置文件 ~/.ssh/config
-
-
-
-
-
-在没有图...
-            </p>
-        </div>
       
         
+          
+            <h3 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h3><blockquote>
+<p>代码<code>$(document).ready(fn);</code><br>简写：<code>$(function(){});</code><br>注意：<br>js:<code>windows.onload=fn;</code><br>jq:<code>$(document).ready(fn);</code><br><img src="https://i.imgur.com/tSwi0ia.png" alt="1"></p>
+</blockquote>
+<h3 id="事件切换"><a href="#事件切换" class="headerlink" title="事件切换"></a>事件切换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">"b"</span>).html(<span class="string">"鼠标放上就变"</span>);<span class="comment">//鼠标放到div标签中，就会变化</span></span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">"a"</span>).html(<span class="string">"鼠标离开就变"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/Ho6LFWb.png" alt="2"></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注：selector为选择器，可以使用标签名，或者id等选中要操作的对象。</span></span><br><span class="line">$(selector).click(fn);<span class="comment">//selector的点击事件，会触发fn函数。</span></span><br><span class="line">$(selector).dblclick(fn);<span class="comment">//双击事件。</span></span><br><span class="line">$(selector).focus(fn);<span class="comment">//获得焦点触发事件。</span></span><br><span class="line">$(selector).blur(fn);<span class="comment">//失去焦点。</span></span><br><span class="line">$(selector).change(fn);<span class="comment">//发生改变。</span></span><br><span class="line">$(selector).mouseover(fn);<span class="comment">//鼠标放上。</span></span><br><span class="line">$(selector).mouseout(fn);<span class="comment">//鼠标离开。</span></span><br><span class="line">$(selector).mousedown(fn);<span class="comment">//鼠标按下。</span></span><br><span class="line">$(selector).mouseup(fn);<span class="comment">//鼠标抬起。</span></span><br><span class="line">$(selector).mousemove(fn);<span class="comment">//鼠标移动。</span></span><br><span class="line"><span class="comment">//js的事件都带有on，而jq事件都没有on</span></span><br></pre></td></tr></table></figure>
+<h3 id="鼠标移动事件"><a href="#鼠标移动事件" class="headerlink" title="鼠标移动事件"></a>鼠标移动事件</h3><p><img src="https://i.imgur.com/hITdkvL.png" alt="1"></p>
+<blockquote>
+<p><strong>注：</strong><br>属性是获取x坐标 <code>clientX</code><br>属性是获取y坐标 <code>clientY</code><br>就代表了div标签对象 <code>event</code> </p>
+</blockquote>
+<h3 id="事件处理："><a href="#事件处理：" class="headerlink" title="事件处理："></a>事件处理：</h3><blockquote>
+<p><strong>bind：重点</strong><br>  绑定事件 – <code>bind(&quot;事件名&quot;,fn)</code><br>  如果多个事件：<code>bind({&quot;mouseover&quot;:fn1,&quot;mouseout&quot;:fn2});</code></p>
+</blockquote>
+<blockquote>
+<p><strong>unbind(“事件名”)</strong><br>  解除绑定，如果没有参数，意味着，全部解除绑定<br><img src="https://i.imgur.com/PAXsvB7.png" alt="121"></p>
+</blockquote>
+<blockquote>
+<p><strong>on：重点</strong><br> 绑定事件 `$(select).on(“clcik”,function (){});</p>
+</blockquote>
+<blockquote>
+<p><strong>off解绑</strong><br> 代码：<code>$(select).off();</code><br><img src="https://i.imgur.com/HgPP9gg.png" alt="12"></p>
+</blockquote>
+<blockquote>
+<p><strong>one：绑定事件，只会执行一次</strong><br>代码：<code>$(&quot;#d1&quot;).one(&quot;click&quot;,function (){alert (&quot;你好，世界&quot;);});</code>执行一次后就失效。</p>
+</blockquote>
+<blockquote>
+<p><strong>查找：</strong><br><code>$(selector).parent()</code>—–查找父元素。<br><code>$(selector).find(a)</code>——在selector中找a元素。</p>
+</blockquote>
+
+          
+        
+      
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-11-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/vi——终端中的编辑器/" class="color4">vi —— 终端中的编辑器</a>
-      
-  </li>
+    
+    
+    
 
-        </ul>
-        
-            <a href="/2018/11/25/vi—终端中的编辑器/#more" class="article-more-link" >more&gt;&gt;</a>
-        
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-web应用渗透测试流程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/11/25/vi—终端中的编辑器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/web应用渗透测试流程/"  >Web应用渗透测试流程</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/25/vi—终端中的编辑器/" itemprop="url">vi —— 终端中的编辑器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-25T17:05:31+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/vi-——-终端中的编辑器/" itemprop="url" rel="index">
+                    <span itemprop="name">vi —— 终端中的编辑器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/11/02/web应用渗透测试流程/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="Web应用渗透测试流程" title="Web应用渗透测试流程">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                Web应用渗透测试对于web应用的测试，一般分为三个阶段：信息收集、漏洞发现以及漏洞利用。
-信息收集在信息收集阶段，我们需要尽量多的收集关于目标web应用的各种信息，比如：脚本语言的类型、服务器的类型、目录结构、使用的开源软件、数据库类型、所有链接页面，用到的框架等。
-脚本语言的类型常见的脚本语言的类型包括：php、asp、aspx、jsp等。测试方法
 
-爬取网站所有链接...
-            </p>
-        </div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         
+          
+            <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li><code>vi</code> 简介</li>
+<li>打开和新建文件</li>
+<li>三种工作模式</li>
+<li>常用命令</li>
+<li>分屏命令</li>
+<li>常用命令速查图</li>
+</ul>
+<h2 id="01-vi-简介"><a href="#01-vi-简介" class="headerlink" title="01. vi 简介"></a>01. <code>vi</code> 简介</h2><h3 id="1-1-学习-vi-的目的"><a href="#1-1-学习-vi-的目的" class="headerlink" title="1.1 学习 vi 的目的"></a>1.1 学习 <code>vi</code> 的目的</h3><ul>
+<li>在工作中，要对 <strong>服务器</strong> 上的文件进行 <strong>简单</strong> 的修改，可以使用 <code>ssh</code> 远程登录到服务器上，并且使用 <code>vi</code> 进行快速的编辑即可</li>
+<li>常见需要修改的文件包括：<ul>
+<li><strong>源程序</strong></li>
+<li><strong>配置文件</strong>，例如 <code>ssh</code> 的配置文件 <code>~/.ssh/config</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>在没有图形界面的环境下，要编辑文件，<code>vi</code> 是最佳选择！</li>
+<li>每一个要使用 Linux 的程序员，都应该或多或少的学习一些 <code>vi</code> 的常用命令</li>
+</ul>
+</blockquote>
+<h3 id="1-2-vi-和-vim"><a href="#1-2-vi-和-vim" class="headerlink" title="1.2 vi 和 vim"></a>1.2 vi 和 vim</h3><ul>
+<li>在很多 <code>Linux</code> 发行版中，直接把 <code>vi</code> 做成 <code>vim</code> 的软连接</li>
+</ul>
+<h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><ul>
+<li><code>vi</code> 是 <code>Visual interface</code> 的简称，是 <code>Linux</code> 中 <strong>最经典</strong> 的文本编辑器</li>
+<li><code>vi</code> 的核心设计思想 —— <strong>让程序员的手指始终保持在键盘的核心区域，就能完成所有的编辑操作</strong></li>
+</ul>
+<p><img src="https://i.imgur.com/yGGhPWH.png" alt="vi键盘"></p>
+<ul>
+<li><code>vi</code> 的特点：<ul>
+<li><strong>没有图形界面</strong> 的 <strong>功能强大</strong> 的编辑器</li>
+<li>只能是编辑 <strong>文本内容</strong>，不能对字体、段落进行排版</li>
+<li><strong>不支持鼠标操作</strong></li>
+<li><strong>没有菜单</strong></li>
+<li><strong>只有命令</strong></li>
+</ul>
+</li>
+<li><code>vi</code> 编辑器在 <strong>系统管理</strong>、<strong>服务器管理</strong> 编辑文件时，<strong>其功能永远不是图形界面的编辑器能比拟的</strong></li>
+</ul>
+<h4 id="vim"><a href="#vim" class="headerlink" title="vim"></a><code>vim</code></h4><p><strong>vim = vi improved</strong></p>
+<ul>
+<li><code>vim</code> 是从 <code>vi</code> 发展出来的一个文本编辑器，支持 <strong>代码补全</strong>、<strong>编译</strong> 及 <strong>错误跳转</strong> 等方便编程的功能特别丰富，在程序员中被广泛使用，被称为 <strong>编辑器之神</strong></li>
+</ul>
+<h4 id="查询软连接命令（知道）"><a href="#查询软连接命令（知道）" class="headerlink" title="查询软连接命令（知道）"></a>查询软连接命令（知道）</h4><ul>
+<li>在很多 <code>Linux</code> 发行版中直接把 <code>vi</code> 做成 <code>vim</code> 的软连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 vi 的运行文件</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> vi</span><br><span class="line">$ ls -l /usr/bin/vi</span><br><span class="line">$ ls -l /etc/alternatives/vi</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找 vim 的运行文件</span></span><br><span class="line">$ <span class="built_in">which</span> vim</span><br><span class="line">$ ls -l /usr/bin/vim</span><br><span class="line">$ ls -l /etc/alternatives/vim</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br></pre></td></tr></table></figure>
+<h2 id="02-打开和新建文件"><a href="#02-打开和新建文件" class="headerlink" title="02. 打开和新建文件"></a>02. 打开和新建文件</h2><ul>
+<li>在终端中输入 <code>vi</code> <strong>在后面跟上文件名</strong> 即可</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果文件已经存在，会直接打开该文件</li>
+<li>如果文件不存在，会新建一个文件</li>
+</ul>
+<h3 id="2-1-打开文件并且定位行"><a href="#2-1-打开文件并且定位行" class="headerlink" title="2.1 打开文件并且定位行"></a>2.1 打开文件并且定位行</h3><ul>
+<li>在日常工作中，有可能会遇到 <strong>打开一个文件，并定位到指定行</strong> 的情况</li>
+<li><p>例如：在开发时，<strong>知道某一行代码有错误</strong>，可以 <strong>快速定位</strong> 到出错代码的位置</p>
+</li>
+<li><p>这个时候，可以使用以下命令打开文件</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名 +行数</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示：如果只带上 <code>+</code> 而不指定行号，会直接定位到文件末尾</p>
+</blockquote>
+<h3 id="2-2-异常处理"><a href="#2-2-异常处理" class="headerlink" title="2.2 异常处理"></a>2.2 异常处理</h3><ul>
+<li>如果 <code>vi</code> 异常退出，在磁盘上可能会保存有 <strong>交换文件</strong></li>
+<li>下次再使用 <code>vi</code> 编辑该文件时，会看到以下屏幕信息，按下字母 <code>d</code> 可以 <strong>删除交换文件</strong> 即可</li>
+</ul>
+<blockquote>
+<p>提示：按下键盘时，注意关闭输入法</p>
+</blockquote>
+<p><img src="https://i.imgur.com/U4oCeXj.png" alt="删除交换文件"></p>
+<h2 id="03-三种工作模式"><a href="#03-三种工作模式" class="headerlink" title="03. 三种工作模式"></a>03. 三种工作模式</h2><ul>
+<li><p><code>vi</code> 有三种基本工作模式：</p>
+<ol>
+<li><strong>命令模式</strong><ul>
+<li><strong>打开文件首先进入命令模式</strong>，是使用 <code>vi</code> 的 <strong>入口</strong></li>
+<li>通过 <strong>命令</strong> 对文件进行常规的编辑操作，例如：<strong>定位</strong>、<strong>翻页</strong>、<strong>复制</strong>、<strong>粘贴</strong>、<strong>删除</strong>……</li>
+<li>在其他图形编辑器下，通过 <strong>快捷键</strong> 或者 <strong>鼠标</strong> 实现的操作，都在 <strong>命令模式</strong> 下实现</li>
+</ul>
+</li>
+<li><strong>末行模式</strong> —— 执行 <strong>保存</strong>、<strong>退出</strong> 等操作 <ul>
+<li>要退出 <code>vi</code> 返回到控制台，需要在末行模式下输入命令</li>
+<li><strong>末行模式</strong> 是 <code>vi</code> 的 <strong>出口</strong></li>
+</ul>
+</li>
+<li><strong>编辑模式</strong> —— 正常的编辑文字</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/aFHcVyB.png" alt="vi的模式"></p>
+<blockquote>
+<p>提示：在 <code>Touch Bar</code> 的 Mac 电脑上 ，按 <code>ESC</code> 不方便，可以使用 <code>CTRL + [</code> 替代</p>
+</blockquote>
+<h3 id="末行模式命令"><a href="#末行模式命令" class="headerlink" title="末行模式命令"></a>末行模式命令</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">write</td>
+<td>保存</td>
+</tr>
+<tr>
+<td style="text-align:center">q</td>
+<td style="text-align:center">quit</td>
+<td>退出，如果没有保存，不允许退出</td>
+</tr>
+<tr>
+<td style="text-align:center">q!</td>
+<td style="text-align:center">quit</td>
+<td>强行退出，不保存退出</td>
+</tr>
+<tr>
+<td style="text-align:center">wq</td>
+<td style="text-align:center">write &amp; quit</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+<td>保存并退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="04-常用命令"><a href="#04-常用命令" class="headerlink" title="04. 常用命令"></a>04. 常用命令</h2><h3 id="命令线路图"><a href="#命令线路图" class="headerlink" title="命令线路图"></a>命令线路图</h3><ol start="0">
+<li>重复次数<ul>
+<li>在命令模式下，<strong>先输入一个数字</strong>，<strong>再跟上一个命令</strong>，可以让该命令 <strong>重复执行指定次数</strong> </li>
+</ul>
+</li>
+<li>移动和选择（<strong>多练</strong>）<ul>
+<li><code>vi</code> 之所以快，关键在于 <strong>能够快速定位到要编辑的代码行</strong></li>
+<li><strong>移动命令</strong> 能够 和 <strong>编辑操作</strong> 命令 <strong>组合使用</strong></li>
+</ul>
+</li>
+<li>编辑操作<ul>
+<li><strong>删除</strong>、<strong>复制</strong>、<strong>粘贴</strong>、<strong>替换</strong>、<strong>缩排</strong></li>
+</ul>
+</li>
+<li>撤销和重复</li>
+<li>查找替换</li>
+<li>编辑</li>
+</ol>
+<h4 id="学习提示"><a href="#学习提示" class="headerlink" title="学习提示"></a>学习提示</h4><ol>
+<li><code>vi</code> 的命令较多，<strong>不要期望一下子全部记住</strong>，个别命令忘记了，只是会影响编辑速度而已</li>
+<li>在使用 <code>vi</code> 命令时，注意 <strong>关闭中文输入法</strong></li>
+</ol>
+<h3 id="4-1-移动（基本）"><a href="#4-1-移动（基本）" class="headerlink" title="4.1 移动（基本）"></a>4.1 移动（基本）</h3><ul>
+<li>要熟练使用 <code>vi</code>，首先应该学会怎么在 <strong>命令模式</strong> 下样快速移动光标</li>
+<li><strong>编辑操作命令</strong>，能够和 <strong>移动命令</strong> 结合在一起使用</li>
+</ul>
+<h4 id="1-上、下、左、右"><a href="#1-上、下、左、右" class="headerlink" title="1) 上、下、左、右"></a>1) 上、下、左、右</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+<th style="text-align:center">手指</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">h</td>
+<td>向左</td>
+<td style="text-align:center">食指</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td>向下</td>
+<td style="text-align:center">食指</td>
+</tr>
+<tr>
+<td style="text-align:center">k</td>
+<td>向上</td>
+<td style="text-align:center">中指</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td>向右</td>
+<td style="text-align:center">无名指</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.imgur.com/gCMx6F9.png" alt="移动光标"></p>
+<h4 id="2-行内移动"><a href="#2-行内移动" class="headerlink" title="2) 行内移动"></a>2) 行内移动</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">word</td>
+<td>向后移动一个单词</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">back</td>
+<td>向前移动一个单词</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center"></td>
+<td>行首</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center"></td>
+<td>行首，第一个不是空白字符的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center"></td>
+<td>行尾</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-行数移动"><a href="#3-行数移动" class="headerlink" title="3) 行数移动"></a>3) 行数移动</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">gg</td>
+<td style="text-align:center">go</td>
+<td>文件顶部</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">go</td>
+<td>文件末尾</td>
+</tr>
+<tr>
+<td style="text-align:center">数字gg</td>
+<td style="text-align:center">go</td>
+<td>移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td style="text-align:center">数字G</td>
+<td style="text-align:center">go</td>
+<td>移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td style="text-align:center">:数字</td>
+<td style="text-align:center"></td>
+<td>移动到 数字 对应行数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-屏幕移动"><a href="#4-屏幕移动" class="headerlink" title="4) 屏幕移动"></a>4) 屏幕移动</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ctrl + b</td>
+<td style="text-align:center">back</td>
+<td>向上翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + f</td>
+<td style="text-align:center">forward</td>
+<td>向下翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">Head</td>
+<td>屏幕顶部</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">Middle</td>
+<td>屏幕中间</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">Low</td>
+<td>屏幕底部</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-2-移动（程序）"><a href="#4-2-移动（程序）" class="headerlink" title="4.2 移动（程序）"></a>4.2 移动（程序）</h3><h4 id="1-段落移动"><a href="#1-段落移动" class="headerlink" title="1) 段落移动"></a>1) 段落移动</h4><ul>
+<li><code>vi</code> 中使用 空行 来区分段落</li>
+<li>在程序开发时，通常 <strong>一段功能相关的代码会写在一起</strong> —— 之间没有空行</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{</td>
+<td>上一段</td>
+</tr>
+<tr>
+<td style="text-align:center">}</td>
+<td>下一段</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-括号切换"><a href="#2-括号切换" class="headerlink" title="2) 括号切换"></a>2) 括号切换</h4><ul>
+<li>在程序世界中，<code>()</code>、<code>[]</code>、<code>{}</code> 使用频率很高，而且 <strong>都是成对出现的</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%</td>
+<td>括号匹配及切换</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-标记"><a href="#3-标记" class="headerlink" title="3) 标记"></a>3) 标记</h4><ul>
+<li>在开发时，某一块代码可能<strong>需要稍后处理</strong>，例如：编辑、查看</li>
+<li>此时先使用 <code>m</code> 增加一个标记，这样可以 <strong>在需要时快速地跳转回来</strong> 或者 <strong>执行其他编辑操作</strong></li>
+<li><strong>标记名称</strong> 可以是 <code>a~z</code> 或者 <code>A~Z</code> 之间的任意 <strong>一个</strong> 字母</li>
+<li>添加了标记的 <strong>行如果被删除</strong>，<strong>标记同时被删除</strong></li>
+<li>如果 <strong>在其他行添加了相同名称的标记</strong>，<strong>之前添加的标记也会被替换掉</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">mx</td>
+<td style="text-align:center">mark</td>
+<td>添加标记 x，x 是 a~z 或者 A~Z 之间的任意一个字母</td>
+</tr>
+<tr>
+<td style="text-align:center">‘x</td>
+<td style="text-align:center"></td>
+<td>直接定位到标记 x 所在位置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-3-选中文本（可视模式）"><a href="#4-3-选中文本（可视模式）" class="headerlink" title="4.3 选中文本（可视模式）"></a>4.3 选中文本（可视模式）</h3><ul>
+<li>学习 <code>复制</code> 命令前，应该先学会 <strong>怎么样选中 要复制的代码</strong></li>
+<li>在 <code>vi</code> 中要选择文本，需要先使用 <code>Visual</code> 命令切换到 <strong>可视模式</strong></li>
+<li><code>vi</code> 中提供了 <strong>三种</strong> 可视模式，可以方便程序员选择 <strong>选中文本的方式</strong></li>
+<li>按 <code>ESC</code> 可以放弃选中，返回到 <strong>命令模式</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>模式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">v</td>
+<td>可视模式</td>
+<td>从光标位置开始按照正常模式选择文本</td>
+</tr>
+<tr>
+<td style="text-align:center">V</td>
+<td>可视行模式</td>
+<td>选中光标经过的完整行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + v</td>
+<td>可视块模式</td>
+<td>垂直方向选中文本</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>可视模式</strong>下，可以和 <strong>移动命令</strong> 连用，例如：<code>ggVG</code> 能够选中所有内容</li>
+</ul>
+<h3 id="4-4-撤销和恢复撤销"><a href="#4-4-撤销和恢复撤销" class="headerlink" title="4.4 撤销和恢复撤销"></a>4.4 撤销和恢复撤销</h3><ul>
+<li>在学习编辑命令之前，先要知道怎样撤销之前一次 <strong>错误的</strong> 编辑动作！</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">undo</td>
+<td>撤销上次命令</td>
+</tr>
+<tr>
+<td style="text-align:center">CTRL + r</td>
+<td style="text-align:center">redo</td>
+<td>恢复撤销的命令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-5-删除文本"><a href="#4-5-删除文本" class="headerlink" title="4.5 删除文本"></a>4.5 删除文本</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">cut</td>
+<td>删除光标所在字符，或者选中文字</td>
+</tr>
+<tr>
+<td style="text-align:center">d(移动命令)</td>
+<td style="text-align:center">delete</td>
+<td>删除移动命令对应的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">dd</td>
+<td style="text-align:center">delete</td>
+<td>删除光标所在行，可以 ndd 复制多行</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">delete</td>
+<td>删除至行尾</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：如果使用 <strong>可视模式</strong> 已经选中了一段文本，那么无论使用 <code>d</code> 还是 <code>x</code>，都可以删除选中文本</p>
+</blockquote>
+<ul>
+<li>删除命令可以和 <strong>移动命令</strong> 连用，以下是常见的组合命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* dw        # 从光标位置删除到单词末尾</span><br><span class="line">* d0        # 从光标位置删除到一行的起始位置</span><br><span class="line">* d&#125;        # 从光标位置删除到段落结尾</span><br><span class="line">* ndd       # 从光标位置向下连续删除 n 行</span><br><span class="line">* d代码行G   # 从光标所在行 删除到 指定代码行 之间的所有代码</span><br><span class="line">* d&apos;a       # 从光标所在行 删除到 标记a 之间的所有代码</span><br></pre></td></tr></table></figure>
+<h3 id="4-6-复制、粘贴"><a href="#4-6-复制、粘贴" class="headerlink" title="4.6 复制、粘贴"></a>4.6 复制、粘贴</h3><ul>
+<li><code>vi</code> 中提供有一个 <strong>被复制文本的缓冲区</strong><ul>
+<li><strong>复制</strong> 命令会将选中的文字保存在缓冲区 </li>
+<li><strong>删除</strong> 命令删除的文字会被保存在缓冲区</li>
+<li>在需要的位置，使用 <strong>粘贴</strong> 命令可以将缓冲区的文字插入到光标所在位置</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">y(移动命令)</td>
+<td style="text-align:center">copy</td>
+<td>复制</td>
+</tr>
+<tr>
+<td style="text-align:center">yy</td>
+<td style="text-align:center">copy</td>
+<td>复制一行，可以 nyy 复制多行</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">paste</td>
+<td>粘贴</td>
+</tr>
+</tbody>
+</table>
+<p><strong>提示</strong></p>
+<ul>
+<li>命令 <code>d</code>、<code>x</code> 类似于图形界面的 <strong>剪切操作</strong> —— <code>CTRL + X</code></li>
+<li>命令 <code>y</code> 类似于图形界面的 <strong>复制操作</strong> —— <code>CTRL + C</code></li>
+<li>命令 <code>p</code> 类似于图形界面的 <strong>粘贴操作</strong> —— <code>CTRL + V</code></li>
+<li><code>vi</code> 中的 <strong>文本缓冲区同样只有一个</strong>，如果后续做过 <strong>复制、剪切</strong> 操作，之前缓冲区中的内容会被替换</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>vi</code> 中的 <strong>文本缓冲区</strong> 和系统的 <strong>剪贴板</strong> 不是同一个</li>
+<li>所以在其他软件中使用 <code>CTRL + C</code> 复制的内容，不能在 <code>vi</code> 中通过 <code>P</code> 命令粘贴</li>
+<li>可以在 <strong>编辑模式</strong> 下使用 <strong>鼠标右键粘贴</strong></li>
+</ul>
+<h3 id="4-7-替换"><a href="#4-7-替换" class="headerlink" title="4.7 替换"></a>4.7 替换</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+<th>工作模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">replace</td>
+<td>替换当前字符</td>
+<td>命令模式</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">replace</td>
+<td>替换当前行光标后的字符</td>
+<td>替换模式</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>R</code> 命令可以进入 <strong>替换模式</strong>，替换完成后，按下 <code>ESC</code> 可以回到 <strong>命令模式</strong></li>
+<li><strong>替换命令</strong> 的作用就是不用进入 <strong>编辑模式</strong>，对文件进行 <strong>轻量级的修改</strong></li>
+</ul>
+<h3 id="4-8-缩排和重复执行"><a href="#4-8-缩排和重复执行" class="headerlink" title="4.8 缩排和重复执行"></a>4.8 缩排和重复执行</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td>向右增加缩进</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td>向左减少缩进</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td>重复上次命令</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>缩排命令</strong> 在开发程序时，<strong>统一增加代码的缩进</strong> 比较有用！<ul>
+<li>一次性 <strong>在选中代码前增加 4 个空格</strong>，就叫做 <strong>增加缩进</strong></li>
+<li>一次性 <strong>在选中代码前删除 4 个空格</strong>，就叫做 <strong>减少缩进</strong></li>
+</ul>
+</li>
+<li>在 <strong>可视模式</strong> 下，缩排命令只需要使用 <strong>一个</strong> <code>&gt;</code> 或者 <code>&lt;</code> </li>
+</ul>
+<blockquote>
+<p>在程序中，<strong>缩进</strong> 通常用来表示代码的归属关系</p>
+<ul>
+<li>前面空格越少，代码的级别越高</li>
+<li>前面空格越多，代码的级别越低</li>
+</ul>
+</blockquote>
+<h3 id="4-9-查找"><a href="#4-9-查找" class="headerlink" title="4.9 查找"></a>4.9 查找</h3><h4 id="常规查找"><a href="#常规查找" class="headerlink" title="常规查找"></a>常规查找</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/str</td>
+<td>查找 str</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>查找到指定内容之后，使用 <code>Next</code> 查找下一个出现的位置：<ul>
+<li><code>n</code>: 查找下一个</li>
+<li><code>N</code>: 查找上一个</li>
+</ul>
+</li>
+<li>如果不想看到高亮显示，可以随便查找一个文件中不存在的内容即可</li>
+</ul>
+<h4 id="单词快速匹配"><a href="#单词快速匹配" class="headerlink" title="单词快速匹配"></a>单词快速匹配</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td>向后查找当前光标所在单词</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td>向前查找当前光标所在单词</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在开发中，通过单词快速匹配，可以快速看到这个单词在其他什么位置使用过</li>
+</ul>
+<h3 id="4-10-查找并替换"><a href="#4-10-查找并替换" class="headerlink" title="4.10 查找并替换"></a>4.10 查找并替换</h3><ul>
+<li>在 <code>vi</code> 中查找和替换命令需要在 <strong>末行模式</strong> 下执行</li>
+<li>记忆命令格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s///g</span><br></pre></td></tr></table></figure>
+<h4 id="1-全局替换"><a href="#1-全局替换" class="headerlink" title="1) 全局替换"></a>1) 全局替换</h4><ul>
+<li><strong>一次性</strong>替换文件中的 <strong>所有出现的旧文本</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/旧文本/新文本/g</span><br></pre></td></tr></table></figure>
+<h4 id="2-可视区域替换"><a href="#2-可视区域替换" class="headerlink" title="2) 可视区域替换"></a>2) 可视区域替换</h4><ul>
+<li><strong>先选中</strong> 要替换文字的 <strong>范围</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/旧文本/新文本/g</span><br></pre></td></tr></table></figure>
+<h4 id="3-确认替换"><a href="#3-确认替换" class="headerlink" title="3) 确认替换"></a>3) 确认替换</h4><ul>
+<li>如果把末尾的 <code>g</code> 改成 <code>gc</code> 在替换的时候，会有提示！<strong>推荐使用！</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/旧文本/新文本/gc</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>y</code> - <code>yes</code> 替换</li>
+<li><code>n</code> - <code>no</code> 不替换</li>
+<li><code>a</code> - <code>all</code> 替换所有</li>
+<li><code>q</code> - <code>quit</code> 退出替换</li>
+<li><code>l</code> - <code>last</code> 最后一个，并把光标移动到行首</li>
+<li><code>^E</code> 向下滚屏</li>
+<li><code>^Y</code> 向上滚屏</li>
+</ol>
+<h3 id="4-11-插入命令"><a href="#4-11-插入命令" class="headerlink" title="4.11 插入命令"></a>4.11 插入命令</h3><ul>
+<li>在 <code>vi</code> 中除了常用的 <code>i</code> 进入 <strong>编辑模式</strong> 外，还提供了以下命令同样可以进入编辑模式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+<th style="text-align:center">常用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">insert</td>
+<td>在当前字符前插入文本</td>
+<td style="text-align:center">常用</td>
+</tr>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">insert</td>
+<td>在行首插入文本</td>
+<td style="text-align:center">较常用</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">append</td>
+<td>在当前字符后添加文本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">append</td>
+<td>在行末添加文本</td>
+<td style="text-align:center">较常用</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center"></td>
+<td>在当前行后面插入一空行</td>
+<td style="text-align:center">常用</td>
+</tr>
+<tr>
+<td style="text-align:center">O</td>
+<td style="text-align:center"></td>
+<td>在当前行前面插入一空行</td>
+<td style="text-align:center">常用</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.imgur.com/GwvwdGM.png" alt="插入命令"></p>
+<h4 id="演练-1-——-编辑命令和数字连用"><a href="#演练-1-——-编辑命令和数字连用" class="headerlink" title="演练 1 —— 编辑命令和数字连用"></a>演练 1 —— 编辑命令和数字连用</h4><ul>
+<li>在开发中，可能会遇到连续输入 <code>N</code> 个同样的字符</li>
+</ul>
+<blockquote>
+<p>在 <code>Python</code> 中有简单的方法，但是其他语言中通常需要自己输入</p>
+</blockquote>
+<ul>
+<li>例如：<code>**********</code> 连续 10 个星号</li>
+</ul>
+<p>要实现这个效果可以在 <strong>命令模式</strong> 下</p>
+<ol>
+<li>输入 <code>10</code>，表示要重复 10 次</li>
+<li>输入 <code>i</code> 进入 <strong>编辑模式</strong></li>
+<li>输入 <code>*</code> 也就是重复的文字</li>
+<li>按下 <code>ESC</code> 返回到 <strong>命令模式</strong>，返回之后 <code>vi</code> 就会把第 <code>2、3</code> 两步的操作重复 <code>10</code> 次</li>
+</ol>
+<blockquote>
+<p>提示：正常开发时，在 <strong>进入编辑模式之前，不要按数字</strong></p>
+</blockquote>
+<h4 id="演练-2-——-利用-可视块-给多行代码增加注释"><a href="#演练-2-——-利用-可视块-给多行代码增加注释" class="headerlink" title="演练 2 —— 利用 可视块 给多行代码增加注释"></a>演练 2 —— 利用 可视块 给多行代码增加注释</h4><ul>
+<li>在开发中，可能会遇到一次性给多行代码 <strong>增加注释</strong> 的情况</li>
+</ul>
+<blockquote>
+<p>在 <code>Python</code> 中，要给代码增加注释，可以在代码前增加一个 <code>#</code></p>
+</blockquote>
+<p>要实现这个效果可以在 <strong>命令模式</strong> 下</p>
+<ol>
+<li>移动到要添加注释的 <strong>第 1 行代码</strong>，按 <code>^</code> 来到行首</li>
+<li>按 <code>CTRL + v</code> 进入 <strong>可视块</strong> 模式</li>
+<li>使用 <code>j</code> 向下连续选中要添加的代码行</li>
+<li>输入 <code>I</code> 进入 <strong>编辑模式</strong>，并在 <strong>行首插入</strong>，注意：一定要使用 <strong>I</strong></li>
+<li>输入 <code>#</code> 也就是注释符号</li>
+<li>按下 <code>ESC</code> 返回到 <strong>命令模式</strong>，返回之后 <code>vi</code> 会在之前选中的每一行代码 <strong>前</strong> 插入 <code>#</code></li>
+</ol>
+<h2 id="05-分屏命令"><a href="#05-分屏命令" class="headerlink" title="05. 分屏命令"></a>05. 分屏命令</h2><ul>
+<li>属于 <code>vi</code> 的高级命令 —— 可以 <strong>同时编辑和查看多个文件</strong></li>
+</ul>
+<h3 id="5-1-末行命令扩展"><a href="#5-1-末行命令扩展" class="headerlink" title="5.1 末行命令扩展"></a>5.1 末行命令扩展</h3><p><strong>末行命令</strong> 主要是针对文件进行操作的：<strong>保存</strong>、<strong>退出</strong>、<strong>保存&amp;退出</strong>、<strong>搜索&amp;替换</strong>、<strong>另存</strong>、<strong>新建</strong>、<strong>浏览文件</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:e .</td>
+<td style="text-align:center">edit</td>
+<td>会打开内置的文件浏览器，浏览要当前目录下的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">:n 文件名</td>
+<td style="text-align:center">new</td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td style="text-align:center">:w 文件名</td>
+<td style="text-align:center">write</td>
+<td>另存为，但是仍然编辑当前文件，并不会切换文件</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：切换文件之前，必须保证当前这个文件已经被保存！</p>
+</blockquote>
+<ul>
+<li>已经学习过的 <strong>末行命令</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:w</td>
+<td style="text-align:center">write</td>
+<td>保存</td>
+</tr>
+<tr>
+<td style="text-align:center">:q</td>
+<td style="text-align:center">quit</td>
+<td>退出，如果没有保存，不允许退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:q!</td>
+<td style="text-align:center">quit</td>
+<td>强行退出，不保存退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:wq</td>
+<td style="text-align:center">write &amp; quit</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:x</td>
+<td style="text-align:center"></td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:%s///gc</td>
+<td style="text-align:center"></td>
+<td>确认搜索并替换</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在实际开发中，可以使用 <code>w</code> 命令 <strong>阶段性的备份代码</strong></p>
+</blockquote>
+<h3 id="5-2-分屏命令"><a href="#5-2-分屏命令" class="headerlink" title="5.2 分屏命令"></a>5.2 分屏命令</h3><ul>
+<li>使用 <strong>分屏命令</strong>，可以 <strong>同时编辑和查看多个文件</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:sp [文件名]</td>
+<td style="text-align:center">split</td>
+<td>横向增加分屏</td>
+</tr>
+<tr>
+<td style="text-align:center">:vsp [文件名]</td>
+<td style="text-align:center">vertical split</td>
+<td>纵向增加分屏</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-切换分屏窗口"><a href="#1-切换分屏窗口" class="headerlink" title="1) 切换分屏窗口"></a>1) 切换分屏窗口</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">window</td>
+<td>切换到下一个窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">reverse</td>
+<td>互换窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">close</td>
+<td>关闭当前窗口，但是不能关闭最后一个窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">q</td>
+<td style="text-align:center">quit</td>
+<td>退出当前窗口，如果是最后一个窗口，则关闭 vi</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">other</td>
+<td>关闭其他窗口</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-调整窗口大小"><a href="#2-调整窗口大小" class="headerlink" title="2) 调整窗口大小"></a>2) 调整窗口大小</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center"></td>
+<td>增加窗口高度</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center"></td>
+<td>减少窗口高度</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center"></td>
+<td>增加窗口宽度</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center"></td>
+<td>减少窗口宽度</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center"></td>
+<td>等分窗口大小</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>调整窗口宽高的命令可以和数字连用，例如：<code>5 CTRL + W +</code> 连续 5 次增加高度</p>
+</blockquote>
+<h2 id="06-常用命令速查图"><a href="#06-常用命令速查图" class="headerlink" title="06. 常用命令速查图"></a>06. 常用命令速查图</h2><p><img src="https://i.imgur.com/r7c7iDL.png" alt="vim"></p>
+<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><ul>
+<li><code>vimrc</code> 是 <code>vim</code> 的配置文件，可以设置 vim 的配置，包括：<strong>热键</strong>、<strong>配色</strong>、<strong>语法高亮</strong>、<strong>插件</strong> 等</li>
+<li><code>Linux</code> 中 <code>vimrc</code> 有两个位置，<strong>家目录下的配置文件优先级更高</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/vim/vimrc</span><br><span class="line">~/.vimrc</span><br></pre></td></tr></table></figure>
+<ul>
+<li>常用的插件有：<ul>
+<li>代码补全</li>
+<li>代码折叠</li>
+<li>搜索</li>
+<li>Git 集成</li>
+<li>……</li>
+</ul>
+</li>
+<li>网上有很多高手已经配置好的针对 <code>python</code> 开发的 <code>vimrc</code> 文件，可以下载过来直接使用，或者等大家多 <code>Linux</code> 比较熟悉后，再行学习！</li>
+</ul>
+
+          
+        
+      
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-11-02</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/渗透测试/" class="color5">渗透测试</a>
-      
-  </li>
+    
+    
+    
 
-        </ul>
-        
-            <a href="/2018/11/02/web应用渗透测试流程/#more" class="article-more-link" >more&gt;&gt;</a>
-        
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-php可变个数参数的函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/11/02/web应用渗透测试流程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php可变个数参数的函数/"  >php可变个数参数的函数</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/02/web应用渗透测试流程/" itemprop="url">Web应用渗透测试流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-02T12:24:12+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php可变个数参数的函数/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php可变个数参数的函数" title="php可变个数参数的函数">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                php可变个数参数的函数php获取可变函数参数的函数php取得可变函数参数，方便后面的控制。
-func_num_args()返回传递给该函数参数的个数
-func_get_arg($arg_num)取得指定位置的参数值，$arg_num位置index从0开始到n-1。
-fun_get_args()返回包含所有参数的数组
 
-            </p>
-        </div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         
+          
+            <h2 id="Web应用渗透测试"><a href="#Web应用渗透测试" class="headerlink" title="Web应用渗透测试"></a>Web应用渗透测试</h2><p>对于web应用的测试，一般分为三个阶段：信息收集、漏洞发现以及漏洞利用。</p>
+<h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>在信息收集阶段，我们需要尽量多的收集关于目标web应用的各种信息，比如：脚本语言的类型、服务器的类型、目录结构、使用的开源软件、数据库类型、所有链接页面，用到的框架等。<br></p>
+<h4 id="脚本语言的类型"><a href="#脚本语言的类型" class="headerlink" title="脚本语言的类型"></a>脚本语言的类型</h4><p>常见的脚本语言的类型包括：php、asp、aspx、jsp等。<br><br><strong>测试方法</strong><br></p>
+<ol>
+<li>爬取网站所有链接，查看后缀</li>
+<li>直接访问一个不存在页面后面加不同后缀测试</li>
+<li>查看robots.txt，查看后缀</li>
+</ol>
+<h4 id="服务器的类型"><a href="#服务器的类型" class="headerlink" title="服务器的类型"></a>服务器的类型</h4><p>常见的web服务器包括：apache、tomcat、iis、ngnix等<br><br><strong>测试方法</strong><br></p>
+<ol>
+<li>查看header，判断服务器类型</li>
+<li>根据报错信息判断</li>
+<li>根据默认页面判断<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4>了解更多的目录，可能发现更多的弱点，如：目录浏览、代码泄漏等。<br><br><strong>测试方法</strong></li>
+<li>使用字典枚举目录</li>
+<li>使用爬虫爬取整个网站，或者使用google等搜索引擎获取</li>
+<li>查看robots.txt是否泄漏<h4 id="使用的开源软件"><a href="#使用的开源软件" class="headerlink" title="使用的开源软件"></a>使用的开源软件</h4>我们如果知道了目标使用的开源软件，我们查找相关的软件的漏洞直接对网站进行测试。<br><br><strong>测试方法</strong><br><br>指纹识别(网上在线的指纹识别工具，例：<em>云溪指纹识别</em>)</li>
+</ol>
+<h4 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h4><p>对于不同的数据库，有不同的测试方法。<br><br><strong>测试方法</strong><br></p>
+<ol>
+<li>使用应用程序报错，查看报错信息</li>
+<li>扫描服务器的数据库端口（没做NAT且防火墙不过滤时有效）<h4 id="所有链接页面"><a href="#所有链接页面" class="headerlink" title="所有链接页面"></a>所有链接页面</h4>这个跟前面的获取目录结构类似，但是这个不是获取网站的所有功能页面，有时候还可以获取到管理员备份的源码。<br><br><strong>测试方法</strong><br></li>
+<li>使用字典枚举页面</li>
+<li>使用爬虫爬取整个网站，或者使用google等搜索引擎获取</li>
+<li>查看robots.txt是否泄漏<h4 id="用到的框架"><a href="#用到的框架" class="headerlink" title="用到的框架"></a>用到的框架</h4>很多网站都利用开源的框架来快速开发网站，所以收集网站的框架信息也是非常关键的。<br><br><strong>测试方法</strong><br><br>指纹识别<br><strong>漏洞发现</strong><br><br>在这个阶段我们在做测试的时候要对症下药，不能盲目的去扫描，首先要确定目标应用是否使用的是公开的开源软件、开源框架等，然后在做深一度的漏洞扫描。<h4 id="关于开源软件的漏洞发现"><a href="#关于开源软件的漏洞发现" class="headerlink" title="关于开源软件的漏洞发现"></a>关于开源软件的漏洞发现</h4><strong>开源软件</strong><br><br>常见的开源软件有：wordpress、phpbb、dedecms等。<br><br><strong>开源的框架</strong><br><br>常见的开源框架有：struts2、spring MVC、thinkPHP等。<br><br><strong>中间件服务器</strong><br><br>常见的中间件服务器有：jboss、tomcat、Weblogic等。<br><br><strong>数据库服务</strong><br><br>常见的数据库服务：mssql、mysql、oracle、redis、sybase、MongoDB、DB2等。<br><br><strong>对开源软件的测试方法</strong><br></li>
+<li>通过指纹识别软件判断开源的版本信息，针对不同的版本信息去开放的漏洞数据库查找相应版本的漏洞进行测试</li>
+<li>对于默认的后台登入页、数据库服务端口认证等入口可以进行简单的暴力破解、默认口令尝试等操作。</li>
+<li>使用开源的漏洞发现工具对其进行漏洞扫描，如：WPScan<h4 id="关于自主开发的应用"><a href="#关于自主开发的应用" class="headerlink" title="关于自主开发的应用"></a>关于自主开发的应用</h4><strong>手动测试</strong><br>这个阶段，我们需要手工测试所有与用户交互的功能，比如：留言、登入、下单、退出、退货、付款等操作。<br><br><strong>软件扫描</strong><br><br>使用免费的软件扫描，如：appscan、wvs、netsparker、burp等<br><br><strong>漏洞利用</strong><br><br>这种方式对于有特殊过滤等操作，或者网络上没有成型的利用工具的时候可以使用，在熟练之后，自己也可以写出自己的利用工具代替手工操作，毕竟手工操作是非常累的。有时候可以结合服务器的配置问题，增加成功率。</li>
+</ol>
+
+          
+        
+      
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
+    
+    
+    
 
-        </ul>
-        
-            <a href="/2018/10/25/php可变个数参数的函数/#more" class="article-more-link" >more&gt;&gt;</a>
-        
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-php可变变量" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php可变个数参数的函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php可变变量/"  >php可变变量</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php可变个数参数的函数/" itemprop="url">php可变个数参数的函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php可变变量/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php可变变量" title="php可变变量">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                php可变变量将变量名储存到另一个变量中
-123456&lt;?phpheader("content-type:text/html;charset=utf-8");	$a="我是一个变量！";	$b='a';	$echo $$b;?&gt;
-$$b:$b里保存的是变量a，$a=&quot;我是一个变量！&quot;，所以$$b的值是&quot;我是一个变量！&quot;
-...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
 
-        </ul>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-            <a href="/2018/10/25/php可变变量/#more" class="article-more-link" >more&gt;&gt;</a>
+          
+            <h4 id="php可变个数参数的函数"><a href="#php可变个数参数的函数" class="headerlink" title="php可变个数参数的函数"></a>php可变个数参数的函数</h4><h5 id="php获取可变函数参数的函数"><a href="#php获取可变函数参数的函数" class="headerlink" title="php获取可变函数参数的函数"></a>php获取可变函数参数的函数</h5><p>php取得可变函数参数，方便后面的控制。</p>
+<p>func_num_args()返回传递给该函数参数的个数</p>
+<p>func_get_arg($arg_num)取得指定位置的参数值，$arg_num位置index从0开始到n-1。</p>
+<p>fun_get_args()返回包含所有参数的数组</p>
+
+          
         
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-php静态变量" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php可变变量/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php静态变量/"  >php静态变量</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php可变变量/" itemprop="url">php可变变量</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php静态变量/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php静态变量" title="php静态变量">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                php静态变量Static（静态）关键字
-1.在函数中声明的静态变量，只在调用时声明。2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。static...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
 
-        </ul>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-            <a href="/2018/10/25/php静态变量/#more" class="article-more-link" >more&gt;&gt;</a>
+          
+            <h3 id="php可变变量"><a href="#php可变变量" class="headerlink" title="php可变变量"></a>php可变变量</h3><pre><code>将变量名储存到另一个变量中
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">header(<span class="string">"content-type:text/html;charset=utf-8"</span>);</span><br><span class="line">	$a=<span class="string">"我是一个变量！"</span>;</span><br><span class="line">	$b=<span class="string">'a'</span>;</span><br><span class="line">	$echo $$b;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>$$b:$b里保存的是变量a，$a=&quot;我是一个变量！&quot;，所以$$b的值是&quot;我是一个变量！&quot;
+
+多学一招：变量中不但可以保存变量名，还可以保存函数名。
+</code></pre>
+          
         
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-php进制" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php静态变量/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php进制/"  >php进制</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php静态变量/" itemprop="url">php静态变量</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <div class="article-img">
-            <a href="/2018/10/25/php进制/" >
+      
+
+      
+        
+          
+            <h3 id="php静态变量"><a href="#php静态变量" class="headerlink" title="php静态变量"></a>php静态变量</h3><pre><code>Static（静态）关键字
+</code></pre><p>1.在函数中声明的静态变量，只在调用时声明。<br><br>2.第二次以后，一看是静态变量，就先到静态区中，看一下有没有这个变量，如果有就使用，而不去再声明。<br><br>3.静态变量 ，在同一个函数多次调用中，共享把局部变量改变为静态变量后是改变了它的存储方式，即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域，限制了它的使用范围。<br><br>static静态变量会被放在程序的全局存储区中（即在程序的全局数据区，而不是在堆栈中分配，所以不会导致堆栈溢出），这样可以在下一次调用的时候还可以保持原来的赋值。这一点是它与堆栈变量和堆变量的区别。</p>
+<pre><code>代码示例：
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//--------------如何理解static静态变量-----------</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/** 普通局部变量 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">local</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $loc = <span class="number">0</span>; <span class="comment">//这样，如果直接不给初值0是错误的。</span></span><br><span class="line">    ++$loc;</span><br><span class="line">    <span class="keyword">echo</span> $loc . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line">local(); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'===================================&lt;br/&gt;'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/** static静态局部变量 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">static_local</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> $local = <span class="number">0</span> ; <span class="comment">//此处可以不赋0值</span></span><br><span class="line">    $local++;</span><br><span class="line">    <span class="keyword">echo</span> $local . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">static_local(); <span class="comment">//1</span></span><br><span class="line">static_local(); <span class="comment">//2</span></span><br><span class="line">static_local(); <span class="comment">//3</span></span><br><span class="line"><span class="comment">//echo $local; 注意虽然静态变量，但是它仍然是局部的，在外不能直接访问的。</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'=======================================&lt;br&gt;'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/** static静态全局变量(实际上:全局变量本身就是静态存储方式,所有的全局变量都是静态变量) */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">static_global</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">global</span> $glo; <span class="comment">//此处，可以不赋值0，当然赋值0，后每次调用时其值都为0，每次调用函数得到的值都会是1，但是不能想</span></span><br><span class="line"><span class="comment">//当然的写上"static"加以修饰，那样是错误的.</span></span><br><span class="line">    $glo++;</span><br><span class="line">    <span class="keyword">echo</span> $glo . <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">static_global(); <span class="comment">//1</span></span><br><span class="line">static_global(); <span class="comment">//2</span></span><br><span class="line">static_global(); <span class="comment">//3</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="静态局部变量："><a href="#静态局部变量：" class="headerlink" title="静态局部变量："></a>静态局部变量：</h5><p>  1.static类型的内部变量同auto自动变量（即未加static声明的局部变量）一样，是某个特定函数的局部变量，即只能在定义该变量的函数内使用该变量，两者作用域相同；两者的不同在于：<strong>auto自动变量会随着函数被调用和退出而存在和消失，而static类局部变量不会，它不管其所在的函数是否被调用，都将一直存在；不过，尽管该变量还继续存在，但不能使用它。</strong>倘若再次调用定义它的函数时，它又可继续使用，而且保存了前次被调用后的值。换言之，<strong><em>static类型的局部变量是一种只能在某个特定函数中使用，但一直占据储存空间的变量。</em></strong></p>
+<p>  2.函数体内如果在定义静态变量的同时进行了初始化，则以后程序不在进行初始化操作（出现在函数内部的基本类型的静态变量初始化语句只有在第一次调用才执行）。而对自动变量赋初值是在函数调用时进行，每调用一次函数重新给一次初值3，相当于执行一次赋值语句。</p>
+<p>  3.静态局部变量的初始化表达式必须是一个常量表达式。即使局部静态变量定义时没有赋初值，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php进制/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php进制" title="php进制">
-                
-            </a>
+                <a class="post-title-link" href="/2018/10/25/php进制/" itemprop="url">php进制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="article-feed">
-            <p>
-                php进制关于进制的表格：
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
 
-进制
-缩写
-单词
-
-
-
-
-十进制
-dec
-decimalist
-
-
-八进制
-oct
-otconary
-
-
-二进制
-bin
-binary
-
-
-十六进制
-hex
-hexadecimal
-
-
-
-php进制转换函数：
-decbin()--------十进制 转 二进制
+      
+        
+          
+            <h4 id="php进制"><a href="#php进制" class="headerlink" title="php进制"></a>php进制</h4><p><strong>关于进制的表格：</strong></p>
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th style="text-align:center">缩写</th>
+<th style="text-align:right">单词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>十进制</td>
+<td style="text-align:center">dec</td>
+<td style="text-align:right">decimalist</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td style="text-align:center">oct</td>
+<td style="text-align:right">otconary</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td style="text-align:center">bin</td>
+<td style="text-align:right">binary</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td style="text-align:center">hex</td>
+<td style="text-align:right">hexadecimal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>php进制转换函数：</strong><br></p>
+<pre><code>decbin()--------十进制 转 二进制
 decoct()--------十进制 转 八进制
-bindec()-----...
-            </p>
-        </div>
-      
+bindec()--------二进制 转 十进制
+</code></pre><p>我们发现缩写组合一下就是 <em>什么进制</em> 转 <em>什么进制</em>。<br></p>
+<p>php变量中可以存十进制、八进制、十六进制。<br></p>
+<p>php变量5.4之前版本<strong>不能</strong>储存 二进制。</p>
+<p><strong>php进制变量声明：</strong></p>
+<pre><code>$a = 123 //十进制
+$a = 023 //八进制
+$a = 0x1A //十六进制
+</code></pre>
+          
         
+      
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
+    
+    
+    
 
-        </ul>
-        
-            <a href="/2018/10/25/php进制/#more" class="article-more-link" >more&gt;&gt;</a>
-        
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
-
-
   
-    <article id="post-php回调函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
+  </article>
+
+
     
-      <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php回调函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php回调函数/"  >php回调函数</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php回调函数/" itemprop="url">php回调函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
-      </header>
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php回调函数/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php回调函数" title="php回调函数">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                php回调函数回调函数：Callback（即call then back 被主函数调用运算后会返回主函数），是指通过函数参数传递到其他代码的，某一块可执行代码的引用。通俗的解释就是把函数作为参数传入进；另一个函数中使用；php中有许多“需求参数为函数”的函数，像array_map,usort,call_user_func_array之类，它们执行传入函数，然后直接将结果返...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
-
-        </ul>
-        
-            <a href="/2018/10/25/php回调函数/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-php访问控制" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php访问控制/"  >php访问控制</a>
-    </h1>
-  
 
           
-      </header>
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php访问控制/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php访问控制" title="php访问控制">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                访问控制（可见性）
-对属性或方法的访问控制，是通过在前面添加关键字public（公有），protected（受保护）或private（私有）来实现的。被定义为公有的类成员可以在任何地方被访问。被定义为受保护的类成员则可以被其自身以及其子类和父类访问。被定义为私有的类成员则只能被其定义所在的类访问。
-属性的访问控制
-类属性必须定义为公有，受保护，私有之一。如果用var定义，...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-    <a href="/tags/public（公有）/" class="color1">public（公有）</a>
-      
-    <a href="/tags/protected（受保护）/" class="color5">protected（受保护）</a>
-      
-    <a href="/tags/private（私有）/" class="color2">private（私有）</a>
-      
-  </li>
-
-        </ul>
-        
-            <a href="/2018/10/25/php访问控制/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-php递归" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/php递归/"  >php递归</a>
-    </h1>
-  
+          
 
           
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2018/10/25/php递归/" >
-                
-                <img src="https://feng4.github.io/images/banner.jpg" alt="php递归" title="php递归">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                什么是php递归函数？递归函数即自动调用函数，在函数体内部直接或者间接的自己调用自己，即函数的嵌套调用是函数本身。通常在此类型的函数题之中会附加一个条件判断叙述，以判断是否需要执行递归调用，并且在特定的条件下终止函数的递归调用动作，把目前流程的主控制权回到上一层函数来执行。从此，当某个执行递归调用的函数没有附加条件判断叙述时，可能会造成无限循环的错误情形。函数递归调用最大...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2018-10-25</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/php学习/" class="color1">php学习</a>
-      
-  </li>
 
-        </ul>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-            <a href="/2018/10/25/php递归/#more" class="article-more-link" >more&gt;&gt;</a>
+          
+            <h4 id="php回调函数"><a href="#php回调函数" class="headerlink" title="php回调函数"></a>php回调函数</h4><p>回调函数：Callback（即call then back 被主函数调用运算后会返回主函数），是指通过函数参数传递到其他代码的，某一块可执行代码的引用。<br><br>通俗的解释就是把函数作为参数传入进；另一个函数中使用；php中有许多“需求参数为函数”的函数，像array_map,usort,call_user_func_array之类，它们执行传入函数，<br>然后直接将结果返回主函数。好处是函数作为值使用起来方便，而且代码简洁，可读性强。</p>
+<h4 id="php中回调函数的实现"><a href="#php中回调函数的实现" class="headerlink" title="php中回调函数的实现"></a>php中回调函数的实现</h4><p> php提供了两个内置函数call_user_func()和call_user_func_array()提供对回调函数的支持。这两个函数的区别是<br><br>call_user_func_array是以数组的形式接收回调函数的参数的，看它的原型就知道了：mixed call_user_func_array(callable $callback,array $param_arr),它只有两个参数。<br><br>而call_user_func($callback,参数1,,参数2,…)的参数个数根据回调函数的参数来决定的。<br></p>
+<p> 如何实现对脚本中全局函数、类中未使用$this的非静态方法、类中使用$this的非静态方法（需要传入对象）、类中静态方法的回调呢？<br></p>
+<p> 实例代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="comment">//普通函数</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">($arg1,$arg2)</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">__FUNCTION__</span>.<span class="string">'exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//通过call_user_func调用函数f1</span></span><br><span class="line">	call_user_func(<span class="string">'f1'</span>,<span class="string">'han'</span>,<span class="string">'wen'</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//通过call_user_func_array调用函数</span></span><br><span class="line">	call_user_func_array(<span class="string">'f1'</span>,<span class="keyword">array</span>(<span class="string">'han'</span>,<span class="string">'wen'</span>));</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">	</span>&#123;</span><br><span class="line">		<span class="keyword">public</span> $name;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">($arg1)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">'the arg is:'</span>.$arg1.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">'my name is:'</span>.<span class="keyword">$this</span>-&gt;name;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">show1</span><span class="params">($arg1,$arg2)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="keyword">__METHOD__</span>.<span class="string">'exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">show2</span><span class="params">($arg1,$arg2)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="keyword">__METHOD__</span>.<span class="string">'of class A exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//调用类中非静态成员函数，该成员函数中有$this调用了对象中的成员</span></span><br><span class="line">	$a = <span class="keyword">new</span> A;</span><br><span class="line">	$a-&gt;name = <span class="string">'wen'</span>;</span><br><span class="line">	call_user_func_array(<span class="keyword">array</span>($a,<span class="string">'show'</span>),<span class="keyword">array</span>(<span class="string">'han!'</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//调用类中非静态成员函数，没有对象被创建，该成员函数中不能有$this</span></span><br><span class="line">	call_user_func_array(<span class="keyword">array</span>(<span class="string">'A'</span>,<span class="string">'show1'</span>),<span class="keyword">array</span>(<span class="string">'an!'</span>,<span class="string">'wen'</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//调用中静态成员函数</span></span><br><span class="line">	call_user_func_array(<span class="keyword">array</span>(<span class="string">'A'</span>,<span class="string">'show2'</span>),<span class="keyword">array</span>(<span class="string">'argument1'</span>,<span class="string">'argument2'</span>));</span><br><span class="line">	<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
         
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
-</article>
+  
+  
+  
+  </article>
 
+
+    
+      
 
   
 
+  
+  
+  
 
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/"><< Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next >></a>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php访问控制/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php访问控制/" itemprop="url">php访问控制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="访问控制（可见性）"><a href="#访问控制（可见性）" class="headerlink" title="访问控制（可见性）"></a>访问控制（可见性）</h3><hr>
+<p>对属性或方法的访问控制，是通过在前面添加关键字public（公有），protected（受保护）或private（私有）来实现的。被定义为公有的类成员可以在任何地方被访问。被定义为受保护的类成员则可以被其自身以及其子类和父类访问。被定义为私有的类成员则只能被其定义所在的类访问。</p>
+<h4 id="属性的访问控制"><a href="#属性的访问控制" class="headerlink" title="属性的访问控制"></a>属性的访问控制</h4><hr>
+<p>类属性必须定义为公有，受保护，私有之一。如果用<em>var</em>定义，则被视为公有。</p>
+<p>#####属性声明：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义类 MyClass</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> $public = <span class="string">'Public(公有)'</span>;</span><br><span class="line">	<span class="keyword">protected</span> $protected = <span class="string">'Protected(受保护)'</span>;</span><br><span class="line">	<span class="keyword">private</span> $private = <span class="string">'Private(私有)'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">printHello</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;public;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;protected;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;private;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> MyClass();</span><br><span class="line"><span class="keyword">echo</span> $obj-&gt;public;   <span class="comment">//这行能被正常执行</span></span><br><span class="line"><span class="keyword">echo</span> $obj-&gt;protected; <span class="comment">//这行会产生一个致命错误</span></span><br><span class="line"><span class="keyword">echo</span> $obj-&gt;private; <span class="comment">//这行也会产生一个致命错误</span></span><br><span class="line">$obj-&gt;printHello(); <span class="comment">//输出 Public(公有)、Protected(受保护) 和 Private(私有)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义类 MyClass2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> <span class="keyword">extends</span> <span class="title">MyClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">//可以对 public 和 protected 进行重定义，但 private 不能</span></span><br><span class="line">	<span class="keyword">protected</span> $protected = <span class="string">'Protected2(受保护)'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">printHello</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;public;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;protected;</span><br><span class="line">		<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;private;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj2 = <span class="keyword">new</span> MyClass2();</span><br><span class="line"><span class="keyword">echo</span> $obj2-&gt;public; <span class="comment">//这行能被执行</span></span><br><span class="line"><span class="keyword">echo</span> $obj2-&gt;private; <span class="comment">//未定义 private</span></span><br><span class="line"><span class="keyword">echo</span> $obj2-&gt;protected; <span class="comment">//这行会产生一个致命错误</span></span><br><span class="line">$obj2-&gt;printHello(); <span class="comment">//输出 Public、Protected2(受保护)、和 Undefined</span></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法的访问控制"><a href="#方法的访问控制" class="headerlink" title="方法的访问控制"></a>方法的访问控制</h4><hr>
+<p>类中的方法可以被定义为公有，私有或受保护。如果没有设置这些关键字，则该方法默认为公有。</p>
+<h5 id="方法声明："><a href="#方法声明：" class="headerlink" title="方法声明："></a>方法声明：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *定义类 MyClass</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">//声明一个公有的构造函数</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//声明一个公有的方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">MyPublic</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//声明一个受保护的方法</span></span><br><span class="line">	<span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">MyProtected</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//声明一个私有的方法</span></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">MyPrivate</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//此方法为公有</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Foo</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyPublic();</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyProtected();</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyPrivate();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$myclass = <span class="keyword">new</span> MyClass;</span><br><span class="line">$myclass-&gt;MyPublic(); <span class="comment">//这行能被正常执行</span></span><br><span class="line">$myclass-&gt;MyProtected(); <span class="comment">//这行会产生一个致命错误</span></span><br><span class="line">$myclass-&gt;MyPrivate(); <span class="comment">//这行会产生一个致命错误</span></span><br><span class="line">$myclass-&gt;Foo();  <span class="comment">//公有，受保护，私有都可执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *定义类 MyClass2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> <span class="keyword">extends</span> <span class="title">MyClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">//此方法为公有</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Foo2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyPublic();</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyProtected();</span><br><span class="line">		<span class="keyword">$this</span>-&gt;MyPrivate(); <span class="comment">//这行会产生一个致命错误</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$myclass2 = <span class="keyword">new</span> MyClass2;</span><br><span class="line">$myclass2-&gt;MyPublic(); <span class="comment">//这行能被正常执行</span></span><br><span class="line">$myclass2-&gt;Foo2(); <span class="comment">//公有的和受保护的都可执行，但私有的不行</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">$this</span>-&gt;testPrivate();</span><br><span class="line">		<span class="keyword">$this</span>-&gt;testPublic();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testPublic</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"Bar::testPublic\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">testPrivate</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"Bar::testPrivate\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> <span class="keyword">extends</span> <span class="title">Bar</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testPublic</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"Foo::testPublic\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">testPrivate</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"Foo::testPrivate\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">$myFoo = <span class="keyword">new</span> foo();</span><br><span class="line">$myFoo-&gt;test(); <span class="comment">//Bar::testPrivate</span></span><br><span class="line">                <span class="comment">//Foo::testPublic</span></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://feng4.github.io/2018/10/25/php递归/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/fengx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng 的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/php递归/" itemprop="url">php递归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T12:30:46+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="什么是php递归函数？"><a href="#什么是php递归函数？" class="headerlink" title="什么是php递归函数？"></a>什么是php递归函数？</h4><p><strong>递归函数</strong>即自动调用函数，在函数体内部直接或者间接的自己调用自己，即函数的嵌套调用是函数本身。通常在此类型的函数题之中会附加一个条件判断叙述，以判断是否需要执行递归调用，并且在特定的条件下终止函数的递归调用动作，把目前流程的主控制权回到上一层函数来执行。从此，当某个执行递归调用的函数没有附加条件判断叙述时，可能会造成无限循环的错误情形。<br><br><br><br>函数递归调用最大的好处在于可以精简程序中的复杂重复调用程序，并且能以这种特性来执行一些较为复杂的运算动作。例如，列表、动态树形菜单及遍历目录等操作。相应的非递归函数虽然效率高，但却比较难编程，而且相对来说可读性差。现代程序设计的目标主要是可读性好。随着计算机硬件性能的不断提高，程序在更多的场合优先考虑可读而不是高效，所以，鼓励用递归函数实现程序思想。<br><br><strong>一个简单的递归调用实例如下所示:</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//声明一个函数，用于测试递归</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> $n.<span class="string">" "</span>;  <span class="comment">//在函数开始输出参数的值</span></span><br><span class="line">	<span class="keyword">if</span>($n&gt;<span class="number">0</span>)&#123;	<span class="comment">//判断参数是否大于0</span></span><br><span class="line">		test($n<span class="number">-1</span>);  <span class="comment">//如果参数大于0则调用自己，并将参数减1后再次传入   </span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;	<span class="comment">//判断参数是不大于0</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"&lt;----------&gt; "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">echo</span> $n.<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">10</span>);        <span class="comment">//调用test函数将整数10传给参数</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>输出结果：</strong></p>
+<pre><code>10 9 8 7 6 5 4 3 2 1 0 &lt;---------&gt; 0 1 2 3 4 5 6 7 8 9 10
+</code></pre><p>说明：在上面的实例中声明了一个test()函数，该函数需要一个整型的参数。在函数外面通过传递整数10作为参数调用test()函数。在test()函数体中，第一条代码输出参数的值和一个空格。然后判断条件是否成立，成立则调用自己并将参数减1，再次传入。开始调用时，它是外层调内层，内层调更内一层，直到最内层由于条件不允许必须结束。最内层结束了。<br>输出<-------->作为分界符，执行调用之后的代码输出参数的值和空格，它就会回到稍外一层继续执行。稍外一层在结束时，退回到在稍外一层继续执行，层层推出，直到最外层结束。执行完成以后的结果就是我们上面看到的结果。</--------></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/fengx.jpg" alt="Feng">
+            
+              <p class="site-author-name" itemprop="name">Feng</p>
+              <p class="site-description motion-element" itemprop="description">IT,web,网络安全</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/feng43" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/FengWu198" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng</span>
+
+  
+</div>
 
 
-      <p>
-        Powered by  <a href="https://www.somd5.com" target="_blank">Feng</a>
-        Theme <a href="//github.com/feng4" target="_blank">FengX</a>
-      &copy; 2019 Feng<br>
-      </p>
-    </div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
-</footer>
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  var mihoConfig = {
-      root: "https://feng4.github.io",
-      animate: true,
-      isHome: true,
-      share: true,
-      reward: 1
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
-<div class="sidebar">
-    <div id="sidebar-search" title="Search">
-        <i class="fa fa-search"></i>
-    </div>
-    <div id="sidebar-category" title="Categories">
-        <i class="fa fa-book"></i>
-    </div>
-    <div id="sidebar-tag" title="Tags">
-        <i class="fa fa-tags"></i>
-    </div>
-    <div id="sidebar-top">
-        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
-    </div>
-</div>
-<div class="sidebar-menu-box" id="sidebar-menu-box">
-    <div class="sidebar-menu-box-container">
-        <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/vi-——-终端中的编辑器/">vi —— 终端中的编辑器</a><a class="category-link" href="/categories/命令学习/">命令学习</a>
-        </div>
-        <div id="sidebar-menu-box-tags">
-            <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 15px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/sql注入/" style="font-size: 10px;">sql注入</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a> <a href="/tags/环境安装/" style="font-size: 10px;">环境安装</a>
-        </div>
-    </div>
-    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
-</div>
-<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
-    <div class="mobile-header-menu-container">
-        <span class="title">Menus</span>
-        <ul class="mobile-header-menu-navbar">
-            
-            <li>
-                <a  href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
-                </a>
-            </li>
-            
-            <li>
-                <a  href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
-                </a>
-            </li>
-            
-            <li>
-                <a  href="/about">
-                    <i class="fa fa-user"></i><span>About</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="mobile-header-tag-container">
-        <span class="title">Tags</span>
-        <div id="mobile-header-container-tags">
-            <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/php学习/" style="font-size: 20px;">php学习</a> <a href="/tags/php学习笔记/" style="font-size: 15px;">php学习笔记</a> <a href="/tags/private（私有）/" style="font-size: 10px;">private（私有）</a> <a href="/tags/protected（受保护）/" style="font-size: 10px;">protected（受保护）</a> <a href="/tags/public（公有）/" style="font-size: 10px;">public（公有）</a> <a href="/tags/sql注入/" style="font-size: 10px;">sql注入</a> <a href="/tags/vi-——-终端中的编辑器/" style="font-size: 10px;">vi —— 终端中的编辑器</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/渗透测试/" style="font-size: 10px;">渗透测试</a> <a href="/tags/环境安装/" style="font-size: 10px;">环境安装</a>
-        </div>
-    </div>
-</div>
-<div class="search-wrap">
-    <span class="search-close">&times;</span>
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-            <i class="icon icon-lg icon-chevron-left"></i>
-        </a>
-        <input class="search-field" placeholder="Search..." id="keywords">
-        <a id="search-submit" href="javascript:;">
-            <i class="fa fa-search"></i>
-        </a>
-    <div class="search-container" id="search-container">
-        <ul class="search-result" id="search-result">
-        </ul>
-    </div>
-</div>
-
-<div id="search-tpl">
-    <li class="search-result-item">
-        <a href="{url}" class="search-item-li">
-            <span class="search-item-li-title" title="{title}">{title}</span>
-        </a>
-    </li>
-</div>
-<script src="/js/search.js"></script>
-<script src="/js/main.js"></script>
-
-
-  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-  <div id="particles"></div>
-  <script src="/js/particles.js"></script>
 
 
 
@@ -878,10 +2707,133 @@ bindec()-----...
 
 
 
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
-  <script src="/js/animate.js"></script>
 
-  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
