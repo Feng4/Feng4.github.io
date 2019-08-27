@@ -1,10 +1,10 @@
 (function() {
     var coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"],
     index = Math.floor(Math.random() * coreSocialistValues.length);
-	
+    
     document.body.addEventListener('click',
     function(e) {
-	//过滤a标签
+    //过滤a标签
         if (e.target.tagName == 'A') {
             return;
         }
