@@ -412,7 +412,7 @@ table>tbody>tr:nth-of-type(odd) {
   background-color: rgba(182,195,160,0.7);
 }
 table>tbody>tr:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(131,175,155,0.7);
 }
 caption,
 th,
@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #65c30b;
+  background: #ddff3e;
 }
 .links-of-blogroll {
   font-size: 13px;
