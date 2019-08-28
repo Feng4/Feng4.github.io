@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #377aff;
+  background: #66aa5d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2930,8 +2930,8 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  background: #fff;
-  border-bottom-color: rgba(182,194,156,0.7);
+  background: rgba(131,175,155,0.7);
+  border-bottom-color: #aaa;
 }
 .menu .menu-item br {
   display: none;
