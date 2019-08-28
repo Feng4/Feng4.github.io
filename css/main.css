@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa4ff;
+  background: #deff57;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2181,7 +2181,7 @@ pre .javascript .function {
   text-align: center;
 }
 .theme-next #ds-thread #ds-reset .ds-service-list a:hover {
-  color: #fff;
+  color: #ccc;
   background: #666;
 }
 .theme-next #ds-thread #ds-reset .ds-service-list .ds-weibo {
