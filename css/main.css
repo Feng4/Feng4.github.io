@@ -321,7 +321,7 @@ dd {
   padding: 0;
 }
 kbd {
-  border: 1px solid #fff;
+  border: 1px solid #ccc;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
   background-color: #f9f9f9;
@@ -687,14 +687,14 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote::before {
   top: -20px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #fff;
+  border-top: 1px solid #ccc;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
   bottom: -20px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
   background-position: 100% 8px;
 }
 .blockquote-center p,
@@ -1025,8 +1025,8 @@ pre .javascript .function {
 }
 .pagination .page-number.current {
   color: #fff;
-  background: #fff;
-  border-top-color: #fff;
+  background: #ccc;
+  border-top-color: #ccc;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -1305,7 +1305,7 @@ pre .javascript .function {
 .posts-expand .post-body h6 .header-anchor {
   float: right;
   margin-left: 10px;
-  color: #fff;
+  color: #ccc;
   border-bottom-style: none;
   visibility: hidden;
 }
@@ -1400,7 +1400,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dashed #ccc;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1612,7 +1612,7 @@ pre .javascript .function {
   margin: 80px auto 60px;
   width: 8%;
   height: 1px;
-  background: #fff;
+  background: #ccc;
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4db1ff;
+  background: #ffa4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2028,7 +2028,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-property: all;
   color: #666;
-  border-bottom-color: #fff;
+  border-bottom-color: #ccc;
 }
 .post-toc ol a:hover {
   color: #000;
@@ -2266,7 +2266,7 @@ pre .javascript .function {
 }
 .theme-next #ds-reset .duoshuo-ua-platform,
 .theme-next #ds-reset .duoshuo-ua-browser {
-  color: #fff;
+  color: #ccc;
 }
 .theme-next #ds-reset .duoshuo-ua-platform .fa,
 .theme-next #ds-reset .duoshuo-ua-browser .fa {
@@ -3018,8 +3018,8 @@ pre .javascript .function {
   text-decoration: underline;
 }
 .feed-link {
-  border-top: 1px dotted #fff;
-  border-bottom: 1px dotted #fff;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
   text-align: center;
 }
 .feed-link a {
@@ -3073,7 +3073,7 @@ pre .javascript .function {
   text-align: center;
   margin-top: 20px;
   padding: 3px 0 0;
-  border-top: 1px dotted #fff;
+  border-top: 1px dotted #ccc;
 }
 .links-of-blogroll-title {
   margin-top: 0;
