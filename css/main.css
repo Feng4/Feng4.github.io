@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fce44d;
+  background: #04ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2464,7 +2464,7 @@ pre .javascript .function {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #ccc;
+  color: #fff;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .busuanzi-count {
