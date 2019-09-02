@@ -93,7 +93,8 @@
 <meta property="og:image" content="https://feng4.github.io/imgs/oauth.jpg">
 <meta property="og:image" content="https://feng4.github.io/imgs/oauth-baidu.jpg">
 <meta property="og:image" content="https://feng4.github.io/imgs/oauth-bypass.jpg">
-<meta property="og:updated_time" content="2019-09-02T04:13:49.773Z">
+<meta property="og:image" content="https://feng4.github.io/imgs/oauth-csrf.png">
+<meta property="og:updated_time" content="2019-09-02T04:41:03.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OAuth的一点点理解">
 <meta name="twitter:description" content="OAuth的原理和授权流程 OAuth(开发授权)是一个开放标准，它的意思是允许第三方网站在用户授权的前提下访问用户在某一网站上存储的各种私密信息（如照片，视频，联系人列表）等，而这种授权无需将用户名和密码提供给第三方应用，如我们常见的QQ登入、微信登入等。目前我们常见的版本为OAuth2.0，OAuth2.0认证和授权的过程中存在四个非常重要的角色，它们分别是Resource Owner：资源的">
@@ -413,12 +414,30 @@
 <blockquote>
 <p>当Resource Owner(用户)访问Client(第三方接入应用)时，Client会要求用户进行授权，然后用户会连接到认证服务器进行授权，授权成功后认证服务器将会携带Auth Code重定向到Client，Client收到Auth Code后将会向认证服务器请求Access Token，然后认证服务器再返回Access Token，接下来Client就能拿到这个token去Resource server存取用户资源了。<br></p>
 </blockquote>
-<p><strong>授权的四种模式：</strong><br><br>授权码模式（authorization code）、简化模式（implicit grant type）、密码模式（Resource Owner Password Credentials Grant）</p>
+<blockquote>
+<p><strong>授权的四种模式：</strong><br><br>授权码模式（authorization code）、简化模式（implicit grant type）、密码模式（Resource Owner Password Credentials Grant）<br></p>
+</blockquote>
 <p><img src="/imgs/oauth-baidu.jpg" alt="oauth-baidu"></p>
+<blockquote>
 <p>图中我们可以看到，百度提供了QQ和微博两种第三方登入方式。这两个就是OAuth服务的提供平台，也即是<code>Authorization Server</code>，而百度就是<code>Client</code>。·、<code>Resource server</code>是QQ、微博。<br></p>
+</blockquote>
+<blockquote>
 <p><strong>OAuth2.0的常见漏洞以及具体案例：</strong><br><br>是OAuth平台自身的漏洞，这类漏洞通常是由于OAuth提供者对redirect_uri这个参数的过滤不严，导致授权成功后跳转到非预期的域名，从而使认证码或token被泄露。<br></p>
+</blockquote>
+<blockquote>
 <p><a href="https://shuimugan.com/bug/view?bug_no=59403" target="_blank" rel="noopener">wooyun-2014-059403</a>、<a href="https://shuimugan.com/bug/view?bug_no=59427" target="_blank" rel="noopener">wooyun-2014-059427</a>、<br><a href="https://shuimugan.com/bug/view?bug_no=59639" target="_blank" rel="noopener">wooyun-2014-059639</a>、<br><a href="https://shuimugan.com/bug/view?bug_no=59676" target="_blank" rel="noopener">wooyun-2014-059676</a>腾讯OAuth平台redirect_uri过滤不严可能导致用户信息遭窃取.<br><br>看完了四个案例，我们来总结一下关于OAuth平台自身的漏洞的常见绕过方式：Bypass的思维导图如下所示：</p>
+</blockquote>
 <p><img src="/imgs/oauth-bypass.jpg" alt="oauth-bypass"></p>
+<blockquote>
+<p>OAuth2.0配合CSRF劫持第三方账号：<br></p>
+</blockquote>
+<blockquote>
+<p>这类漏洞常见于绑定账号处，由于绑定请求处存在CSRF漏洞，导致该请求能被恶意伪造，使得受害者在不知情的情况下将自己的应用账号绑定到攻击者的账号上。<br></p>
+</blockquote>
+<p><img src="/imgs/oauth-csrf.png" alt="oauth-csrf"></p>
+<blockquote>
+<p>攻击者用自己的账号向服务器发送绑定请求来进行账号绑定，当认证完成后，OAuth提供方会返回给第三方一个auth code作为确认绑定的依据，并携带在一个URL中。当用户访问这个URL之后，就会完成绑定的最后操作。<br><br><a href="https://shuimugan.com/bug/view?bug_no=54888" target="_blank" rel="noopener">wooyun-2014-054888</a>天涯–新浪OAuth 2.0 redirect_uir CSRF 漏洞<br><br><a href="https://shuimugan.com/bug/view?bug_no=145396" target="_blank" rel="noopener">wooyun-2015-0145396</a>知乎某处OAuth的身份劫持漏洞<br></p>
+</blockquote>
 
       
     </div>
