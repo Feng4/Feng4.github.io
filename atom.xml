@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://feng4.github.io/"/>
-  <updated>2019-08-28T07:08:59.028Z</updated>
+  <updated>2019-09-02T02:40:15.165Z</updated>
   <id>https://feng4.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OAuth的一点点理解</title>
+    <link href="https://feng4.github.io/2019/09/02/OAuth%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E7%90%86%E8%A7%A3/"/>
+    <id>https://feng4.github.io/2019/09/02/OAuth的一点点理解/</id>
+    <published>2019-09-02T02:39:18.844Z</published>
+    <updated>2019-09-02T02:40:15.165Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="OAuth的原理和授权流程"><a href="#OAuth的原理和授权流程" class="headerlink" title="OAuth的原理和授权流程"></a>OAuth的原理和授权流程</h3><blockquote><p>OAuth(开发授权)是一个开放标准，它的意思是允许第三方网站在用户授权的前提下访问用户在某一网站上存储的各种私密信息（如照片，视频，联系人列表）等，而这种授权无需将用户名和密码提供给第三方应用，如我们常见的QQ登入、微信登入等。<br><br>目前我们常见的版本为OAuth2.0，OAuth2.0认证和授权的过程中存在四个非常重要的角色，它们分别是<code>Resource Owner：资源的拥有者，即用户</code>，<code>Client：第三方接入应用</code>，<code>Resource Server：数据获取的服务器</code>，<code>Authorization Server：认证服务器</code>。<br></p></blockquote><p><strong>OAuth2.0认证和授权的运行流程：</strong><br><br><img src="/2019/09/02/OAuth的一点点理解/oauth.jpg" alt="oauth"></p><blockquote><p>当Resource Owner(用户)访问Client(第三方接入应用)时，Client会要求用户进行授权，然后用户会连接到认证服务器进行授权，授权成功后认证服务器将会携带Auth Code重定向到Client，Client收到Auth Code后将会向认证服务器请求Access Token，然后认证服务器再返回Access Token，接下来Client就能拿到这个token去Resource server存取用户资源了。<br></p></blockquote><p><strong>授权的四种模式：</strong><br><br>授权码模式（authorization code）、简化模式（implicit grant type）、密码模式（Resource Owner Password Credentials Grant）</p><p><img src="/2019/09/02/OAuth的一点点理解/oauth-baidu.jpg" alt="oauth-baidu"></p><p>图中我们可以看到，百度提供了QQ和微博两种第三方登入方式。这两个就是OAuth服务的提供平台，也即是<code>Authorization Server</code>，而百度就是<code>Client</code>。·、<code>Resource server</code>是QQ、微博。<br></p><p><strong>OAuth2.0的常见漏洞以及具体案例：</strong><br><br>是OAuth平台自身的漏洞，这类漏洞通常是由于OAuth提供者对redirect_uri这个参数的过滤不严，导致授权成功后跳转到非预期的域名，从而使认证码或token被泄露。<br></p><p><a href="https://shuimugan.com/bug/view?bug_no=59403" target="_blank" rel="noopener">wooyun-2014-059403</a>、<a href="https://shuimugan.com/bug/view?bug_no=59427" target="_blank" rel="noopener">wooyun-2014-059427</a>、<br><a href="https://shuimugan.com/bug/view?bug_no=59639" target="_blank" rel="noopener">wooyun-2014-059639</a>、<br><a href="https://shuimugan.com/bug/view?bug_no=59676" target="_blank" rel="noopener">wooyun-2014-059676</a>腾讯OAuth平台redirect_uri过滤不严可能导致用户信息遭窃取.<br><br>看完了四个案例，我们来总结一下关于OAuth平台自身的漏洞的常见绕过方式：Bypass的思维导图如下所示：</p><p><img src="/2019/09/02/OAuth的一点点理解/oauth-bypass.jpg" alt="oauth-bypass"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;OAuth的原理和授权流程&quot;&gt;&lt;a href=&quot;#OAuth的原理和授权流程&quot; class=&quot;headerlink&quot; title=&quot;OAuth的原理和授权流程&quot;&gt;&lt;/a&gt;OAuth的原理和授权流程&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;OAuth(开发授权)是一
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="https://feng4.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="OAuth" scheme="https://feng4.github.io/tags/OAuth/"/>
+    
+  </entry>
   
   <entry>
     <title>内网渗透基础知识</title>
@@ -475,29 +501,6 @@
       <category term="protected（受保护）" scheme="https://feng4.github.io/tags/protected%EF%BC%88%E5%8F%97%E4%BF%9D%E6%8A%A4%EF%BC%89/"/>
     
       <category term="private（私有）" scheme="https://feng4.github.io/tags/private%EF%BC%88%E7%A7%81%E6%9C%89%EF%BC%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>php递归</title>
-    <link href="https://feng4.github.io/2018/10/25/php%E9%80%92%E5%BD%92/"/>
-    <id>https://feng4.github.io/2018/10/25/php递归/</id>
-    <published>2018-10-25T04:30:46.006Z</published>
-    <updated>2017-12-06T07:11:47.129Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="什么是php递归函数？"><a href="#什么是php递归函数？" class="headerlink" title="什么是php递归函数？"></a>什么是php递归函数？</h4><p><strong>递归函数</strong>即自动调用函数，在函数体内部直接或者间接的自己调用自己，即函数的嵌套调用是函数本身。通常在此类型的函数题之中会附加一个条件判断叙述，以判断是否需要执行递归调用，并且在特定的条件下终止函数的递归调用动作，把目前流程的主控制权回到上一层函数来执行。从此，当某个执行递归调用的函数没有附加条件判断叙述时，可能会造成无限循环的错误情形。<br><br><br><br>函数递归调用最大的好处在于可以精简程序中的复杂重复调用程序，并且能以这种特性来执行一些较为复杂的运算动作。例如，列表、动态树形菜单及遍历目录等操作。相应的非递归函数虽然效率高，但却比较难编程，而且相对来说可读性差。现代程序设计的目标主要是可读性好。随着计算机硬件性能的不断提高，程序在更多的场合优先考虑可读而不是高效，所以，鼓励用递归函数实现程序思想。<br><br><strong>一个简单的递归调用实例如下所示:</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//声明一个函数，用于测试递归</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($n)</span></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> $n.<span class="string">" "</span>;  <span class="comment">//在函数开始输出参数的值</span></span><br><span class="line"><span class="keyword">if</span>($n&gt;<span class="number">0</span>)&#123;<span class="comment">//判断参数是否大于0</span></span><br><span class="line">test($n<span class="number">-1</span>);  <span class="comment">//如果参数大于0则调用自己，并将参数减1后再次传入   </span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;<span class="comment">//判断参数是不大于0</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;----------&gt; "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $n.<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">10</span>);        <span class="comment">//调用test函数将整数10传给参数</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p><strong>输出结果：</strong></p><pre><code>10 9 8 7 6 5 4 3 2 1 0 &lt;---------&gt; 0 1 2 3 4 5 6 7 8 9 10</code></pre><p>说明：在上面的实例中声明了一个test()函数，该函数需要一个整型的参数。在函数外面通过传递整数10作为参数调用test()函数。在test()函数体中，第一条代码输出参数的值和一个空格。然后判断条件是否成立，成立则调用自己并将参数减1，再次传入。开始调用时，它是外层调内层，内层调更内一层，直到最内层由于条件不允许必须结束。最内层结束了。<br>输出<-------->作为分界符，执行调用之后的代码输出参数的值和空格，它就会回到稍外一层继续执行。稍外一层在结束时，退回到在稍外一层继续执行，层层推出，直到最外层结束。执行完成以后的结果就是我们上面看到的结果。</--------></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;什么是php递归函数？&quot;&gt;&lt;a href=&quot;#什么是php递归函数？&quot; class=&quot;headerlink&quot; title=&quot;什么是php递归函数？&quot;&gt;&lt;/a&gt;什么是php递归函数？&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;递归函数&lt;/strong&gt;即自动调用函数，在函数体内
-      
-    
-    </summary>
-    
-    
-      <category term="php学习" scheme="https://feng4.github.io/tags/php%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
