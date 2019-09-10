@@ -94,9 +94,9 @@
 <meta property="og:image" content="https://feng4.github.io/imgs/kali-linux3.jpg">
 <meta property="og:image" content="https://feng4.github.io/imgs/kali-linux4.jpg">
 <meta property="og:image" content="https://feng4.github.io/imgs/kali-linux.jpg">
-<meta property="og:image" content="https://feng4.github.io/img//kali-linux5.jpg">
+<meta property="og:image" content="https://feng4.github.io/imgs/kali-linux5.jpg">
 <meta property="og:image" content="https://feng4.github.io/imgs/kali-linux6.jpg">
-<meta property="og:updated_time" content="2019-09-10T03:14:42.447Z">
+<meta property="og:updated_time" content="2019-09-10T03:16:36.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali linux网络配置">
 <meta name="twitter:description" content="kali linux网络配置 使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。使用命令service networking restart还是没有用。现在解决了这个问题，我来做个记录。由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。   使用命令ifconfig，发现我的eth0网卡没有了。猜测是网卡没有启动，使用命令">
@@ -419,7 +419,7 @@
 <p>现在想到了，更改interfaces文件，文件路径为：<code>/etc/network/interfaces</code><br><img src="/imgs/kali-linux.jpg" alt="interfaces"><br>编辑interfaces文件：<code>vim interfaces</code><br>在最下面加入这段：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
-<p><img src="/img//kali-linux5.jpg" alt="配置"></p>
+<p><img src="/imgs/kali-linux5.jpg" alt="配置"></p>
 <blockquote>
 <p>保存后，使用命令：<code>service networking restart</code>网络就可以了<br><img src="/imgs/kali-linux6.jpg" alt="成功"></p>
 </blockquote>
