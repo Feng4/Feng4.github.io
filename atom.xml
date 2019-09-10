@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://feng4.github.io/"/>
-  <updated>2019-09-10T03:06:20.211Z</updated>
+  <updated>2019-09-10T03:14:42.447Z</updated>
   <id>https://feng4.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://feng4.github.io/2019/09/10/kali-linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
     <id>https://feng4.github.io/2019/09/10/kali-linux网络配置/</id>
     <published>2019-09-10T03:07:08.888Z</published>
-    <updated>2019-09-10T03:06:20.211Z</updated>
+    <updated>2019-09-10T03:14:42.447Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="kali-linux网络配置"><a href="#kali-linux网络配置" class="headerlink" title="kali linux网络配置"></a>kali linux网络配置</h3><blockquote><p>使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。<br>使用命令<code>service networking restart</code>还是没有用。<br>现在解决了这个问题，我来做个记录。<br>由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。</p></blockquote><blockquote><p>使用命令<code>ifconfig</code>，发现我的<code>eth0</code>网卡没有了。<br><img src="img/kali-linux2.jpg" alt="eth0"><br>猜测是网卡没有启动，使用命令<code>ifconfig eth0 up</code>启动了网卡，还是没有用。<br><img src="img/kali-linux3.jpg" alt="ifconfig"><br>没有inet4的地址，只能看到inet6，电脑右上角没有下图这个标志。<br><img src="img/kali-linux4.jpg" alt="标志"></p></blockquote><blockquote><p>现在想到了，更改interfaces文件，文件路径为：<code>/etc/network/interfaces</code><br><img src="img/kali-linux.jpg" alt="interfaces"><br>编辑interfaces文件：<code>vim interfaces</code><br>在最下面加入这段：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure><p><img src="img/kali-linux5.jpg" alt="配置"></p><blockquote><p>保存后，使用命令：<code>service networking restart</code>网络就可以了<br><img src="img/kali-linux6.jpg" alt="成功"></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h3 id="kali-linux网络配置"><a href="#kali-linux网络配置" class="headerlink" title="kali linux网络配置"></a>kali linux网络配置</h3><blockquote><p>使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。<br>使用命令<code>service networking restart</code>还是没有用。<br>现在解决了这个问题，我来做个记录。<br>由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。</p></blockquote><blockquote><p>使用命令<code>ifconfig</code>，发现我的<code>eth0</code>网卡没有了。<br><img src="/imgs/kali-linux2.jpg" alt="eth0"><br>猜测是网卡没有启动，使用命令<code>ifconfig eth0 up</code>启动了网卡，还是没有用。<br><img src="/imgs/kali-linux3.jpg" alt="ifconfig"><br>没有inet4的地址，只能看到inet6，电脑右上角没有下图这个标志。<br><img src="/imgs/kali-linux4.jpg" alt="标志"></p></blockquote><blockquote><p>现在想到了，更改interfaces文件，文件路径为：<code>/etc/network/interfaces</code><br><img src="/imgs/kali-linux.jpg" alt="interfaces"><br>编辑interfaces文件：<code>vim interfaces</code><br>在最下面加入这段：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure><p><img src="/img//kali-linux5.jpg" alt="配置"></p><blockquote><p>保存后，使用命令：<code>service networking restart</code>网络就可以了<br><img src="/imgs/kali-linux6.jpg" alt="成功"></p></blockquote>]]></content>
     
     <summary type="html">
     
