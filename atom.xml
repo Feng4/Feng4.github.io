@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://feng4.github.io/"/>
-  <updated>2019-09-09T04:55:30.526Z</updated>
+  <updated>2019-09-10T03:06:20.211Z</updated>
   <id>https://feng4.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>kali linux网络配置</title>
+    <link href="https://feng4.github.io/2019/09/10/kali-linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://feng4.github.io/2019/09/10/kali-linux网络配置/</id>
+    <published>2019-09-10T03:07:08.888Z</published>
+    <updated>2019-09-10T03:06:20.211Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="kali-linux网络配置"><a href="#kali-linux网络配置" class="headerlink" title="kali linux网络配置"></a>kali linux网络配置</h3><blockquote><p>使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。<br>使用命令<code>service networking restart</code>还是没有用。<br>现在解决了这个问题，我来做个记录。<br>由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。</p></blockquote><blockquote><p>使用命令<code>ifconfig</code>，发现我的<code>eth0</code>网卡没有了。<br><img src="img/kali-linux2.jpg" alt="eth0"><br>猜测是网卡没有启动，使用命令<code>ifconfig eth0 up</code>启动了网卡，还是没有用。<br><img src="img/kali-linux3.jpg" alt="ifconfig"><br>没有inet4的地址，只能看到inet6，电脑右上角没有下图这个标志。<br><img src="img/kali-linux4.jpg" alt="标志"></p></blockquote><blockquote><p>现在想到了，更改interfaces文件，文件路径为：<code>/etc/network/interfaces</code><br><img src="img/kali-linux.jpg" alt="interfaces"><br>编辑interfaces文件：<code>vim interfaces</code><br>在最下面加入这段：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure><p><img src="img/kali-linux5.jpg" alt="配置"></p><blockquote><p>保存后，使用命令：<code>service networking restart</code>网络就可以了<br><img src="img/kali-linux6.jpg" alt="成功"></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;kali-linux网络配置&quot;&gt;&lt;a href=&quot;#kali-linux网络配置&quot; class=&quot;headerlink&quot; title=&quot;kali linux网络配置&quot;&gt;&lt;/a&gt;kali linux网络配置&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;使用虚拟机时，我喜
+      
+    
+    </summary>
+    
+      <category term="kali" scheme="https://feng4.github.io/categories/kali/"/>
+    
+    
+      <category term="网络配置" scheme="https://feng4.github.io/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cve-2019-0708复现记录</title>
     <link href="https://feng4.github.io/2019/09/09/cve-2019-0708%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/"/>
     <id>https://feng4.github.io/2019/09/09/cve-2019-0708复现记录/</id>
     <published>2019-09-09T04:53:02.243Z</published>
-    <updated>2019-09-09T04:55:30.526Z</updated>
+    <updated>2019-09-10T03:08:41.261Z</updated>
     
     <content type="html"><![CDATA[<h3 id="cve-2019-0708漏洞复现"><a href="#cve-2019-0708漏洞复现" class="headerlink" title="cve-2019-0708漏洞复现"></a>cve-2019-0708漏洞复现</h3><p>最近msf的cve-2019-0708的exp出来了，来复现漏洞，有一些坑，来踩一些。</p><p>测试环境：VMware虚拟机<br>攻击机： kali 2019    ip：192.168.89.147<br>靶机： win7 sp1 7061 ip：192.168.89.133<br><img src="/imgs/cve-2019-0708.jpg" alt="cve-2019-0708"></p><p>先从github把exp文件搞下来。<a href="https://github.com/rapid7/metasploit-framework/pull/12283/files?file-filters%5B%5D=#diff-fc2b557755ef2db9d4d58b6aaae7e7a3" target="_blank" rel="noopener">cve-2019-0708 exp</a><br><img src="/imgs/cve-2019-0708-1.jpg" alt="cve-2019-0708-1"></p><p>找到<code>metasploit-framework</code>目录位置，我的是<code>/usr/share/metasploit-framework/</code><br>把方框内的文件保存到方框的目录里，<code>modules/exploits/windows/</code>目录下没有rdp目录，所以创建一个rdp目录，并把cve_2019_0708_bluekeep_rce.rb文件保存到这个目下。<br>我的msf5之前就有cve_2019_0708_bluekeep.rb、rdp_scanner.rb这两个文件，所以我把这两个替换掉。<br>弄完这些文件后启动msf。<br><img src="/imgs/cve-2019-0708-2.jpg" alt="cve-2019-0708-2"><br>现在还搜索不到cve-2019-0708的攻击模块，所以我们需要重新加载模块。<br>在msf中使用命令：<code>reload_all</code><br>然后搜索0708就能搜到cve-2019-0708的攻击模块了。<br><img src="/imgs/cve-2019-0708-3.jpg" alt="cve-2019-0708-3"><br>使用这个模块，看看这个模块怎么使用<code>info</code></p><p><img src="/imgs/cve-2019-0708-5.jpg" alt="cve-2019-0708-5"></p><p>然后看看选项，<code>show options</code><br>设置被攻击的ip：<code>set rhosts 192.168.89.133</code><br>端口就不用设置了，我的端口是默认的3389.<br>设置target：<code>set target 2</code><br>然后开始攻击：<code>run</code><br><img src="/imgs/cve-2019-0708-4.jpg" alt="cve-2019-0708-4"></p><p>发现并没有成功，target 3失败，所有target都试了一遍，都是不行。<br>target 3会蓝屏。<br>根据测试我的这个使用target 1、target 2,run两次后可以成功。<br><img src="/imgs/cve-2019-0708-6.jpg" alt="cve-2019-0708-6"><br>现在是成功搞到会话了，system权限。</p>]]></content>
     
@@ -33,6 +59,8 @@
       
     
     </summary>
+    
+      <category term="渗透测试" scheme="https://feng4.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
       <category term="漏洞复现" scheme="https://feng4.github.io/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
@@ -465,29 +493,6 @@
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;进制&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="php学习" scheme="https://feng4.github.io/tags/php%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>php回调函数</title>
-    <link href="https://feng4.github.io/2018/10/25/php%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/"/>
-    <id>https://feng4.github.io/2018/10/25/php回调函数/</id>
-    <published>2018-10-25T04:30:46.013Z</published>
-    <updated>2017-12-04T00:47:44.985Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="php回调函数"><a href="#php回调函数" class="headerlink" title="php回调函数"></a>php回调函数</h4><p>回调函数：Callback（即call then back 被主函数调用运算后会返回主函数），是指通过函数参数传递到其他代码的，某一块可执行代码的引用。<br><br>通俗的解释就是把函数作为参数传入进；另一个函数中使用；php中有许多“需求参数为函数”的函数，像array_map,usort,call_user_func_array之类，它们执行传入函数，<br>然后直接将结果返回主函数。好处是函数作为值使用起来方便，而且代码简洁，可读性强。</p><h4 id="php中回调函数的实现"><a href="#php中回调函数的实现" class="headerlink" title="php中回调函数的实现"></a>php中回调函数的实现</h4><p> php提供了两个内置函数call_user_func()和call_user_func_array()提供对回调函数的支持。这两个函数的区别是<br><br>call_user_func_array是以数组的形式接收回调函数的参数的，看它的原型就知道了：mixed call_user_func_array(callable $callback,array $param_arr),它只有两个参数。<br><br>而call_user_func($callback,参数1,,参数2,…)的参数个数根据回调函数的参数来决定的。<br></p><p> 如何实现对脚本中全局函数、类中未使用$this的非静态方法、类中使用$this的非静态方法（需要传入对象）、类中静态方法的回调呢？<br></p><p> 实例代码：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">($arg1,$arg2)</span></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__FUNCTION__</span>.<span class="string">'exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过call_user_func调用函数f1</span></span><br><span class="line">call_user_func(<span class="string">'f1'</span>,<span class="string">'han'</span>,<span class="string">'wen'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过call_user_func_array调用函数</span></span><br><span class="line">call_user_func_array(<span class="string">'f1'</span>,<span class="keyword">array</span>(<span class="string">'han'</span>,<span class="string">'wen'</span>));</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">public</span> $name;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">($arg1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'the arg is:'</span>.$arg1.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'my name is:'</span>.<span class="keyword">$this</span>-&gt;name;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show1</span><span class="params">($arg1,$arg2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__METHOD__</span>.<span class="string">'exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">show2</span><span class="params">($arg1,$arg2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">__METHOD__</span>.<span class="string">'of class A exec,the args is:'</span>.$arg1.<span class="string">' '</span>.$arg2.<span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用类中非静态成员函数，该成员函数中有$this调用了对象中的成员</span></span><br><span class="line">$a = <span class="keyword">new</span> A;</span><br><span class="line">$a-&gt;name = <span class="string">'wen'</span>;</span><br><span class="line">call_user_func_array(<span class="keyword">array</span>($a,<span class="string">'show'</span>),<span class="keyword">array</span>(<span class="string">'han!'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用类中非静态成员函数，没有对象被创建，该成员函数中不能有$this</span></span><br><span class="line">call_user_func_array(<span class="keyword">array</span>(<span class="string">'A'</span>,<span class="string">'show1'</span>),<span class="keyword">array</span>(<span class="string">'an!'</span>,<span class="string">'wen'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用中静态成员函数</span></span><br><span class="line">call_user_func_array(<span class="keyword">array</span>(<span class="string">'A'</span>,<span class="string">'show2'</span>),<span class="keyword">array</span>(<span class="string">'argument1'</span>,<span class="string">'argument2'</span>));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;php回调函数&quot;&gt;&lt;a href=&quot;#php回调函数&quot; class=&quot;headerlink&quot; title=&quot;php回调函数&quot;&gt;&lt;/a&gt;php回调函数&lt;/h4&gt;&lt;p&gt;回调函数：Callback（即call then back 被主函数调用运算后会返回主函数），是指通
       
     
     </summary>

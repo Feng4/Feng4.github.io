@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[kali linux网络配置]]></title>
+    <url>%2F2019%2F09%2F10%2Fkali-linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[kali linux网络配置 使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。使用命令service networking restart还是没有用。现在解决了这个问题，我来做个记录。由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。 使用命令ifconfig，发现我的eth0网卡没有了。猜测是网卡没有启动，使用命令ifconfig eth0 up启动了网卡，还是没有用。没有inet4的地址，只能看到inet6，电脑右上角没有下图这个标志。 现在想到了，更改interfaces文件，文件路径为：/etc/network/interfaces编辑interfaces文件：vim interfaces在最下面加入这段： 12auto eth0iface eth0 inet dhcp 保存后，使用命令：service networking restart网络就可以了]]></content>
+      <categories>
+        <category>kali</category>
+      </categories>
+      <tags>
+        <tag>网络配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[cve-2019-0708复现记录]]></title>
     <url>%2F2019%2F09%2F09%2Fcve-2019-0708%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95%2F</url>
     <content type="text"><![CDATA[cve-2019-0708漏洞复现最近msf的cve-2019-0708的exp出来了，来复现漏洞，有一些坑，来踩一些。 测试环境：VMware虚拟机攻击机： kali 2019 ip：192.168.89.147靶机： win7 sp1 7061 ip：192.168.89.133 先从github把exp文件搞下来。cve-2019-0708 exp 找到metasploit-framework目录位置，我的是/usr/share/metasploit-framework/把方框内的文件保存到方框的目录里，modules/exploits/windows/目录下没有rdp目录，所以创建一个rdp目录，并把cve_2019_0708_bluekeep_rce.rb文件保存到这个目下。我的msf5之前就有cve_2019_0708_bluekeep.rb、rdp_scanner.rb这两个文件，所以我把这两个替换掉。弄完这些文件后启动msf。现在还搜索不到cve-2019-0708的攻击模块，所以我们需要重新加载模块。在msf中使用命令：reload_all然后搜索0708就能搜到cve-2019-0708的攻击模块了。使用这个模块，看看这个模块怎么使用info 然后看看选项，show options设置被攻击的ip：set rhosts 192.168.89.133端口就不用设置了，我的端口是默认的3389.设置target：set target 2然后开始攻击：run 发现并没有成功，target 3失败，所有target都试了一遍，都是不行。target 3会蓝屏。根据测试我的这个使用target 1、target 2,run两次后可以成功。现在是成功搞到会话了，system权限。]]></content>
+      <categories>
+        <category>渗透测试</category>
+      </categories>
       <tags>
         <tag>漏洞复现</tag>
       </tags>
