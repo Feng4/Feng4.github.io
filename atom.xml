@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://feng4.github.io/"/>
-  <updated>2019-09-10T03:16:36.084Z</updated>
+  <updated>2019-09-14T13:17:04.778Z</updated>
   <id>https://feng4.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python编码的问题报错</title>
+    <link href="https://feng4.github.io/2019/09/14/python%E8%9C%9C%E6%B1%81%E6%8A%A5%E9%94%99/"/>
+    <id>https://feng4.github.io/2019/09/14/python蜜汁报错/</id>
+    <published>2019-09-14T13:16:05.485Z</published>
+    <updated>2019-09-14T13:17:04.778Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="python编码报错"><a href="#python编码报错" class="headerlink" title="python编码报错"></a>python编码报错</h3><h4 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00  前言"></a>0x00  前言</h4><p>使用python爬取某网站时发现，代码一直报错，起初我以为是我的headers头伪装不够好，仔细看报错信息，发现是编码的问题。然后就有了这篇记录的文章。</p><h4 id="0x01-发现问题"><a href="#0x01-发现问题" class="headerlink" title="0x01  发现问题"></a>0x01  发现问题</h4><p>爬虫报错：<code>UnicodeEncodeError: &#39;gbk&#39; codec can&#39;t encode character &#39;\xa9&#39; in position 51078: illegal multibyte sequence</code><br><img src="/imgs/pythonbao.png" alt="报错"><br>就是上图的报错，发现问题所在。<br>使用python写文件的时候，大部分会出现<code>UnicodeEncodeError: &#39;gbk&#39; codec can&#39;t encode character &#39;\xa9&#39; in position</code>这个问题。</p><h4 id="0x02-解决问题"><a href="#0x02-解决问题" class="headerlink" title="0x02  解决问题"></a>0x02  解决问题</h4><p><strong>解决办法：</strong></p><blockquote><p>第一种方法：或者在网络上获取的数据，先decode解码成unicode编码，然后再写入windows系统，这样就不会出现这种为题了</p></blockquote><blockquote><p>第二种方法：在windows下面，新文件的默认编码是gbk，这样的话，python解释器会用gbk编码去解析我们的网络数据流txt，然而txt此时已经是decode过的unicode编码，这样的话就会导致解析不了，出现上述问题。 解决的办法就是，改变目标文件的编码：</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"xxx.html"</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure><blockquote><p>这样就不会报错了。</p></blockquote><h4 id="0x03-附件问题"><a href="#0x03-附件问题" class="headerlink" title="0x03 附件问题"></a>0x03 附件问题</h4><p>使用scrapy爬取的json数据，中文为unicode编码，如下图所示：<br><img src="/imgs/pythonbao2.png" alt="json编码"><br>由于比较xx，所以打码处理。</p><p>解决办法：<br>在<code>settings.py</code>文件中添加一行代码：<code>FEED_EXPORT_ENCODING = &#39;utf-8&#39;</code><br>item 被转 str，默认 ensure_ascii = True，则非 ASCII 字符被转化为 unicode<br>再次爬取，查看数据<br><img src="/imgs/pythonbao3.png" alt="数据"></p><h4 id="0x04-参考链接"><a href="#0x04-参考链接" class="headerlink" title="0x04 参考链接"></a>0x04 参考链接</h4><p><a href="https://doc.scrapy.org/en/latest/topics/feed-exports.html#feed-export-encoding" target="_blank" rel="noopener">https://doc.scrapy.org/en/latest/topics/feed-exports.html#feed-export-encoding</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;python编码报错&quot;&gt;&lt;a href=&quot;#python编码报错&quot; class=&quot;headerlink&quot; title=&quot;python编码报错&quot;&gt;&lt;/a&gt;python编码报错&lt;/h3&gt;&lt;h4 id=&quot;0x00-前言&quot;&gt;&lt;a href=&quot;#0x00-前言&quot; class
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://feng4.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>kali linux网络配置</title>
@@ -466,33 +489,6 @@
       
         &lt;h3 id=&quot;php静态变量&quot;&gt;&lt;a href=&quot;#php静态变量&quot; class=&quot;headerlink&quot; title=&quot;php静态变量&quot;&gt;&lt;/a&gt;php静态变量&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;Static（静态）关键字
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.在函数中声明的静态变
-      
-    
-    </summary>
-    
-    
-      <category term="php学习" scheme="https://feng4.github.io/tags/php%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>php进制</title>
-    <link href="https://feng4.github.io/2018/10/25/php%E8%BF%9B%E5%88%B6/"/>
-    <id>https://feng4.github.io/2018/10/25/php进制/</id>
-    <published>2018-10-25T04:30:46.017Z</published>
-    <updated>2017-12-02T09:48:21.530Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="php进制"><a href="#php进制" class="headerlink" title="php进制"></a>php进制</h4><p><strong>关于进制的表格：</strong></p><table><thead><tr><th>进制</th><th style="text-align:center">缩写</th><th style="text-align:right">单词</th></tr></thead><tbody><tr><td>十进制</td><td style="text-align:center">dec</td><td style="text-align:right">decimalist</td></tr><tr><td>八进制</td><td style="text-align:center">oct</td><td style="text-align:right">otconary</td></tr><tr><td>二进制</td><td style="text-align:center">bin</td><td style="text-align:right">binary</td></tr><tr><td>十六进制</td><td style="text-align:center">hex</td><td style="text-align:right">hexadecimal</td></tr></tbody></table><p><strong>php进制转换函数：</strong><br></p><pre><code>decbin()--------十进制 转 二进制decoct()--------十进制 转 八进制bindec()--------二进制 转 十进制</code></pre><p>我们发现缩写组合一下就是 <em>什么进制</em> 转 <em>什么进制</em>。<br></p><p>php变量中可以存十进制、八进制、十六进制。<br></p><p>php变量5.4之前版本<strong>不能</strong>储存 二进制。</p><p><strong>php进制变量声明：</strong></p><pre><code>$a = 123 //十进制$a = 023 //八进制$a = 0x1A //十六进制</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;php进制&quot;&gt;&lt;a href=&quot;#php进制&quot; class=&quot;headerlink&quot; title=&quot;php进制&quot;&gt;&lt;/a&gt;php进制&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;关于进制的表格：&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;进制&lt;
       
     
     </summary>

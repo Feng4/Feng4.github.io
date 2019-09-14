@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python编码的问题报错]]></title>
+    <url>%2F2019%2F09%2F14%2Fpython%E8%9C%9C%E6%B1%81%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[python编码报错0x00 前言使用python爬取某网站时发现，代码一直报错，起初我以为是我的headers头伪装不够好，仔细看报错信息，发现是编码的问题。然后就有了这篇记录的文章。 0x01 发现问题爬虫报错：UnicodeEncodeError: &#39;gbk&#39; codec can&#39;t encode character &#39;\xa9&#39; in position 51078: illegal multibyte sequence就是上图的报错，发现问题所在。使用python写文件的时候，大部分会出现UnicodeEncodeError: &#39;gbk&#39; codec can&#39;t encode character &#39;\xa9&#39; in position这个问题。 0x02 解决问题解决办法： 第一种方法：或者在网络上获取的数据，先decode解码成unicode编码，然后再写入windows系统，这样就不会出现这种为题了 第二种方法：在windows下面，新文件的默认编码是gbk，这样的话，python解释器会用gbk编码去解析我们的网络数据流txt，然而txt此时已经是decode过的unicode编码，这样的话就会导致解析不了，出现上述问题。 解决的办法就是，改变目标文件的编码： 1f = open("xxx.html",'w',encoding='utf-8') 这样就不会报错了。 0x03 附件问题使用scrapy爬取的json数据，中文为unicode编码，如下图所示：由于比较xx，所以打码处理。 解决办法：在settings.py文件中添加一行代码：FEED_EXPORT_ENCODING = &#39;utf-8&#39;item 被转 str，默认 ensure_ascii = True，则非 ASCII 字符被转化为 unicode再次爬取，查看数据 0x04 参考链接https://doc.scrapy.org/en/latest/topics/feed-exports.html#feed-export-encoding]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[kali linux网络配置]]></title>
     <url>%2F2019%2F09%2F10%2Fkali-linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[kali linux网络配置 使用虚拟机时，我喜欢使用挂起，然后再次开启时，有时会检测不到网络，这个就很烦了。使用命令service networking restart还是没有用。现在解决了这个问题，我来做个记录。由于kali在network服务的interfaces文件中没有加入我使用的网卡。所以无法识别。 使用命令ifconfig，发现我的eth0网卡没有了。猜测是网卡没有启动，使用命令ifconfig eth0 up启动了网卡，还是没有用。没有inet4的地址，只能看到inet6，电脑右上角没有下图这个标志。 现在想到了，更改interfaces文件，文件路径为：/etc/network/interfaces编辑interfaces文件：vim interfaces在最下面加入这段： 12auto eth0iface eth0 inet dhcp 保存后，使用命令：service networking restart网络就可以了]]></content>
