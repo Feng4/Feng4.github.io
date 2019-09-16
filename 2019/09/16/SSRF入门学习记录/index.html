@@ -82,18 +82,18 @@
 
 
 
-<meta name="description" content="0x00 什么是SSRF 词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。  0x01 SSRF产生的原因 服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并">
+<meta name="description" content="0x00 什么是SSRF词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。 0x01 SSRF产生的原因服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并没有对">
 <meta name="keywords" content="渗透测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSRF入门学习">
 <meta property="og:url" content="https://feng4.github.io/2019/09/16/SSRF入门学习记录/index.html">
 <meta property="og:site_name" content="Fengx 的博客">
-<meta property="og:description" content="0x00 什么是SSRF 词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。  0x01 SSRF产生的原因 服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并">
+<meta property="og:description" content="0x00 什么是SSRF词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。 0x01 SSRF产生的原因服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并没有对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-16T08:54:07.840Z">
+<meta property="og:updated_time" content="2019-09-16T09:06:21.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSRF入门学习">
-<meta name="twitter:description" content="0x00 什么是SSRF 词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。  0x01 SSRF产生的原因 服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并">
+<meta name="twitter:description" content="0x00 什么是SSRF词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。 0x01 SSRF产生的原因服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并没有对">
 
 
 
@@ -402,29 +402,16 @@
       
 
       
-        <h3 id="0x00-什么是SSRF"><a href="#0x00-什么是SSRF" class="headerlink" title="0x00 什么是SSRF"></a>0x00 什么是SSRF</h3><blockquote>
-<p><strong>词语解释：</strong><br><code>SSRF ：Server-Side Request Forgery 服务器端请求伪造</code><br>它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。<br>一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。</p>
-</blockquote>
-<h3 id="0x01-SSRF产生的原因"><a href="#0x01-SSRF产生的原因" class="headerlink" title="0x01 SSRF产生的原因"></a>0x01 SSRF产生的原因</h3><blockquote>
-<p>服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并没有对目标进行过滤和限制，这便是SSRF产生的原因。例如网上的很多在线翻译网页，远程图片下载等等。</p>
-</blockquote>
-<blockquote>
+        <h3 id="0x00-什么是SSRF"><a href="#0x00-什么是SSRF" class="headerlink" title="0x00 什么是SSRF"></a>0x00 什么是SSRF</h3><p><strong>词语解释：</strong><br><code>SSRF ：Server-Side Request Forgery 服务器端请求伪造</code><br>它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。<br>一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。</p>
+<h3 id="0x01-SSRF产生的原因"><a href="#0x01-SSRF产生的原因" class="headerlink" title="0x01 SSRF产生的原因"></a>0x01 SSRF产生的原因</h3><p>服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并没有对目标进行过滤和限制，这便是SSRF产生的原因。例如网上的很多在线翻译网页，远程图片下载等等。</p>
 <p>以加载远程图片为例，它后端的代码实现通常如下：</p>
-</blockquote>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getImage</span><span class="params">()</span></span>&#123;</span><br><span class="line">  $f = fopen($_GET[<span class="string">'src'</span>], <span class="string">'rb'</span>); <span class="comment">//打开远程文件</span></span><br><span class="line">  <span class="keyword">echo</span> fread($f, <span class="number">8192</span>); <span class="comment">//显示已打开的远程文件</span></span><br><span class="line">&#125;</span><br><span class="line">getImage();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>这段代码中，用fopen()去请求一个外部资源，而且参数直接由外部get提交，并未经过任何处理，这样便产生了SSRF。这时，如果src参数传入了一个内部地址，攻击者便能获取到目标内网的信息。</p>
-</blockquote>
-<h3 id="0x02-如何挖掘SSRF漏洞"><a href="#0x02-如何挖掘SSRF漏洞" class="headerlink" title="0x02 如何挖掘SSRF漏洞"></a>0x02 如何挖掘SSRF漏洞</h3><blockquote>
-<p>一般会进行黑盒测试和白盒测试。<br><strong>黑盒测试：</strong><br>我们往往会关注Web应用上提供的远程图片下载，分享页面到第三方网站，在线转码、翻译以及离线下载等功能。<br>除此之外，对于那些我们不可见的功能，就需要多关注url中的敏感参数，这些参数通常是对远程服务器的调用<br>url中的敏感参数举例：</p>
-</blockquote>
+<h3 id="0x02-如何挖掘SSRF漏洞"><a href="#0x02-如何挖掘SSRF漏洞" class="headerlink" title="0x02 如何挖掘SSRF漏洞"></a>0x02 如何挖掘SSRF漏洞</h3><p>一般会进行黑盒测试和白盒测试。<br><strong>黑盒测试：</strong><br>我们往往会关注Web应用上提供的远程图片下载，分享页面到第三方网站，在线转码、翻译以及离线下载等功能。<br>除此之外，对于那些我们不可见的功能，就需要多关注url中的敏感参数，这些参数通常是对远程服务器的调用<br>url中的敏感参数举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share, wap, url, link, src, source, target, u, 3g, display, sourceurl, imageURL, domain</span><br></pre></td></tr></table></figure>
 <p><strong>白盒测试：</strong></p>
-<blockquote>
 <p>一般是指攻击者在获得了源代码的情况下对代码进行审计。我们以php为例，在php代码中，我们通常会去寻找源码中的<code>file_get_contents(), fsockopen(), curl_exec(), fopen()</code>等敏感函数，之后再进一步验证其参数是否外部可控。</p>
-</blockquote>
-<h3 id="0x03-实战中的利用和绕过姿势"><a href="#0x03-实战中的利用和绕过姿势" class="headerlink" title="0x03 实战中的利用和绕过姿势"></a>0x03 实战中的利用和绕过姿势</h3><blockquote>
-<p>在实际测试中，遇到的SSRF可以分为两类，有回显和无回显。<br><strong>有回显，即响应信息直接输出到客户端浏览器：</strong></p>
+<h3 id="0x03-实战中的利用和绕过姿势"><a href="#0x03-实战中的利用和绕过姿势" class="headerlink" title="0x03 实战中的利用和绕过姿势"></a>0x03 实战中的利用和绕过姿势</h3><p>在实际测试中，遇到的SSRF可以分为两类，有回显和无回显。<br><strong>有回显，即响应信息直接输出到客户端浏览器：</strong></p>
 <ul>
 <li>首先是探测内网端口。请求一个开放的端口比不存在的端口所用的时间要多的多，攻击者可通过判断响应时间来探测内网开放的端口。</li>
 <li>其次是获取服务banner信息。攻击者通常会从响应信息中提取应用程序的程序名，版本号等信息，这对下一步攻击十分重要。</li>
@@ -432,30 +419,21 @@
 <li>也能读取本地文件。通常，能实现远程请求的函数也能请求本地资源，所以攻击者可以借此读取服务器上的一些重要数据，如数据库配置文件，网站源代码等。在php中，常用的读取协议有:file://, php://filter</li>
 <li>最后是中转请求。利用SSRF将目标服务器作为一台代理服务器，攻击者通过此代理来攻击其他目标。这样，受害者在查询攻击来源的时候查到的就是存在SSRF的那台代理服务，而非攻击者的IP。</li>
 </ul>
-</blockquote>
-<blockquote>
 <p><strong>而关于无回显，也就是在请求完成以后，客户端浏览器无法获得响应甚至不能判断请求是否成功。无回显通常运用在以下方面：</strong></p>
 <ul>
 <li>它可以绕过CDN，寻找真实IP。CDN全称为Content Delivery Network，中文是内容分发网络。攻击者一般很难查到部署了CDN的服务器的真实IP，从而无法进一步攻击。但是如果存在SSRF的话，攻击者可通过SSRF去请求自己事先准备的服务器，然后就能在请求记录里找到来源IP，也就是目标的真实IP。</li>
 <li>还有DDOS全称Distributed Denial of Service，即分布式拒绝服务攻击。攻击者可以通过SSRF去请求一个大文件造成目标服务器网络堵塞。</li>
 </ul>
-</blockquote>
-<blockquote>
 <p><strong>常见的限制绕过方法：</strong></p>
 <ul>
 <li>不过，在实战中通常会遇到一些限制，比如对需要请求的域名或是IP做了限制，成功利用SSRF，必须要能发送针对目标服务的数据包。根据网上公开的漏洞案例来看，很多厂商对SSRF的防御并不完善，有很多修复之后又再次被绕过的例子。</li>
 <li>如果内网IP被列入黑名单，可以将点分十进制IP转换成整数十进制、八进制、十六进制；可以使用这个转换地址：<a href="http://ip.chacuo.net/ipcalc" target="_blank" rel="noopener">http://ip.chacuo.net/ipcalc</a><br>也可以用xip.io解析，只需要在xip.io前加上需要解析的IP，此域名就会自动解析到这个IP<br>还可以限制协议，我们利用重定向跳转到其他协议:<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> header(<span class="string">"Location: gopher://10.10.10.1"</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</blockquote>
-<blockquote>
 <p>如果是域名白名单，也就是只允许请求含有指定域名的URL。我们结合URL的结构来构造一些特殊的URL，实现绕过，下面是一些URL标准结构:</p>
-</blockquote>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protocol:<span class="comment">//username:password@hostname/?query#fragment   http://example.com@xxxx.burpcollaborator.net   http://xxxx.burpcollaborator.net?example.com   http://xxx.burpcollaborator.net#example.com</span></span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>这些URL都可以成功的访问到通信域名，而不是目标站点的域名，但却可以让目标服务器认为是目标站点的域名。</p>
-</blockquote>
-<p>注：<a href="本文摘自二向箔">^本文摘自</a></p>
+<p>注：<u>本文摘自二向箔</u></p>
 
       
     </div>
