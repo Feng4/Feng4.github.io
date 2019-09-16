@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="Fengx 的博客">
 <meta property="og:description" content="0x00 什么是SSRF 词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。  0x01 SSRF产生的原因 服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-16T08:41:34.594Z">
+<meta property="og:updated_time" content="2019-09-16T08:54:07.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSRF入门学习">
 <meta name="twitter:description" content="0x00 什么是SSRF 词语解释：SSRF ：Server-Side Request Forgery 服务器端请求伪造它是一种由攻击者构造请求，再由服务端发起请求的一种安全漏洞。一般情况下，外网无法进行访问的内部系统 会作为SSRF的攻击目标，SSRF能够让服务器替攻击者去发送请求。  0x01 SSRF产生的原因 服务端会提供从远程服务器、应用获取数据的功能，但对远程服务器地址的传递过程中，并">
@@ -440,12 +440,13 @@
 <li>还有DDOS全称Distributed Denial of Service，即分布式拒绝服务攻击。攻击者可以通过SSRF去请求一个大文件造成目标服务器网络堵塞。</li>
 </ul>
 </blockquote>
+<blockquote>
 <p><strong>常见的限制绕过方法：</strong></p>
-<blockquote>
-<p>不过，在实战中通常会遇到一些限制，比如对需要请求的域名或是IP做了限制，成功利用SSRF，必须要能发送针对目标服务的数据包。根据网上公开的漏洞案例来看，很多厂商对SSRF的防御并不完善，有很多修复之后又再次被绕过的例子。</p>
-</blockquote>
-<blockquote>
-<p>如果内网IP被列入黑名单，可以将点分十进制IP转换成整数十进制、八进制、十六进制；可以使用这个转换地址：<a href="http://ip.chacuo.net/ipcalc" target="_blank" rel="noopener">http://ip.chacuo.net/ipcalc</a><br>也可以用xip.io解析，只需要在xip.io前加上需要解析的IP，此域名就会自动解析到这个IP<br>还可以限制协议，我们利用重定向跳转到其他协议:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> header(<span class="string">"Location: gopher://10.10.10.1"</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>不过，在实战中通常会遇到一些限制，比如对需要请求的域名或是IP做了限制，成功利用SSRF，必须要能发送针对目标服务的数据包。根据网上公开的漏洞案例来看，很多厂商对SSRF的防御并不完善，有很多修复之后又再次被绕过的例子。</li>
+<li>如果内网IP被列入黑名单，可以将点分十进制IP转换成整数十进制、八进制、十六进制；可以使用这个转换地址：<a href="http://ip.chacuo.net/ipcalc" target="_blank" rel="noopener">http://ip.chacuo.net/ipcalc</a><br>也可以用xip.io解析，只需要在xip.io前加上需要解析的IP，此域名就会自动解析到这个IP<br>还可以限制协议，我们利用重定向跳转到其他协议:<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> header(<span class="string">"Location: gopher://10.10.10.1"</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
 <blockquote>
 <p>如果是域名白名单，也就是只允许请求含有指定域名的URL。我们结合URL的结构来构造一些特殊的URL，实现绕过，下面是一些URL标准结构:</p>
@@ -454,7 +455,7 @@
 <blockquote>
 <p>这些URL都可以成功的访问到通信域名，而不是目标站点的域名，但却可以让目标服务器认为是目标站点的域名。</p>
 </blockquote>
-<p>注：<a href="注：本文摘自二向箔">^本文摘自</a>.</p>
+<p>注：<a href="本文摘自二向箔">^本文摘自</a></p>
 
       
     </div>
